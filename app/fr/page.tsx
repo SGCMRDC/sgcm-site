@@ -1,0 +1,588 @@
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+// ─────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────
+
+interface Slide {
+  label: string;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+const slides: Slide[] = [
+  {
+    label: 'FACILITATION DE CATHODES DE CUIVRE',
+    title: 'Structurer des chaînes d\'approvisionnement minérales responsables depuis la RDC.',
+    subtitle: 'En savoir plus',
+    image: '/SGCM Electrorefining plant.png',
+  },
+  {
+    label: 'CONFORMITÉ & TRAÇABILITÉ',
+    title: 'Intégration de la conformité de bout en bout pour la RDC.',
+    subtitle: 'Découvrir notre plateforme',
+    image: '/sgcm-africa-tracability.jpg',
+  },
+  {
+    label: 'PARTENARIATS INSTITUTIONNELS',
+    title: 'Construire des partenariats industriels à long terme.',
+    subtitle: 'Notre réseau',
+    image: '/dar-es-salaam.jpg',
+  },
+  {
+    label: 'IMPACT LOCAL',
+    title: 'Fondé sur l\'expertise congolaise, pour le développement congolais.',
+    subtitle: 'Notre engagement social',
+    image: '/SGCM-community.jpg',
+  },
+];
+
+const navItems = [
+  { label: 'À PROPOS',    href: '#aboutus'    },
+  { label: 'PLATEFORME',  href: '#platform'   },
+  { label: 'SERVICES',    href: '#services'   },
+  { label: 'RÉSEAU',      href: '#network'    },
+  { label: 'ACTUALITÉS',  href: '#insights'   },
+  { label: 'CONTACT',     href: '/contact/fr' },
+];
+
+const aboutCards = [
+  { label: 'Mission',   text: 'Formaliser et structurer les chaînes d\'approvisionnement minérales en RDC' },
+  { label: 'Vision',    text: 'Devenir l\'intégrateur de conformité de référence en Afrique centrale' },
+  { label: 'Présence',  text: 'Kinshasa · Kolwezi (RDC) et Bruxelles (Belgique)' },
+  { label: 'Domaines',  text: 'Cathodes de cuivre, or, cobalt et minéraux stratégiques, approvisionnés de manière responsable et entièrement traçables.' },
+];
+
+const services = [
+  {
+    title: 'Facilitation stratégique des minéraux',
+    desc: 'Mise en relation acheteurs–producteurs et vérification de conformité pour les cathodes de cuivre de qualité LME, l\'or, le cobalt et d\'autres minéraux stratégiques issus de sources certifiées en RDC.',
+  },
+  {
+    title: 'Coordination logistique et export',
+    desc: 'Planification du transport intérieur, documentation export, préparation des expéditions et collaboration avec les entités logistiques agréées.',
+  },
+  {
+    title: 'Conformité & Documentation',
+    desc: 'Alignement réglementaire avec les cadres RDC, OCDE et UE. Diligence raisonnable de type KYC/AML et transparence administrative.',
+  },
+  {
+    title: 'Structuration multi-minéraux de la chaîne d\'approvisionnement',
+    desc: 'Structuration de bout en bout pour les chaînes d\'approvisionnement en or, cobalt, coltan et cuivre — de l\'approvisionnement certifié à la préparation export et à l\'intégrité documentaire.',
+  },
+  {
+    title: 'Interface institutionnelle',
+    desc: 'Communication structurée avec les organismes de réglementation, les autorités douanières et les institutions internationales de conformité.',
+  },
+  {
+    title: 'Conseil stratégique minier',
+    desc: 'Conseil de niveau exécutif sur la structuration des chaînes d\'approvisionnement, l\'allocation des risques, les cadres de traçabilité et le développement de partenariats industriels à long terme dans le secteur minier de la RDC.',
+  },
+];
+
+const platformItems = [
+  { title: 'SGCM Certified™',               desc: 'Vérification documentaire complète de chaque opérateur et unité de production de notre réseau.' },
+  { title: 'Cadre de conformité',            desc: 'Protocoles d\'alignement réglementaire conformes aux normes RDC, OCDE et UE' },
+  { title: 'Traçabilité & Blockchain',       desc: 'Traçabilité minérale de bout en bout avec des pistes d\'audit immuables' },
+  { title: 'Structuration des transactions', desc: 'Allocation contractuelle des risques et assistance à la documentation des opérations' },
+];
+
+const networkItems = [
+  { title: 'Producteurs miniers',      desc: 'Installations certifiées de production de cuivre et d\'or en RDC' },
+  { title: 'Partenaires logistiques',  desc: 'Opérateurs logistiques intérieurs et à l\'export agréés' },
+  { title: 'Conseillers juridiques',   desc: 'Experts juridiques congolais en droit minier de la RDC, cadres réglementaires et conformité à l\'export.' },
+  { title: 'Acheteurs internationaux', desc: 'Fonderies industrielles, affineurs et offtakers' },
+];
+
+// ─────────────────────────────────────────────
+// NAV ITEM
+// ─────────────────────────────────────────────
+
+function NavItem({ label, href, onClick }: { label: string; href: string; onClick?: () => void }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'relative',
+        display: 'inline-flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '4px 14px',
+        fontSize: '11px',
+        fontWeight: 500,
+        letterSpacing: '0.13em',
+        textTransform: 'uppercase',
+        color: hovered ? '#ffffff' : 'rgba(255,255,255,0.72)',
+        textDecoration: 'none',
+        transition: 'color 0.2s',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {label}
+      <span
+        style={{
+          position: 'absolute',
+          bottom: '-2px',
+          left: '14px',
+          right: '14px',
+          height: '1.5px',
+          background: '#C94010',
+          transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
+          transformOrigin: 'left',
+          transition: 'transform 0.25s ease',
+          borderRadius: '1px',
+        }}
+      />
+    </a>
+  );
+}
+
+// ─────────────────────────────────────────────
+// MAIN PAGE
+// ─────────────────────────────────────────────
+
+export default function Home() {
+  const [current, setCurrent]   = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [searchOpen, setSearchOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setProgress(0);
+    const duration = 5000;
+    const interval = 50;
+    let elapsed = 0;
+    const progressTimer = setInterval(() => {
+      elapsed += interval;
+      setProgress((elapsed / duration) * 100);
+      if (elapsed >= duration) clearInterval(progressTimer);
+    }, interval);
+    const slideTimer = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, duration);
+    return () => { clearInterval(progressTimer); clearTimeout(slideTimer); };
+  }, [current]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  return (
+    <main className="min-h-screen bg-white text-gray-900 font-sans">
+
+      {/* ══════════════════════════════════════════════
+          HEADER
+          ══════════════════════════════════════════════ */}
+      <header
+        style={{
+          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+          transition: 'background 0.4s ease, box-shadow 0.4s ease',
+          background: scrolled || menuOpen
+            ? 'rgba(8,8,8,0.97)'
+            : 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.0) 100%)',
+          boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
+        }}
+      >
+        {/* ── TOP BAR ── */}
+        <div
+          className="px-4 md:px-8 lg:px-12"
+          style={{
+            borderBottom: '1px solid rgba(255,255,255,0.09)',
+            height: '38px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <a href="/fr" style={{
+              fontSize: '12px', letterSpacing: '0.07em',
+              color: 'white', textDecoration: 'none',
+              padding: '0 4px', fontWeight: 600,
+            }}>FR</a>
+            <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '11px' }}>|</span>
+            <a href="/" style={{
+              fontSize: '12px', letterSpacing: '0.07em',
+              color: 'rgba(255,255,255,0.42)', textDecoration: 'none',
+              padding: '0 4px', transition: 'color 0.2s',
+            }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'white')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.42)')}>
+              EN
+            </a>
+          </div>
+          <div
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: '6px', fontSize: '12px', color: 'rgba(255,255,255,0.42)', letterSpacing: '0.07em' }}
+          >
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+              stroke="rgba(255,255,255,0.35)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Kinshasa</span>
+            <span style={{ color: 'rgba(255,255,255,0.20)' }}>·</span>
+            <span>Kolwezi</span>
+            <span style={{ color: 'rgba(255,255,255,0.20)' }}>·</span>
+            <span>Bruxelles</span>
+          </div>
+        </div>
+
+        {/* ── MAIN NAVBAR ── */}
+        <div
+          className="px-4 md:px-8 lg:px-12"
+          style={{ height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+        >
+          <div className="hidden lg:flex items-center" style={{ gap: '36px' }}>
+            <button
+              onClick={() => setSearchOpen(o => !o)}
+              aria-label="Rechercher"
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                color: 'rgba(255,255,255,0.5)', display: 'flex', alignItems: 'center',
+                padding: 0, transition: 'color 0.2s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'white')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+              {navItems.map((item) => (
+                <NavItem key={item.label} label={item.label} href={item.href} />
+              ))}
+            </nav>
+          </div>
+
+          <button
+            className="lg:hidden"
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', padding: '4px' }}
+          >
+            {menuOpen ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            )}
+          </button>
+
+          <a href="#" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={140} height={44} priority
+              style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+          </a>
+        </div>
+
+        {/* ── SEARCH DROPDOWN ── */}
+        <div style={{
+          overflow: 'hidden',
+          maxHeight: searchOpen ? '72px' : '0',
+          transition: 'max-height 0.3s ease',
+          borderTop: searchOpen ? '1px solid rgba(255,255,255,0.08)' : 'none',
+          background: 'rgba(0,0,0,0.94)',
+        }}>
+          <div className="px-4 md:px-12" style={{ padding: '14px 0', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+              stroke="rgba(255,255,255,0.30)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input autoFocus={searchOpen} type="text" placeholder="Rechercher sur SGCM…"
+              style={{ background: 'none', border: 'none', outline: 'none', color: 'white', fontSize: '14px', letterSpacing: '0.04em', width: '100%', fontFamily: 'inherit' }} />
+            <button onClick={() => setSearchOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.4)', fontSize: '20px', lineHeight: 1, padding: '0 4px' }}>×</button>
+          </div>
+        </div>
+      </header>
+
+      {/* ── MOBILE MENU OVERLAY ── */}
+      {menuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 flex flex-col" style={{ background: 'rgba(8,8,8,0.98)', paddingTop: '102px' }}>
+          <nav className="flex flex-col items-center gap-8 pt-12">
+            {navItems.map((item) => (
+              <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}
+                style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '13px', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div className="flex items-center justify-center gap-6 mt-auto mb-12">
+            <a href="/fr" style={{ color: 'white', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em', fontWeight: 600 }}>FR</a>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em' }}>EN</a>
+          </div>
+        </div>
+      )}
+
+
+      {/* ══════════════════════════════════════════════
+          HERO CAROUSEL
+          ══════════════════════════════════════════════ */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {slides.map((slide, index) => (
+          <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}>
+            <Image src={slide.image} alt={slide.label} fill className="object-cover" priority={index === 0} />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
+          </div>
+        ))}
+
+        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-40 md:pb-36">
+          <div className="max-w-4xl">
+            <p className="text-white/55 text-xs font-semibold uppercase tracking-widest mb-3 md:mb-4">
+              {slides[current].label}
+            </p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 md:mb-8" style={{ fontWeight: 300 }}>
+              {slides[current].title}
+            </h1>
+            <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
+              <span>{slides[current].subtitle}</span>
+              <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center text-xs group-hover:bg-white group-hover:text-black transition-colors">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 z-10 grid grid-cols-4">
+          {slides.map((slide, index) => (
+            <button key={index} onClick={() => setCurrent(index)}
+              className={`text-left px-3 py-4 md:px-6 md:py-5 border-r border-white/10 last:border-r-0 transition-colors ${index === current ? 'bg-black/25' : 'bg-transparent hover:bg-black/10'}`}>
+              <div className="hidden sm:flex items-center gap-2 mb-3">
+                {index < current && <span className="text-white/35 text-xs">←</span>}
+                <p className={`text-xs uppercase tracking-widest font-medium truncate ${index === current ? 'text-white' : 'text-white/38'}`}>
+                  {slide.label}
+                </p>
+              </div>
+              <div className="h-px w-full bg-white/18">
+                {index === current && <div className="h-px bg-[#C94010]" style={{ width: `${progress}%`, transition: 'none' }} />}
+                {index < current && <div className="h-px bg-white/38 w-full" />}
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          À PROPOS
+          ══════════════════════════════════════════════ */}
+      <section id="aboutus" className="py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div>
+            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
+            <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la facilitation minière</h2>
+            <p className="text-gray-500 leading-relaxed mb-4">
+              La Société de Gestion et Consultation Minières (SGCM) est un facilitateur de
+              chaînes d'approvisionnement minérales basé à Kinshasa. Nous intégrons la conformité,
+              la traçabilité et la structuration logistique pour construire des voies fiables et
+              transparentes entre les sources de production certifiées de la RDC et les partenaires
+              industriels internationaux.
+            </p>
+            <p className="text-gray-500 leading-relaxed">
+              SGCM constitue un pont structuré entre le secteur minier congolais et la demande
+              industrielle mondiale, offrant un accès vérifié à des sources de production certifiées
+              tout en garantissant un alignement réglementaire complet et l'intégrité documentaire
+              à chaque étape.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
+            {aboutCards.map((item) => (
+              <div key={item.label} className="bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#C94010] transition-colors duration-200">
+                <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">{item.label}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          SERVICES
+          ══════════════════════════════════════════════ */}
+      <section id="services" className="py-16 md:py-24 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Services</p>
+          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Ce que nous faisons pour nos partenaires</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
+            {services.map((service) => (
+              <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default">
+                <h3 className="text-base font-semibold mb-3 group-hover:text-[#C94010] transition-colors">{service.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.desc}</p>
+                <span className="text-[#C94010] text-xs uppercase tracking-widest">En savoir plus →</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          PLATEFORME
+          ══════════════════════════════════════════════ */}
+      <section id="platform" className="py-12 md:py-16 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Plateforme</p>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16 mb-12 lg:mb-0">
+            <div className="flex flex-col gap-4 lg:max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-light">
+                SGCM Certified™ <br />Notre standard de vérification
+              </h2>
+              <p className="text-gray-500 leading-relaxed">
+                SGCM Certified™ est notre standard de vérification interne. Avant d'engager toute
+                unité de production ou opérateur économique, SGCM procède à une revue documentaire
+                complète au regard des principales normes internationales, garantissant que chaque
+                partenaire présenté à nos acheteurs dispose d'une documentation complète, conforme
+                et vérifiable.
+              </p>
+            </div>
+            <Image
+              src="/SGCM CERTIFIED LABELv1.svg"
+              alt="SGCM Certified"
+              width={320}
+              height={320}
+              className="hidden md:block lg:ml-20 w-48 md:w-64 lg:w-[420px] h-auto flex-shrink-0"
+            />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-gray-200">
+            {platformItems.map((item) => (
+              <div key={item.title} className="pt-6 md:pt-8 pr-4 md:pr-8 pb-6 md:pb-0">
+                <div className="w-8 h-px bg-[#C94010] mb-4 md:mb-6" />
+                <h3 className="font-semibold mb-2 text-sm uppercase tracking-wide">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          RÉSEAU
+          ══════════════════════════════════════════════ */}
+      <section id="network" className="py-16 md:py-24 px-6 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Réseau</p>
+          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl text-white">
+            Un réseau de confiance de partenaires vérifiés
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
+            {networkItems.map((item) => (
+              <div key={item.title} className="bg-gray-900 p-6 md:p-8">
+                <h3 className="font-semibold mb-3 text-sm uppercase tracking-wide">{item.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          CONTACT CTA
+          ══════════════════════════════════════════════ */}
+      <section id="contact" className="py-16 md:py-24 px-6 bg-[#C94010]">
+        <div className="max-w-7xl mx-auto text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-light mb-6">
+            Prêt à structurer votre chaîne d'approvisionnement ?
+          </h2>
+          <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
+            Que vous soyez producteur, acheteur ou partenaire institutionnel, SGCM est prêt à
+            accompagner vos besoins en matière de conformité et de facilitation.
+          </p>
+          <a href="mailto:contact@sgcm-mining.com"
+            className="inline-block bg-white text-[#C94010] px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+            Nous contacter
+          </a>
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          FOOTER
+          ══════════════════════════════════════════════ */}
+      <footer className="bg-[#0a0a0a] text-white">
+        <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
+          <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-2">
+            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={200} height={40}
+              style={{ filter: 'brightness(0) invert(1)', width: '180px', height: 'auto' }} />
+            <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
+              Facilitateur de chaînes d'approvisionnement minérales. Structurer des flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            {[
+              { label: 'À propos',   href: '#aboutus' },
+              { label: 'Plateforme', href: '#platform' },
+              { label: 'Réseau',     href: '#network' },
+              { label: 'Actualités', href: '#insights' },
+              { label: 'Carrières',  href: '#' },
+            ].map((item) => (
+              <a key={item.label} href={item.href} className="text-white/40 text-xs hover:text-white transition-colors">{item.label}</a>
+            ))}
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            {['Cathode de cuivre', 'Chaîne or', 'Conformité', 'Logistique', 'Conseil'].map((item) => (
+              <a key={item} href="#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
+            ))}
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
+            <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
+            <a href="mailto:verify@sogecom-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sogecom-mining.com</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
+            <span className="text-white/25 text-xs">Bureau de Kinshasa</span>
+            <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
+            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
+            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Conditions d'utilisation</a>
+            <a href="https://sogecom-mining.com/verify" target="_blank" rel="noopener noreferrer"
+              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
+              <span>Vérifier un mandat →</span>
+            </a>
+          </div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <p className="text-white/25 text-xs">© 2026 Société de Gestion et Consultation Minières. Tous droits réservés.</p>
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Confidentialité</a>
+              <span className="text-white/10">|</span>
+              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Juridique</a>
+              <span className="text-white/10">|</span>
+              <span className="text-white/25 text-xs">SGCM Certified™</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  );
+}
