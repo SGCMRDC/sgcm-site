@@ -386,9 +386,23 @@ export default function Home() {
                   {slide.label}
                 </p>
               </div>
-              <div className="h-px w-full bg-white/18">
-                {index === current && <div className="h-px bg-[#C94010]" style={{ width: `${progress}%`, transition: 'none' }} />}
-                {index < current && <div className="h-px bg-white/38 w-full" />}
+              <div className="h-[3px] sm:h-px w-full bg-white/10 sm:bg-white/18 rounded-full sm:rounded-none overflow-hidden">
+                {index === current && (
+                  <div
+                    className="h-full"
+                    style={{
+                      width: `${progress}%`,
+                      transition: 'none',
+                      background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
+                    }}
+                  />
+                )}
+                {index < current && (
+                  <div
+                    className="h-full w-full transition-all duration-700"
+                    style={{ background: 'rgba(255,255,255,0.38)' }}
+                  />
+                )}
               </div>
             </button>
           ))}
