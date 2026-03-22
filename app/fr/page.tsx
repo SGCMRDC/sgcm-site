@@ -454,12 +454,20 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-light">
                 SGCM Certified™ <br />Notre standard de vérification
               </h2>
-              <p className="text-gray-500 leading-relaxed">
-                SGCM Certified™ est notre standard de vérification interne. Avant d'engager toute
+              <p className="text-gray-500 leading-relaxed mb-3">
+                SGCM Certified™ est notre standard de vérification interne. Avant d&apos;engager toute
                 unité de production ou opérateur économique, SGCM procède à une revue documentaire
                 complète au regard des principales normes internationales, garantissant que chaque
-                partenaire présenté à nos acheteurs dispose d'une documentation complète, conforme
+                partenaire présenté à nos acheteurs dispose d&apos;une documentation complète, conforme
                 et vérifiable.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-3">
+                Les protocoles SGCM Certified™ sont alignés avec les lignes directrices OCDE sur
+                le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en
+                minerais provenant de zones à haut risque.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Conçu pour préparer les coopératives à l&apos;éligibilité aux chaînes d&apos;approvisionnement internationales.
               </p>
             </div>
             <img src="/sgcm-certified.png" alt="SGCM Certified"
