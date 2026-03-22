@@ -352,7 +352,7 @@ export default function Home() {
           </div>
         ))}
 
-        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 md:pb-14">
+        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-[102px] pb-24">
           <div className="max-w-4xl">
             <p className="text-white/55 text-xs font-semibold uppercase tracking-widest mb-3 md:mb-4">
               {slides[current].label}
