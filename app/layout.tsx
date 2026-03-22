@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "RK4mRHy-DdX-1MGRlwNBHYfY9lXM7r19FHlnb6wNhV8",
+  },
   title: "SGCM — Mineral Supply Chain Facilitator",
   description: "Société de Gestion et Consultation Minières (SGCM) is a mineral supply chain facilitator headquartered in Kinshasa, structuring compliant, traceable, and responsible mineral flows from the DRC to international markets.",
   keywords: ["SGCM", "mineral supply chain", "DRC", "copper cathode", "compliance", "traceability", "Kinshasa", "Congo"],
