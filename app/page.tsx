@@ -454,8 +454,11 @@ export default function Home() {
               >
                 {/* Label — desktop only */}
                 <p
-                  className="hidden sm:block text-xs uppercase tracking-widest font-medium truncate mb-2 transition-opacity duration-500"
-                  style={{ color: isActive ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.28)' }}
+                  className="hidden sm:block text-xs uppercase tracking-widest font-medium truncate mb-2 text-white"
+                  style={{
+                    opacity: isActive ? 0.85 : 0.28,
+                    transition: 'opacity 500ms ease',
+                  }}
                 >
                   {slide.label}
                 </p>
