@@ -481,15 +481,17 @@ export default function Home() {
               A structured approach to mineral facilitation
             </h2>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Société de Gestion et Consultation Minières (SGCM) is a mineral supply chain
-              facilitator headquartered in Kinshasa. We integrate compliance,
-              traceability, and logistics structuring to build reliable, transparent pathways
-              between certified DRC production sources and international industrial partners.
+              Société de Gestion et Consultation Minières (SGCM) is a structured intermediary
+              headquartered in Kinshasa, connecting certified DRC producers of copper cathodes,
+              gold, and cobalt with international industrial buyers.
+            </p>
+            <p className="text-gray-700 font-medium leading-relaxed mb-4">
+              We do not trade. We structure.
             </p>
             <p className="text-gray-500 leading-relaxed">
-              SGCM serves as a structured bridge between the Congolese mineral sector and global
-              industrial demand, providing verified access to certified production sources while
-              ensuring full regulatory alignment and documentation integrity at every stage.
+              SGCM integrates compliance, traceability, and logistics coordination — aligned with
+              OECD Due Diligence Guidance — to ensure every supply chain is verifiable,
+              documented, and export-ready.
             </p>
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">

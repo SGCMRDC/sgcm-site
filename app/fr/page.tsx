@@ -398,17 +398,17 @@ export default function Home() {
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
             <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la facilitation minière</h2>
             <p className="text-gray-500 leading-relaxed mb-4">
-              La Société de Gestion et Consultation Minières (SGCM) est un facilitateur de
-              chaînes d'approvisionnement minérales basé à Kinshasa. Nous intégrons la conformité,
-              la traçabilité et la structuration logistique pour construire des voies fiables et
-              transparentes entre les sources de production certifiées de la RDC et les partenaires
-              industriels internationaux.
+              Société de Gestion et Consultation Minières (SGCM) est un intermédiaire structurant
+              basé à Kinshasa, reliant des producteurs certifiés en RDC (cuivre cathodique, or,
+              cobalt) à la demande industrielle internationale.
+            </p>
+            <p className="text-gray-700 font-medium leading-relaxed mb-4">
+              Nous ne négocions pas. Nous structurons.
             </p>
             <p className="text-gray-500 leading-relaxed">
-              SGCM constitue un pont structuré entre le secteur minier congolais et la demande
-              industrielle mondiale, offrant un accès vérifié à des sources de production certifiées
-              tout en garantissant un alignement réglementaire complet et l'intégrité documentaire
-              à chaque étape.
+              SGCM intègre conformité, traçabilité et structuration logistique — en alignement
+              avec les lignes directrices OCDE — afin de garantir des chaînes d&apos;approvisionnement
+              vérifiables, documentées et prêtes à l&apos;export.
             </p>
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
