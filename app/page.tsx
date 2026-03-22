@@ -409,7 +409,7 @@ export default function Home() {
         ))}
 
         {/* Hero content */}
-        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-40 md:pb-36">
+        <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 md:pb-14">
           <div className="max-w-4xl">
             <p className="text-white/55 text-xs font-semibold uppercase tracking-widest mb-3 md:mb-4">
               {slides[current].label}
@@ -436,8 +436,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Slide nav bar — Aramco-style: active segment wider than inactive */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 flex">
+        {/* Slide indicator — clean pill segments, no backgrounds or borders */}
+        <div className="absolute bottom-6 left-6 right-6 md:left-16 md:right-16 z-10 flex items-center gap-1.5">
           {slides.map((slide, index) => {
             const isActive = index === current;
             const isPast   = index < current;
@@ -445,44 +445,30 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`text-left overflow-hidden border-r border-white/10 last:border-r-0 ${
-                  isActive ? 'bg-black/25' : 'bg-transparent hover:bg-black/10'
-                }`}
+                aria-label={`Slide ${index + 1}`}
+                className="relative h-[3px] rounded-full overflow-hidden cursor-pointer p-0 border-0 outline-none"
                 style={{
                   flex: isActive ? 3 : 1,
-                  padding: '16px 12px',
-                  transition: 'flex 600ms cubic-bezier(0.4,0,0.2,1), background-color 300ms ease',
+                  background: 'rgba(255,255,255,0.18)',
+                  transition: 'flex 600ms cubic-bezier(0.4,0,0.2,1)',
                 }}
               >
-                {/* Label — desktop only, fades with opacity */}
-                <div className="hidden sm:flex items-center gap-2 mb-3 overflow-hidden">
-                  {isPast && <span className="text-white/35 text-xs flex-shrink-0">←</span>}
-                  <p
-                    className="text-xs uppercase tracking-widest font-medium truncate transition-opacity duration-500"
-                    style={{ color: isActive ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.35)' }}
-                  >
-                    {slide.label}
-                  </p>
-                </div>
-                {/* Progress bar — 3px, rounded */}
-                <div className="h-[3px] w-full rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.12)' }}>
-                  {isActive && (
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${progress}%`,
-                        transition: 'none',
-                        background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
-                      }}
-                    />
-                  )}
-                  {isPast && (
-                    <div
-                      className="h-full w-full rounded-full"
-                      style={{ background: 'rgba(255,255,255,0.42)' }}
-                    />
-                  )}
-                </div>
+                {isActive && (
+                  <div
+                    className="absolute inset-y-0 left-0 rounded-full"
+                    style={{
+                      width: `${progress}%`,
+                      transition: 'none',
+                      background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
+                    }}
+                  />
+                )}
+                {isPast && (
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.55)' }}
+                  />
+                )}
               </button>
             );
           })}
