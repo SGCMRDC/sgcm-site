@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 interface Slide {
   label: string;
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
   image: string;
 }
@@ -34,7 +34,7 @@ const slides: Slide[] = [
   },
   {
     label: 'IMPACT LOCAL',
-    title: 'Fondé sur l\'expertise congolaise, pour le développement congolais.',
+    title: <>Fondé sur l&apos;expertise congolaise,<br />pour le développement congolais.</>,
     subtitle: 'Notre engagement social',
     image: '/SGCM-community.jpg',
   },
