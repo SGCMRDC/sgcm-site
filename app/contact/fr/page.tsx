@@ -146,7 +146,7 @@ export default function ContactPageFr() {
           </button>
 
           <a href="/fr" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={140} height={44} priority
+            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={140} height={44} priority unoptimized
               style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
           </a>
         </div>
@@ -325,8 +325,8 @@ export default function ContactPageFr() {
       <footer className="bg-[#0a0a0a] text-white mt-16 md:mt-[72px]">
         <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-2">
-            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={200} height={40}
-              style={{ filter: 'brightness(0) invert(1)', width: '180px', height: 'auto' }} />
+            <Image src="/SGCM-LOGO-TM.svg" alt="SGCM" width={180} height={40} unoptimized
+              style={{ filter: 'brightness(0) invert(1)', height: 'auto' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
               Facilitateur de chaînes d'approvisionnement minérales. Structurer des flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
             </p>
