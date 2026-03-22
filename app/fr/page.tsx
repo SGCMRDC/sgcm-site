@@ -11,6 +11,7 @@ interface Slide {
   title: React.ReactNode;
   subtitle: string;
   image: string;
+  body?: string;
 }
 
 const slides: Slide[] = [
@@ -34,7 +35,8 @@ const slides: Slide[] = [
   },
   {
     label: 'IMPACT LOCAL',
-    title: <>Expertise congolaise.<br />Structurée pour les marchés internationaux.</>,
+    title: <>Structurée pour la création de valeur locale.<br />Au service du développement congolais.</>,
+    body: 'En structurant des chaînes d\'approvisionnement conformes et traçables, SGCM permet aux opérateurs congolais d\'accéder aux marchés internationaux dans des conditions formelles et vérifiables.',
     subtitle: 'Notre engagement social',
     image: '/SGCM-community.jpg',
   },
@@ -355,9 +357,14 @@ export default function Home() {
             <p className="text-white/55 text-xs font-semibold uppercase tracking-widest mb-3 md:mb-4">
               {slides[current].label}
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 md:mb-8" style={{ fontWeight: 300 }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6" style={{ fontWeight: 300 }}>
               {slides[current].title}
             </h1>
+            {slides[current].body && (
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mb-6 md:mb-8">
+                {slides[current].body}
+              </p>
+            )}
             <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
               <span>{slides[current].subtitle}</span>
               <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">

@@ -11,6 +11,7 @@ interface Slide {
   title: React.ReactNode;
   subtitle: string;
   image: string;
+  body?: string;
 }
 
 const slides: Slide[] = [
@@ -34,7 +35,8 @@ const slides: Slide[] = [
   },
   {
     label: 'LOCAL IMPACT',
-    title: <>Congolese Expertise.<br />Structured for International Markets.</>,
+    title: <>Structured for Local Value Creation.<br />Built for Congolese Development.</>,
+    body: 'By structuring compliant and traceable supply chains, SGCM enables Congolese operators to access international markets under formal, verifiable conditions.',
     subtitle: 'Our social commitment',
     image: '/SGCM-community.jpg',
   },
@@ -413,11 +415,16 @@ export default function Home() {
               {slides[current].label}
             </p>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 md:mb-6"
               style={{ fontWeight: 300 }}
             >
               {slides[current].title}
             </h1>
+            {slides[current].body && (
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mb-6 md:mb-8">
+                {slides[current].body}
+              </p>
+            )}
             <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
               <span>{slides[current].subtitle}</span>
               <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
