@@ -376,8 +376,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Slide indicator — clean pill segments, no backgrounds or borders */}
-        <div className="absolute bottom-6 left-6 right-6 md:left-16 md:right-16 z-10 flex items-center gap-1.5">
+        {/* Slide indicator — pills + labels on desktop, pills only on mobile */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 flex gap-1.5 px-6 md:px-16 pb-5">
           {slides.map((slide, index) => {
             const isActive = index === current;
             const isPast   = index < current;
@@ -385,30 +385,42 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                aria-label={`Slide ${index + 1}`}
-                className="relative h-[3px] rounded-full overflow-hidden cursor-pointer p-0 border-0 outline-none"
+                aria-label={slide.label}
+                className="text-left p-0 border-0 outline-none bg-transparent overflow-hidden"
                 style={{
                   flex: isActive ? 3 : 1,
-                  background: 'rgba(255,255,255,0.18)',
                   transition: 'flex 600ms cubic-bezier(0.4,0,0.2,1)',
                 }}
               >
-                {isActive && (
-                  <div
-                    className="absolute inset-y-0 left-0 rounded-full"
-                    style={{
-                      width: `${progress}%`,
-                      transition: 'none',
-                      background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
-                    }}
-                  />
-                )}
-                {isPast && (
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.55)' }}
-                  />
-                )}
+                {/* Label — desktop only */}
+                <p
+                  className="hidden sm:block text-xs uppercase tracking-widest font-medium truncate mb-2 transition-opacity duration-500"
+                  style={{ color: isActive ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.28)' }}
+                >
+                  {slide.label}
+                </p>
+                {/* Pill */}
+                <div
+                  className="relative h-[3px] w-full rounded-full overflow-hidden"
+                  style={{ background: 'rgba(255,255,255,0.18)' }}
+                >
+                  {isActive && (
+                    <div
+                      className="absolute inset-y-0 left-0 rounded-full"
+                      style={{
+                        width: `${progress}%`,
+                        transition: 'none',
+                        background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
+                      }}
+                    />
+                  )}
+                  {isPast && (
+                    <div
+                      className="absolute inset-0 rounded-full"
+                      style={{ background: 'rgba(255,255,255,0.55)' }}
+                    />
+                  )}
+                </div>
               </button>
             );
           })}
