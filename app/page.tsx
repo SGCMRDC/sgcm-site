@@ -34,7 +34,7 @@ const slides: Slide[] = [
   },
   {
     label: 'LOCAL IMPACT',
-    title: <>Built on Congolese Expertise,<br />For Congolese Development.</>,
+    title: <>Congolese Expertise.<br />Structured for International Markets.</>,
     subtitle: 'Our social commitment',
     image: '/SGCM-community.jpg',
   },

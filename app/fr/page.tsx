@@ -34,7 +34,7 @@ const slides: Slide[] = [
   },
   {
     label: 'IMPACT LOCAL',
-    title: <>Fondé sur l&apos;expertise congolaise,<br />pour le développement congolais.</>,
+    title: <>Expertise congolaise.<br />Structurée pour les marchés internationaux.</>,
     subtitle: 'Notre engagement social',
     image: '/SGCM-community.jpg',
   },
