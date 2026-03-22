@@ -312,6 +312,7 @@ export default function Home() {
               width={140}
               height={44}
               priority
+              unoptimized
               style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
             />
           </a>
@@ -422,8 +423,10 @@ export default function Home() {
             </h1>
             <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
               <span>{slides[current].subtitle}</span>
-              <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center text-xs group-hover:bg-white group-hover:text-black transition-colors">
-                ↗
+              <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 12L12 2M12 2H4M12 2V10"/>
+                </svg>
               </span>
             </a>
           </div>
@@ -492,11 +495,11 @@ export default function Home() {
               ensuring full regulatory alignment and documentation integrity at every stage.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:gap-6">
+          <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
             {aboutCards.map((item) => (
               <div
                 key={item.label}
-                className="bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#C94010] transition-colors duration-200"
+                className="flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#C94010] transition-colors duration-200"
               >
                 <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">
                   {item.label}
@@ -565,7 +568,8 @@ export default function Home() {
               alt="SGCM Certified"
               width={320}
               height={320}
-              className="hidden md:block lg:ml-20 w-48 md:w-64 lg:w-[420px] h-auto flex-shrink-0"
+              unoptimized
+              className="block lg:ml-20 w-40 sm:w-56 md:w-64 lg:w-[420px] h-auto flex-shrink-0 mx-auto md:mx-0"
             />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-gray-200">
@@ -639,9 +643,10 @@ export default function Home() {
             <Image
               src="/SGCM-LOGO-TM.svg"
               alt="SGCM"
-              width={200}
+              width={180}
               height={40}
-              style={{ filter: 'brightness(0) invert(1)', width: '180px', height: 'auto' }}
+              unoptimized
+              style={{ filter: 'brightness(0) invert(1)', height: 'auto' }}
             />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
               Mineral supply chain facilitator. Structuring compliant, traceable, and responsible mineral flows from the DRC to international markets.
