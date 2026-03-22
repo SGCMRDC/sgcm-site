@@ -86,7 +86,7 @@ const services = [
 const platformItems = [
   { title: 'SGCM Certified™',               desc: 'Vérification documentaire complète de chaque opérateur et unité de production de notre réseau.' },
   { title: 'Cadre de conformité',            desc: 'Protocoles d\'alignement réglementaire conformes aux normes RDC, OCDE et UE' },
-  { title: 'Traçabilité & Blockchain',       desc: 'Traçabilité minérale de bout en bout avec des pistes d\'audit immuables' },
+  { title: 'Traçabilité & Chaîne de custody numérique', desc: 'Traçabilité minérale de bout en bout avec des pistes d\'audit immuables' },
   { title: 'Structuration des transactions', desc: 'Allocation contractuelle des risques et assistance à la documentation des opérations' },
 ];
 

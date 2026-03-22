@@ -86,7 +86,7 @@ const services = [
 const platformItems = [
   { title: 'SGCM Certified™',           desc: 'Full documentary verification of every operator and production unit in our network.' },
   { title: 'Compliance Framework',      desc: 'DRC, OECD, and EU-aligned regulatory alignment protocols' },
-  { title: 'Traceability & Blockchain', desc: 'End-to-end mineral traceability with immutable audit trails' },
+  { title: 'Traceability & Digital Chain-of-Custody', desc: 'End-to-end mineral traceability with immutable audit trails' },
   { title: 'Transaction Structuring',   desc: 'Contractual risk allocation and deal documentation support' },
 ];
 
