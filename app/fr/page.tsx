@@ -35,7 +35,7 @@ const slides: Slide[] = [
   },
   {
     label: 'IMPACT LOCAL',
-    title: <>Structurée pour la création de valeur locale.<br />Au service du développement congolais.</>,
+    title: 'Structurée pour la valeur locale.',
     body: 'En structurant des chaînes d\'approvisionnement conformes et traçables, SGCM permet aux opérateurs congolais d\'accéder aux marchés internationaux dans des conditions formelles et vérifiables.',
     subtitle: 'Notre engagement social',
     image: '/SGCM-community.jpg',

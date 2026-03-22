@@ -35,7 +35,7 @@ const slides: Slide[] = [
   },
   {
     label: 'LOCAL IMPACT',
-    title: <>Structured for Local Value Creation.<br />Built for Congolese Development.</>,
+    title: 'Structured for Local Value.',
     body: 'By structuring compliant and traceable supply chains, SGCM enables Congolese operators to access international markets under formal, verifiable conditions.',
     subtitle: 'Our social commitment',
     image: '/SGCM-community.jpg',
