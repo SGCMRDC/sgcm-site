@@ -514,7 +514,7 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 px-6 bg-[#C94010]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
-            Prêt à structurer votre chaîne d'approvisionnement ?
+            Vous travaillez avec le cuivre, l&apos;or ou le cobalt de la RDC ? Structurons votre chaîne d&apos;approvisionnement.
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
             Que vous soyez producteur, acheteur ou partenaire institutionnel, SGCM est prêt à
