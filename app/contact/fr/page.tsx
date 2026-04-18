@@ -244,8 +244,8 @@ export default function ContactPageFr() {
               <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#C94010', fontSize: '13px', fontWeight: 600, textDecoration: 'none', marginBottom: '8px' }}>
                 ✉ contact@sgcm-mining.com
               </a>
-              <a href="mailto:verify@sogecom-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
-                verify@sogecom-mining.com
+              <a href="mailto:verify@sgcm-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
+                verify@sgcm-mining.com
               </a>
             </div>
             <div className="md:px-12 md:border-r md:border-gray-200">
@@ -259,8 +259,8 @@ export default function ContactPageFr() {
             <div className="md:pl-12">
               <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Nous suivre</p>
               {[
-                { label: 'LinkedIn', href: 'https://linkedin.com' },
-                { label: 'Portail de vérification', href: 'https://sogecom-mining.com/verify' },
+                { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
+                { label: 'Portail de vérification', href: 'https://sgcm-mining.com/verify' },
               ].map((item) => (
                 <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
@@ -274,9 +274,9 @@ export default function ContactPageFr() {
         {/* Départements */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-12 md:py-14 border-b border-gray-200">
           {[
-            { title: 'Communication & Partenariats', desc: 'Pour toute demande presse, communication institutionnelle ou proposition de partenariat, contactez directement notre équipe communication.', email: 'contact@sogecom-mining.com' },
+            { title: 'Communication & Partenariats', desc: 'Pour toute demande presse, communication institutionnelle ou proposition de partenariat, contactez directement notre équipe communication.', email: 'contact@sgcm-mining.com' },
             { title: 'Commercial & Relations acheteurs', desc: 'Pour toute demande commerciale, discussion offtake ou intégration acheteur, contactez directement notre équipe commerciale.', email: 'contact@sgcm-mining.com' },
-            { title: 'Conformité & Documentation', desc: 'Pour la vérification de mandat, les demandes de documentation KYC ou les questions relatives au standard SGCM Certified™, utilisez notre canal de vérification dédié.', email: 'verify@sogecom-mining.com' },
+            { title: 'Conformité & Documentation', desc: 'Pour la vérification de mandat, les demandes de documentation KYC ou les questions relatives au standard SGCM Certified™, utilisez notre canal de vérification dédié.', email: 'verify@sgcm-mining.com' },
           ].map((dept, i) => (
             <div key={dept.title} className={`${i > 0 ? 'md:pl-12' : ''} ${i < 2 ? 'md:pr-12 md:border-r md:border-gray-200' : ''}`}>
               <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '2px solid #C94010', display: 'inline-block' }}>{dept.title}</p>
@@ -341,7 +341,7 @@ export default function ContactPageFr() {
               { label: 'Plateforme', href: '/fr/#platform' },
               { label: 'Réseau',     href: '/fr/#network' },
               { label: 'Actualités', href: '/fr/#insights' },
-              { label: 'Carrières',  href: '#' },
+              { label: 'Carrières',  href: '/fr/careers' },
             ].map((item) => (
               <a key={item.label} href={item.href} className="text-white/40 text-xs hover:text-white transition-colors">{item.label}</a>
             ))}
@@ -355,31 +355,37 @@ export default function ContactPageFr() {
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
-            <a href="mailto:verify@sogecom-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sogecom-mining.com</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
+            <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
+            {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
+            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
             <span className="text-white/25 text-xs">Bureau de Kinshasa</span>
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Conditions d'utilisation</a>
-            <a href="https://sogecom-mining.com/verify" target="_blank" rel="noopener noreferrer"
+            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
+            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
+            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
               className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
               <span>Vérifier un mandat →</span>
             </a>
           </div>
         </div>
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <p className="text-white/25 text-xs">© 2026 Société de Gestion et Consultation Minières. Tous droits réservés.</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Confidentialité</a>
-              <span className="text-white/10">|</span>
-              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Juridique</a>
-              <span className="text-white/10">|</span>
-              <span className="text-white/25 text-xs">SGCM Certified™</span>
+        <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/40">
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              <span>© 2026 SGCM SARL</span>
+              <span className="text-white/20">|</span>
+              <a href="/fr/privacy" className="hover:text-white/70 transition">Confidentialité</a>
+              <span className="text-white/20">|</span>
+              <a href="/fr/legal" className="hover:text-white/70 transition">Juridique</a>
+              <span className="text-white/20">|</span>
+              <span>SGCM Certified®</span>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/40">
+              <span>RCCM: CD/KNG/RCCM/26-B-01360</span>
+              <span className="text-white/20">|</span>
+              <span>ID. Nat.: 01-B0500-N98100N</span>
             </div>
           </div>
         </div>

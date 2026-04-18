@@ -680,9 +680,10 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
-            {['About Us', 'Platform', 'Network', 'Insights', 'Careers'].map((item) => (
+            {['About Us', 'Platform', 'Network', 'Insights'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '')}`} className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
+            <a href="/careers" className="text-white/40 text-xs hover:text-white transition-colors">Careers</a>
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
@@ -693,31 +694,37 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Connect</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
-            <a href="mailto:verify@sogecom-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sogecom-mining.com</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
+            <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
+            {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
+            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
             <span className="text-white/25 text-xs">Kinshasa Office</span>
             <span className="text-white/25 text-xs">Brussels Office</span>
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Legal</p>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Legal Notice</a>
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">Terms of Use</a>
-            <a href="https://sogecom-mining.com/verify" target="_blank" rel="noopener noreferrer"
+            <a href="/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/legal" className="text-white/40 text-xs hover:text-white transition-colors">Legal Notice</a>
+            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
               className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
               <span>Verify a Mandate →</span>
             </a>
           </div>
         </div>
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <p className="text-white/25 text-xs">© 2026 Société de Gestion et Consultation Minières. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Privacy</a>
-              <span className="text-white/10">|</span>
-              <a href="#" className="text-white/25 text-xs hover:text-white transition-colors">Legal</a>
-              <span className="text-white/10">|</span>
-              <span className="text-white/25 text-xs">SGCM Certified™</span>
+        <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/40">
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              <span>© 2026 SGCM SARL</span>
+              <span className="text-white/20">|</span>
+              <a href="/privacy" className="hover:text-white/70 transition">Privacy</a>
+              <span className="text-white/20">|</span>
+              <a href="/legal" className="hover:text-white/70 transition">Legal</a>
+              <span className="text-white/20">|</span>
+              <span>SGCM Certified®</span>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/40">
+              <span>RCCM: CD/KNG/RCCM/26-B-01360</span>
+              <span className="text-white/20">|</span>
+              <span>ID. Nat.: 01-B0500-N98100N</span>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 const navItems = [
   { label: 'ABOUT US', href: '/#aboutus'  },
@@ -11,16 +10,15 @@ const navItems = [
   { label: 'CONTACT',  href: '/contact'   },
 ];
 
-function NavItem({ label, href, active, onClick }: { label: string; href: string; active?: boolean; onClick?: () => void }) {
+function NavItem({ label, href }: { label: string; href: string }) {
   const [hovered, setHovered] = useState(false);
   return (
     <a
       href={href}
-      onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        color: active ? 'white' : hovered ? 'white' : 'rgba(255,255,255,0.7)',
+        color: hovered ? '#ffffff' : 'rgba(255,255,255,0.7)',
         textDecoration: 'none',
         fontSize: '12px',
         fontWeight: 500,
@@ -37,7 +35,7 @@ function NavItem({ label, href, active, onClick }: { label: string; href: string
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
         background: '#C94010',
-        transform: hovered || active ? 'scaleX(1)' : 'scaleX(0)',
+        transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
       }} />
@@ -45,7 +43,7 @@ function NavItem({ label, href, active, onClick }: { label: string; href: string
   );
 }
 
-export default function ContactPage() {
+export default function PrivacyPage() {
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,7 +81,7 @@ export default function ContactPage() {
           borderBottom: '1px solid rgba(255,255,255,0.09)',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <a href="/fr/contact" style={{
+            <a href="/fr/privacy" style={{
               fontSize: '12px', letterSpacing: '0.07em',
               color: 'rgba(255,255,255,0.42)', textDecoration: 'none',
               padding: '0 4px', transition: 'color 0.2s',
@@ -93,7 +91,7 @@ export default function ContactPage() {
               FR
             </a>
             <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '11px' }}>|</span>
-            <a href="/contact" style={{ fontSize: '12px', letterSpacing: '0.07em', color: 'white', textDecoration: 'none', padding: '0 4px', fontWeight: 600 }}>EN</a>
+            <a href="/privacy" style={{ fontSize: '12px', letterSpacing: '0.07em', color: 'white', textDecoration: 'none', padding: '0 4px', fontWeight: 600 }}>EN</a>
           </div>
           <div className="hidden md:flex" style={{ alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.4)' }}>
             <span style={{ fontSize: '11px' }}>Kinshasa · Kolwezi · Brussels</span>
@@ -102,14 +100,12 @@ export default function ContactPage() {
 
         {/* Main navbar */}
         <div className="px-4 md:px-8 lg:px-12" style={{
-          background: scrolled ? 'rgba(8,8,8,0.97)' : 'transparent',
           height: '64px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           transition: 'background 0.4s ease',
         }}>
-          {/* Desktop nav */}
           <div className="hidden lg:flex items-center" style={{ gap: '36px' }}>
             <button onClick={() => setSearchOpen(o => !o)} aria-label="Search" style={{
               background: 'none', border: 'none', cursor: 'pointer',
@@ -125,12 +121,11 @@ export default function ContactPage() {
             </button>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
               {navItems.map((item) => (
-                <NavItem key={item.label} label={item.label} href={item.href} active={item.href === '/contact'} />
+                <NavItem key={item.label} label={item.label} href={item.href} />
               ))}
             </nav>
           </div>
 
-          {/* Mobile hamburger */}
           <button className="lg:hidden" onClick={() => setMenuOpen(o => !o)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', padding: '4px' }}>
@@ -167,7 +162,7 @@ export default function ContactPage() {
             </svg>
             <input autoFocus={searchOpen} placeholder="Search SGCM..." style={{
               background: 'none', border: 'none', outline: 'none', color: 'white',
-              fontSize: '14px', flex: 1,
+              fontSize: '14px', flex: 1, fontFamily: 'inherit',
             }} />
             <button onClick={() => setSearchOpen(false)} style={{
               background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)',
@@ -177,152 +172,184 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* ── MOBILE MENU OVERLAY ── */}
+      {/* Mobile menu overlay */}
       {menuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex flex-col" style={{ background: 'rgba(8,8,8,0.98)', paddingTop: '102px' }}>
           <nav className="flex flex-col items-center gap-8 pt-12">
             {navItems.map((item) => (
               <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}
                 style={{
-                  color: item.href === '/contact' ? 'white' : 'rgba(255,255,255,0.8)',
-                  textDecoration: 'none', fontSize: '13px', fontWeight: item.href === '/contact' ? 600 : 500,
-                  letterSpacing: '0.18em', textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.8)',
+                  textDecoration: 'none', fontSize: '13px', fontWeight: 500,
+                  letterSpacing: '0.18em', textTransform: 'uppercase' as const,
                 }}>
                 {item.label}
               </a>
             ))}
           </nav>
           <div className="flex items-center justify-center gap-6 mt-auto mb-12">
-            <a href="/contact/fr" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em' }}>FR</a>
+            <a href="/fr/privacy" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em' }}>FR</a>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em', fontWeight: 600 }}>EN</a>
+            <a href="/privacy" style={{ color: 'white', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em', fontWeight: 600 }}>EN</a>
           </div>
         </div>
       )}
 
       {/* ══════════════════════════════════════════════
-          HERO
+          PAGE HERO
       ══════════════════════════════════════════════ */}
-      <div className="relative h-64 sm:h-80 md:h-[520px] overflow-hidden flex items-end" style={{ marginTop: '102px' }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.3) 100%), url("/SGCM Electrorefining plant.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }} />
-        <div className="relative z-10 px-6 md:px-12 pb-8 md:pb-16 max-w-2xl">
-          <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
-            Contact
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px]"
-            style={{ fontWeight: 300, color: '#fff', lineHeight: 1.1, marginBottom: '20px' }}>
-            Get in touch<br />with SGCM
+      <div className="bg-[#0a0a0a]" style={{ marginTop: '102px', paddingTop: '52px', paddingBottom: '52px' }}>
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-3">Legal</p>
+          <h1 className="text-3xl md:text-4xl text-white" style={{ fontWeight: 300 }}>
+            Privacy Policy
           </h1>
-          <p className="hidden md:block" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: '480px' }}>
-            Whether you are an industrial buyer, a certified producer, or an institutional partner — our team is ready to support your facilitation and compliance needs.
-          </p>
+          <p className="text-white/40 text-sm mt-3">Last updated: April 17, 2026</p>
         </div>
       </div>
 
       {/* ══════════════════════════════════════════════
           CONTENT
       ══════════════════════════════════════════════ */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+      <div className="max-w-4xl mx-auto px-6 py-16">
 
-        {/* Office info */}
-        <section className="pt-12 md:pt-16">
-          <div className="flex justify-between items-center pb-6 border-b border-gray-200">
-            <h2 className="text-2xl md:text-[28px]" style={{ fontWeight: 400 }}>SGCM — Kinshasa Office</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-10 md:py-12 border-b border-gray-200">
-            <div className="md:pr-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Head Office</p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>SGCM</p>
-              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>Kinshasa, Democratic Republic of Congo</p>
-              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#C94010', fontSize: '13px', fontWeight: 600, textDecoration: 'none', marginBottom: '8px' }}>
-                ✉ contact@sgcm-mining.com
-              </a>
-              <a href="mailto:verify@sgcm-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
-                verify@sgcm-mining.com
-              </a>
-            </div>
-            <div className="md:px-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Quick Links</p>
-              {['About SGCM', 'Our Commercial Ecosystem', 'SGCM Certified™ Standard'].map((item) => (
-                <a key={item} href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item}
-                </a>
-              ))}
-            </div>
-            <div className="md:pl-12">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
-              {[
-                { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
-                { label: 'Verification Portal', href: 'https://sgcm-mining.com/verify' },
-              ].map((item) => (
-                <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item.label}
-                </a>
-              ))}
-            </div>
-          </div>
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Introduction</h2>
+          <p className="text-gray-500 leading-relaxed">
+            SGCM SARL attaches the highest importance to protecting the personal data of its visitors,
+            partners, and counterparties. This policy describes the conditions under which SGCM
+            collects, uses, and protects information gathered via the website sgcm-mining.com.
+          </p>
         </section>
 
-        {/* Departments */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-12 md:py-14 border-b border-gray-200">
-          {[
-            { title: 'Communications & Partnerships', desc: 'For press inquiries, institutional communication, or partnership proposals, please reach out directly to our communications team.', email: 'contact@sgcm-mining.com' },
-            { title: 'Commercial & Buyer Relations', desc: 'For commercial inquiries, off-take discussions, or buyer onboarding, contact our commercial team directly.', email: 'contact@sgcm-mining.com' },
-            { title: 'Compliance & Documentation', desc: 'For mandate verification, KYC documentation requests, or SGCM Certified™ inquiries, use our dedicated verification channel.', email: 'verify@sgcm-mining.com' },
-          ].map((dept, i) => (
-            <div key={dept.title} className={`${i > 0 ? 'md:pl-12' : ''} ${i < 2 ? 'md:pr-12 md:border-r md:border-gray-200' : ''}`}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '2px solid #C94010', display: 'inline-block' }}>{dept.title}</p>
-              <p style={{ fontSize: '13px', lineHeight: 1.75, color: '#555', marginBottom: '12px', marginTop: '8px' }}>{dept.desc}</p>
-              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#C94010', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Send an inquiry →
-              </a>
-            </div>
-          ))}
-        </div>
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Data Controller</h2>
+          <p className="text-gray-700 font-medium leading-relaxed mb-3">
+            SOCIÉTÉ DE GESTION ET CONSULTATION MINIÈRES SARL (SGCM SARL)
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-1">
+            Registered office: 644 Immeuble Massamba, 3rd Floor, Rond-Point Kin-Mazière,
+            Quartier Commerce, Commune de la Gombe, Kinshasa, Democratic Republic of the Congo
+          </p>
+          <p className="text-gray-500 leading-relaxed mb-1">RCCM: CD/KNG/RCCM/26-B-01360</p>
+          <p className="text-gray-500 leading-relaxed mb-1">National Identification: 01-B0500-N98100N</p>
+          <p className="text-gray-500 leading-relaxed mt-4">
+            Compliance contact:{' '}
+            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+              compliance@sgcm-mining.com
+            </a>
+          </p>
+        </section>
 
-        {/* Careers */}
-        <div className="py-12 md:py-14 border-b border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start">
-            <div>
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Careers</p>
-              <h3 style={{ fontSize: '24px', fontWeight: 400, color: '#111', marginBottom: '12px' }}>Join the SGCM team</h3>
-              <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.7 }}>SGCM is currently accepting applications from Congolese professionals committed to building responsible and transparent mineral supply chains in the DRC.</p>
-            </div>
-            <div className="flex flex-col gap-4">
-              {[
-                { title: 'Compliance & Documentation Officer', location: 'Kinshasa, DRC · Full-time' },
-                { title: 'Supply Chain Coordinator', location: 'Kinshasa / Kolwezi, DRC · Full-time' },
-                { title: 'Logistics & Export Specialist', location: 'Kinshasa, DRC · Full-time' },
-              ].map((job) => (
-                <div key={job.title} className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 border border-gray-200">
-                  <div>
-                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '4px' }}>{job.title}</p>
-                    <p style={{ fontSize: '12px', color: '#555' }}>{job.location}</p>
-                  </div>
-                  <a href={`mailto:contact@sgcm-mining.com?subject=Application: ${job.title}`}
-                    className="shrink-0"
-                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C94010', textDecoration: 'none', border: '1px solid #C94010', padding: '8px 16px' }}>
-                    Apply
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Data Collected</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            SGCM may collect the following categories of personal data:
+          </p>
+          <ul className="space-y-3">
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Contact form submissions (name, email address, company, message)
+            </li>
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Browsing data (technical cookies, server logs)
+            </li>
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Documents submitted in the context of due diligence processes
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Processing Purposes</h2>
+          <ul className="space-y-3">
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Responding to information and partnership requests
+            </li>
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              SGCM Certified® due diligence processes
+            </li>
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Compliance with applicable legal obligations (OECD, LBMA, LME, CRMA, DRC Mining Code)
+            </li>
+            <li className="flex gap-3 text-gray-500 leading-relaxed">
+              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              Improvement of the website and its services
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Legal Basis</h2>
+          <p className="text-gray-500 leading-relaxed">
+            Processing is based on the performance of pre-contractual measures, compliance with
+            legal obligations applicable to SGCM, and SGCM&apos;s legitimate interests in operating
+            a compliant mineral supply chain facilitation business.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Recipients</h2>
+          <p className="text-gray-500 leading-relaxed">
+            Data is processed exclusively by SGCM&apos;s Legal and Compliance Department. Where required
+            by applicable law or by the scope of a specific compliance process, data may be shared
+            with regulatory authorities (including CENAREF, OECD-designated bodies, or other
+            competent institutions) within the strict applicable legal framework.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Retention Period</h2>
+          <p className="text-gray-500 leading-relaxed">
+            Personal data is retained in accordance with the obligations of the DRC Mining Code
+            and applicable OECD standards. Due diligence files are kept for a minimum of five years
+            from the date of the last transaction or the end of the business relationship.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Rights of Data Subjects</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">
+            In accordance with applicable data protection regulations, you have the right to access,
+            rectify, erase, object to, and port your personal data. You also have the right to
+            restrict processing in certain circumstances.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            To exercise any of these rights, please contact:{' '}
+            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+              compliance@sgcm-mining.com
+            </a>
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Cookies</h2>
+          <p className="text-gray-500 leading-relaxed">
+            This site uses technical cookies only, strictly necessary for its correct operation.
+            No marketing tracking or advertising cookies are deployed at this time.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Changes to This Policy</h2>
+          <p className="text-gray-500 leading-relaxed">
+            SGCM reserves the right to update this policy at any time to reflect changes in
+            applicable regulations or operational practices. The date of last update displayed
+            at the top of this page constitutes the reference version.
+          </p>
+        </section>
 
       </div>
 
       {/* ══════════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════════ */}
-      <footer className="bg-[#0a0a0a] text-white mt-16 md:mt-[72px]">
+      <footer className="bg-[#0a0a0a] text-white">
         <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-2">
             <img src="/sgcm-logo.png" alt="SGCM"
