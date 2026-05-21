@@ -259,7 +259,6 @@ export default function ContactPage() {
               <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
               {[
                 { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
-                { label: 'Verification Portal', href: 'https://sgcm-mining.com/verify' },
               ].map((item) => (
                 <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
