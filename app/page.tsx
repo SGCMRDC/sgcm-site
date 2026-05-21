@@ -12,33 +12,41 @@ interface Slide {
   subtitle: string;
   image: string;
   body?: string;
+  alt?: string;
 }
 
 const slides: Slide[] = [
   {
-    label: 'COPPER CATHODE FACILITATION',
-    title: 'Structuring Responsible Mineral Supply Chains from the DRC.',
-    subtitle: 'Learn more',
+    label: 'COMPLIANCE INFRASTRUCTURE',
+    title: 'Structuring Responsible Mineral Supply Chains from the Democratic Republic of Congo.',
+    body: 'SGCM is the compliance integrator behind internationally defensible DRC supply chains.',
+    subtitle: 'About SGCM',
     image: '/SGCM Electrorefining plant.png',
+    alt: 'SGCM compliance infrastructure — DRC mineral supply chain',
   },
   {
-    label: 'COMPLIANCE & TRACEABILITY',
-    title: 'End-to-End Compliance Integration for the DRC.',
-    subtitle: 'Discover our platform',
+    label: 'THE CRP FRAMEWORK',
+    title: 'Certified Responsible Partner. The integration standard for DRC mineral compliance.',
+    body: 'A proprietary framework evaluating, validating, and certifying production units against international due diligence requirements.',
+    subtitle: 'Explore the Program',
     image: '/sgcm-africa-tracability.jpg',
+    alt: 'SGCM Certified Responsible Partner framework',
   },
   {
-    label: 'INSTITUTIONAL PARTNERSHIPS',
-    title: 'Building Long-Term Industrial Partnerships.',
-    subtitle: 'Our network',
+    label: 'INTERNATIONAL ALIGNMENT',
+    title: 'Aligned with the international due diligence frameworks that govern responsible sourcing.',
+    body: 'OECD · LBMA · ICGLR · EU 2017/821 · DRC Mining Code 2018',
+    subtitle: 'Regulatory Framework',
     image: '/dar-es-salaam.jpg',
+    alt: 'International due diligence frameworks alignment',
   },
   {
-    label: 'LOCAL IMPACT',
-    title: 'Structured for Local Value.',
-    body: 'By structuring compliant and traceable supply chains, SGCM enables Congolese operators to access international markets under formal, verifiable conditions.',
-    subtitle: 'Our social commitment',
+    label: 'STRUCTURAL IMPACT',
+    title: 'Formalization that lasts. Compliance that compounds.',
+    body: 'By structuring documentary, regulatory, and traceability conditions, SGCM enables Congolese production units to access international markets under verifiable terms — strengthening fiscal capture, governance, and local economic integration.',
+    subtitle: 'Structural Outcomes',
     image: '/SGCM-community.jpg',
+    alt: 'Structural impact of compliance integration in DRC mining sector',
   },
 ];
 
@@ -399,7 +407,7 @@ export default function Home() {
           >
             <Image
               src={slide.image}
-              alt={slide.label}
+              alt={slide.alt ?? slide.label}
               fill
               className="object-cover"
               priority={index === 0}
