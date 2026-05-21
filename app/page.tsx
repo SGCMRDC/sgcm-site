@@ -18,23 +18,23 @@ interface Slide {
 const slides: Slide[] = [
   {
     label: 'COMPLIANCE INFRASTRUCTURE',
-    title: 'Structuring Responsible Mineral Supply Chains from the Democratic Republic of Congo.',
-    body: 'SGCM is the compliance integrator behind internationally defensible DRC supply chains.',
+    title: 'Compliance infrastructure for DRC mineral supply chains.',
+    body: 'SGCM structures, validates, and certifies — independently of any transaction.',
     subtitle: 'About SGCM',
     image: '/SGCM Electrorefining plant.png',
     alt: 'SGCM compliance infrastructure — DRC mineral supply chain',
   },
   {
     label: 'THE CRP FRAMEWORK',
-    title: 'Certified Responsible Partner. The integration standard for DRC mineral compliance.',
-    body: 'A proprietary framework evaluating, validating, and certifying production units against international due diligence requirements.',
+    title: 'The Certified Responsible Partner framework.',
+    body: 'A proprietary standard for evaluating and certifying DRC production units.',
     subtitle: 'Explore the Program',
     image: '/sgcm-africa-tracability.jpg',
     alt: 'SGCM Certified Responsible Partner framework',
   },
   {
     label: 'INTERNATIONAL ALIGNMENT',
-    title: 'Aligned with the international due diligence frameworks that govern responsible sourcing.',
+    title: 'Aligned with international due diligence.',
     body: 'OECD · LBMA · ICGLR · EU 2017/821 · DRC Mining Code 2018',
     subtitle: 'Regulatory Framework',
     image: '/dar-es-salaam.jpg',
@@ -43,7 +43,7 @@ const slides: Slide[] = [
   {
     label: 'STRUCTURAL IMPACT',
     title: 'Formalization that lasts. Compliance that compounds.',
-    body: 'By structuring documentary, regulatory, and traceability conditions, SGCM enables Congolese production units to access international markets under verifiable terms — strengthening fiscal capture, governance, and local economic integration.',
+    body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
     image: '/SGCM-community.jpg',
     alt: 'Structural impact of compliance integration in DRC mining sector',
