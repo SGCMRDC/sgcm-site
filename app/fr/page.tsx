@@ -12,33 +12,41 @@ interface Slide {
   subtitle: string;
   image: string;
   body?: string;
+  alt?: string;
 }
 
 const slides: Slide[] = [
   {
-    label: 'FACILITATION DE CATHODES DE CUIVRE',
-    title: 'Structurer des chaînes d\'approvisionnement minérales responsables depuis la RDC.',
-    subtitle: 'En savoir plus',
+    label: 'INFRASTRUCTURE DE CONFORMITÉ',
+    title: 'Structurer des chaînes d\'approvisionnement minier responsables depuis la République Démocratique du Congo.',
+    body: 'SGCM est l\'intégrateur de conformité derrière des chaînes d\'approvisionnement RDC défendables à l\'international.',
+    subtitle: 'À propos de SGCM',
     image: '/SGCM Electrorefining plant.png',
+    alt: 'Infrastructure de conformité SGCM — chaîne d\'approvisionnement minier RDC',
   },
   {
-    label: 'CONFORMITÉ & TRAÇABILITÉ',
-    title: 'Intégration de la conformité de bout en bout pour la RDC.',
-    subtitle: 'Découvrir notre plateforme',
+    label: 'LE CADRE CRP',
+    title: 'Certified Responsible Partner. Le standard d\'intégration de la conformité minérale en RDC.',
+    body: 'Un cadre propriétaire d\'évaluation, de validation et de certification des unités de production selon les exigences internationales de diligence raisonnable.',
+    subtitle: 'Découvrir le Programme',
     image: '/sgcm-africa-tracability.jpg',
+    alt: 'Cadre Certified Responsible Partner de SGCM',
   },
   {
-    label: 'PARTENARIATS INSTITUTIONNELS',
-    title: 'Construire des partenariats industriels à long terme.',
-    subtitle: 'Notre réseau',
+    label: 'ALIGNEMENT INTERNATIONAL',
+    title: 'Aligné sur les cadres internationaux de diligence raisonnable qui régissent l\'approvisionnement responsable.',
+    body: 'OCDE · LBMA · ICGLR · Règlement UE 2017/821 · Code Minier RDC 2018',
+    subtitle: 'Cadre Réglementaire',
     image: '/dar-es-salaam.jpg',
+    alt: 'Alignement sur les cadres internationaux de diligence raisonnable',
   },
   {
-    label: 'IMPACT LOCAL',
-    title: 'Structurée pour la valeur locale.',
-    body: 'En structurant des chaînes d\'approvisionnement conformes et traçables, SGCM permet aux opérateurs congolais d\'accéder aux marchés internationaux dans des conditions formelles et vérifiables.',
-    subtitle: 'Notre engagement social',
+    label: 'IMPACT STRUCTUREL',
+    title: 'Une formalisation qui dure. Une conformité qui se renforce.',
+    body: 'En structurant les conditions documentaires, réglementaires et de traçabilité, SGCM permet aux unités de production congolaises d\'accéder aux marchés internationaux dans des conditions vérifiables — renforçant la capture fiscale, la gouvernance et l\'intégration économique locale.',
+    subtitle: 'Résultats Structurels',
     image: '/SGCM-community.jpg',
+    alt: 'Impact structurel de l\'intégration de la conformité dans le secteur minier RDC',
   },
 ];
 
@@ -347,7 +355,7 @@ export default function Home() {
       <section className="relative h-screen w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}>
-            <Image src={slide.image} alt={slide.label} fill className="object-cover" priority={index === 0} />
+            <Image src={slide.image} alt={slide.alt ?? slide.label} fill className="object-cover" priority={index === 0} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
           </div>
         ))}
