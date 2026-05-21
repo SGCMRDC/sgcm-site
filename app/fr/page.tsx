@@ -18,23 +18,23 @@ interface Slide {
 const slides: Slide[] = [
   {
     label: 'INFRASTRUCTURE DE CONFORMITÉ',
-    title: 'Structurer des chaînes d\'approvisionnement minier responsables depuis la République Démocratique du Congo.',
-    body: 'SGCM est l\'intégrateur de conformité derrière des chaînes d\'approvisionnement RDC défendables à l\'international.',
+    title: 'Infrastructure de conformité pour les chaînes minières RDC.',
+    body: 'SGCM structure, valide et certifie — indépendamment de toute transaction.',
     subtitle: 'À propos de SGCM',
     image: '/SGCM Electrorefining plant.png',
     alt: 'Infrastructure de conformité SGCM — chaîne d\'approvisionnement minier RDC',
   },
   {
     label: 'LE CADRE CRP',
-    title: 'Certified Responsible Partner. Le standard d\'intégration de la conformité minérale en RDC.',
-    body: 'Un cadre propriétaire d\'évaluation, de validation et de certification des unités de production selon les exigences internationales de diligence raisonnable.',
+    title: 'Le cadre Certified Responsible Partner.',
+    body: 'Un standard propriétaire d\'évaluation et de certification des unités de production RDC.',
     subtitle: 'Découvrir le Programme',
     image: '/sgcm-africa-tracability.jpg',
     alt: 'Cadre Certified Responsible Partner de SGCM',
   },
   {
     label: 'ALIGNEMENT INTERNATIONAL',
-    title: 'Aligné sur les cadres internationaux de diligence raisonnable qui régissent l\'approvisionnement responsable.',
+    title: 'Aligné sur les standards internationaux de diligence.',
     body: 'OCDE · LBMA · ICGLR · Règlement UE 2017/821 · Code Minier RDC 2018',
     subtitle: 'Cadre Réglementaire',
     image: '/dar-es-salaam.jpg',
@@ -43,7 +43,7 @@ const slides: Slide[] = [
   {
     label: 'IMPACT STRUCTUREL',
     title: 'Une formalisation qui dure. Une conformité qui se renforce.',
-    body: 'En structurant les conditions documentaires, réglementaires et de traçabilité, SGCM permet aux unités de production congolaises d\'accéder aux marchés internationaux dans des conditions vérifiables — renforçant la capture fiscale, la gouvernance et l\'intégration économique locale.',
+    body: 'Des conditions structurelles d\'accès aux marchés internationaux — et de valeur locale durable.',
     subtitle: 'Résultats Structurels',
     image: '/SGCM-community.jpg',
     alt: 'Impact structurel de l\'intégration de la conformité dans le secteur minier RDC',
