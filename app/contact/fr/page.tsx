@@ -330,7 +330,7 @@ export default function ContactPageFr() {
               className="object-contain"
               style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Facilitateur de chaînes d'approvisionnement minérales. Structurer des flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
+              Intégrateur de conformité pour des chaînes d'approvisionnement minérales responsables. Structurer la documentation, la traçabilité et l'alignement réglementaire depuis la RDC vers les marchés internationaux.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
@@ -348,8 +348,8 @@ export default function ContactPageFr() {
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Cathode de cuivre', 'Chaîne or', 'Conformité', 'Logistique', 'Conseil'].map((item) => (
-              <a key={item} href="/fr/#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
+            {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
+              <a key={item} href="/fr#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
@@ -365,10 +365,6 @@ export default function ContactPageFr() {
             <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
             <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
             <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
-            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
-              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
-              <span>Vérifier un mandat →</span>
-            </a>
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
