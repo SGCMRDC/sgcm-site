@@ -13,6 +13,7 @@ interface Slide {
   image: string;
   body?: string;
   alt?: string;
+  ctaHref?: string;
 }
 
 const slides: Slide[] = [
@@ -21,6 +22,7 @@ const slides: Slide[] = [
     title: 'Compliance infrastructure for DRC mineral supply chains.',
     body: 'SGCM structures, validates, and certifies — independently of any transaction.',
     subtitle: 'About SGCM',
+    ctaHref: '#about',
     image: '/SGCM Electrorefining plant.png',
     alt: 'SGCM compliance infrastructure — DRC mineral supply chain',
   },
@@ -29,6 +31,7 @@ const slides: Slide[] = [
     title: 'The Certified Responsible Partner framework.',
     body: 'A proprietary standard for evaluating and certifying DRC production units.',
     subtitle: 'Explore the Program',
+    ctaHref: '#platform',
     image: '/sgcm-africa-tracability.jpg',
     alt: 'SGCM Certified Responsible Partner framework',
   },
@@ -37,6 +40,7 @@ const slides: Slide[] = [
     title: 'Aligned with international due diligence.',
     body: 'OECD · LBMA · ICGLR · EU 2017/821 · DRC Mining Code 2018',
     subtitle: 'Regulatory Framework',
+    ctaHref: '#services',
     image: '/dar-es-salaam.jpg',
     alt: 'International due diligence frameworks alignment',
   },
@@ -45,6 +49,7 @@ const slides: Slide[] = [
     title: 'Formalization that lasts. Compliance that compounds.',
     body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
+    ctaHref: '#network',
     image: '/SGCM-community.jpg',
     alt: 'Structural impact of compliance integration in DRC mining sector',
   },
@@ -433,7 +438,7 @@ export default function Home() {
                 {slides[current].body}
               </p>
             )}
-            <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
+            <a href={slides[current].ctaHref ?? '#services'} className="inline-flex items-center gap-3 text-white text-sm group">
               <span>{slides[current].subtitle}</span>
               <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
