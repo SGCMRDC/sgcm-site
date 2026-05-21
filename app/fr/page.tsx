@@ -13,6 +13,7 @@ interface Slide {
   image: string;
   body?: string;
   alt?: string;
+  ctaHref?: string;
 }
 
 const slides: Slide[] = [
@@ -21,6 +22,7 @@ const slides: Slide[] = [
     title: 'Infrastructure de conformité pour les chaînes minières RDC.',
     body: 'SGCM structure, valide et certifie — indépendamment de toute transaction.',
     subtitle: 'À propos de SGCM',
+    ctaHref: '#about',
     image: '/SGCM Electrorefining plant.png',
     alt: 'Infrastructure de conformité SGCM — chaîne d\'approvisionnement minier RDC',
   },
@@ -29,6 +31,7 @@ const slides: Slide[] = [
     title: 'Le cadre Certified Responsible Partner.',
     body: 'Un standard propriétaire d\'évaluation et de certification des unités de production RDC.',
     subtitle: 'Découvrir le Programme',
+    ctaHref: '#platform',
     image: '/sgcm-africa-tracability.jpg',
     alt: 'Cadre Certified Responsible Partner de SGCM',
   },
@@ -37,6 +40,7 @@ const slides: Slide[] = [
     title: 'Aligné sur les standards internationaux de diligence.',
     body: 'OCDE · LBMA · ICGLR · Règlement UE 2017/821 · Code Minier RDC 2018',
     subtitle: 'Cadre Réglementaire',
+    ctaHref: '#services',
     image: '/dar-es-salaam.jpg',
     alt: 'Alignement sur les cadres internationaux de diligence raisonnable',
   },
@@ -45,6 +49,7 @@ const slides: Slide[] = [
     title: 'Une formalisation qui dure. Une conformité qui se renforce.',
     body: 'Des conditions structurelles d\'accès aux marchés internationaux — et de valeur locale durable.',
     subtitle: 'Résultats Structurels',
+    ctaHref: '#network',
     image: '/SGCM-community.jpg',
     alt: 'Impact structurel de l\'intégration de la conformité dans le secteur minier RDC',
   },
@@ -373,7 +378,7 @@ export default function Home() {
                 {slides[current].body}
               </p>
             )}
-            <a href="#services" className="inline-flex items-center gap-3 text-white text-sm group">
+            <a href={slides[current].ctaHref ?? '#services'} className="inline-flex items-center gap-3 text-white text-sm group">
               <span>{slides[current].subtitle}</span>
               <span className="w-9 h-9 rounded-full border border-white/55 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
