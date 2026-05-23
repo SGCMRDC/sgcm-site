@@ -34,7 +34,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
         position: 'absolute',
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
-        background: '#C94010',
+        background: '#0A1628',
         transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
@@ -200,7 +200,7 @@ export default function FrLegalPage() {
       ══════════════════════════════════════════════ */}
       <div className="bg-[#0a0a0a]" style={{ marginTop: '102px', paddingTop: '52px', paddingBottom: '52px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-3">Juridique</p>
+          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-3">Juridique</p>
           <h1 className="text-3xl md:text-4xl text-white" style={{ fontWeight: 300 }}>
             Mentions Légales
           </h1>
@@ -233,7 +233,7 @@ export default function FrLegalPage() {
             <p><span className="text-gray-700 font-medium">Direction Juridique &amp; Conformité : </span>Monsieur Elvis Mwamba N&apos;Se Sombamanya</p>
             <p>
               <span className="text-gray-700 font-medium">Contact : </span>
-              <a href="mailto:legal@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+              <a href="mailto:legal@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
                 legal@sgcm-mining.com
               </a>
             </p>
@@ -293,7 +293,7 @@ export default function FrLegalPage() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Contact</h2>
           <p className="text-gray-500 leading-relaxed">
             Pour toute question relative aux présentes mentions légales :{' '}
-            <a href="mailto:legal@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+            <a href="mailto:legal@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
               legal@sgcm-mining.com
             </a>
           </p>
@@ -316,20 +316,20 @@ export default function FrLegalPage() {
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
             {[['À propos', 'aboutus'], ['Plateforme', 'platform'], ['Réseau', 'network'], ['Actualités', 'insights']].map(([label, anchor]) => (
               <a key={label} href={`/fr#${anchor}`} className="text-white/40 text-xs hover:text-white transition-colors">{label}</a>
             ))}
             <a href="/fr/careers" className="text-white/40 text-xs hover:text-white transition-colors">Carrières</a>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
             {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
               <a key={item} href="/fr#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -338,7 +338,7 @@ export default function FrLegalPage() {
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
             <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
             <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
           </div>
