@@ -163,7 +163,7 @@ function NavItem({ label, href, onClick }: { label: string; href: string; onClic
           left: '14px',
           right: '14px',
           height: '1.5px',
-          background: '#C94010',
+          background: '#0A1628',
           transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
           transformOrigin: 'left',
           transition: 'transform 0.25s ease',
@@ -441,7 +441,7 @@ export default function Home() {
                       style={{
                         width: `${progress}%`,
                         transition: 'none',
-                        background: 'linear-gradient(90deg, #C94010 0%, #E8581A 100%)',
+                        background: 'rgba(255,255,255,0.9)',
                       }}
                     />
                   )}
@@ -506,7 +506,7 @@ export default function Home() {
       <section id="aboutus" className="py-16 md:py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
+            <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
             <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la facilitation minière</h2>
             <p className="text-gray-500 leading-relaxed mb-4">
               Société de Gestion et Consultation Minières (SGCM) est un intermédiaire structurant
@@ -524,8 +524,8 @@ export default function Home() {
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
             {aboutCards.map((item) => (
-              <div key={item.label} className="flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#C94010] transition-colors duration-200">
-                <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">{item.label}</p>
+              <div key={item.label} className="flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#1A1F2C] transition-colors duration-200">
+                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-2">{item.label}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
@@ -539,14 +539,14 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section id="services" className="py-16 md:py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Services</p>
+          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">Services</p>
           <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Ce que nous faisons pour nos partenaires</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
             {services.map((service) => (
               <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default">
-                <h3 className="text-base font-semibold mb-3 group-hover:text-[#C94010] transition-colors">{service.title}</h3>
+                <h3 className="text-base font-semibold mb-3 group-hover:text-[#1A1F2C] transition-colors">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.desc}</p>
-                <span className="text-[#C94010] text-xs uppercase tracking-widest">En savoir plus →</span>
+                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest">En savoir plus →</span>
               </div>
             ))}
           </div>
@@ -559,7 +559,7 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section id="platform" className="py-12 md:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Plateforme</p>
+          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">Plateforme</p>
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16 mb-12 lg:mb-0">
             <div className="flex flex-col gap-4 lg:max-w-xl">
               <h2 className="text-3xl md:text-4xl font-light">
@@ -588,7 +588,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-gray-200">
             {platformItems.map((item) => (
               <div key={item.title} className="pt-6 md:pt-8 pr-4 md:pr-8 pb-6 md:pb-0">
-                <div className="w-8 h-px bg-[#C94010] mb-4 md:mb-6" />
+                <div className="w-8 h-px bg-[rgba(26,31,44,0.15)] mb-4 md:mb-6" />
                 <h3 className="font-semibold mb-2 text-sm uppercase tracking-wide">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -603,7 +603,7 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section id="network" className="py-16 md:py-24 px-6 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-4">Réseau</p>
+          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">Réseau</p>
           <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl text-white">
             Un réseau de confiance de partenaires vérifiés
           </h2>
@@ -622,7 +622,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           CONTACT CTA
           ══════════════════════════════════════════════ */}
-      <section id="contact" className="py-16 md:py-24 px-6 bg-[#C94010]">
+      <section id="contact" className="py-16 md:py-24 px-6 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
             Vous travaillez avec le cuivre, l&apos;or ou le cobalt de la RDC ? Structurons votre chaîne d&apos;approvisionnement.
@@ -632,7 +632,7 @@ export default function Home() {
             accompagner vos besoins en matière de conformité et de facilitation.
           </p>
           <a href="mailto:contact@sgcm-mining.com"
-            className="inline-block bg-white text-[#C94010] px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+            className="inline-block bg-transparent text-white border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors">
             Nous contacter
           </a>
         </div>
@@ -654,7 +654,7 @@ export default function Home() {
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
             {[
               { label: 'À propos',   href: '#aboutus' },
               { label: 'Plateforme', href: '#platform' },
@@ -666,13 +666,13 @@ export default function Home() {
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
             {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
               <a key={item} href="#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -681,7 +681,7 @@ export default function Home() {
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
             <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
             <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
           </div>
