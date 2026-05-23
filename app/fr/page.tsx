@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -131,8 +132,9 @@ const discoverCards: DiscoverCard[] = [
 // NAV ITEM
 // ─────────────────────────────────────────────
 
-function NavItem({ label, href, onClick }: { label: string; href: string; onClick?: () => void }) {
+function NavItem({ label, href, onClick, pathname }: { label: string; href: string; onClick?: () => void; pathname: string }) {
   const [hovered, setHovered] = useState(false);
+  const isActive = pathname === href;
   return (
     <a
       href={href}
@@ -149,7 +151,7 @@ function NavItem({ label, href, onClick }: { label: string; href: string; onClic
         fontWeight: 500,
         letterSpacing: '0.13em',
         textTransform: 'uppercase',
-        color: hovered ? '#ffffff' : 'rgba(255,255,255,0.72)',
+        color: isActive ? '#FF7F2A' : hovered ? 'rgba(255,127,42,0.4)' : 'rgba(255,255,255,0.72)',
         textDecoration: 'none',
         transition: 'color 0.2s',
         whiteSpace: 'nowrap',
@@ -163,8 +165,8 @@ function NavItem({ label, href, onClick }: { label: string; href: string; onClic
           left: '14px',
           right: '14px',
           height: '1.5px',
-          background: '#0A1628',
-          transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
+          background: '#FF7F2A',
+          transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
           transformOrigin: 'left',
           transition: 'transform 0.25s ease',
           borderRadius: '1px',
@@ -184,6 +186,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setProgress(0);
@@ -298,7 +301,7 @@ export default function Home() {
             </button>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
               {navItems.map((item) => (
-                <NavItem key={item.label} label={item.label} href={item.href} />
+                <NavItem key={item.label} label={item.label} href={item.href} pathname={pathname} />
               ))}
             </nav>
           </div>
