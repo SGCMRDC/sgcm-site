@@ -112,6 +112,21 @@ const networkItems = [
   { title: 'International Buyers', desc: 'Industrial smelters, refiners, and off-takers' },
 ];
 
+interface DiscoverCard {
+  eyebrow: string;
+  title: string;
+  href: string;
+  ariaLabel: string;
+  bg: string;
+}
+
+const discoverCards: DiscoverCard[] = [
+  { eyebrow: 'CRP PROGRAM', title: 'A proprietary standard for responsible mineral supply chains.', href: '#program', ariaLabel: 'Learn more about the CRP Program', bg: '#0A1628' },
+  { eyebrow: 'COMPLIANCE FRAMEWORK', title: 'Aligned with OECD, LBMA, ICGLR, EU 2017/821.', href: '#framework', ariaLabel: 'Learn more about the Compliance Framework', bg: '#1A2638' },
+  { eyebrow: 'INSTITUTIONAL PARTNERS', title: 'Engaging regulators, cooperatives, and international buyers.', href: '#partners', ariaLabel: 'Learn more about Institutional Partners', bg: '#2A3648' },
+  { eyebrow: 'STRUCTURAL IMPACT', title: 'Formalization that lasts. Compliance that compounds.', href: '#impact', ariaLabel: 'Learn more about Structural Impact', bg: '#3A4658' },
+];
+
 // ─────────────────────────────────────────────
 // NAV ITEM
 // ─────────────────────────────────────────────
@@ -500,6 +515,46 @@ export default function Home() {
               </button>
             );
           })}
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          DISCOVER SGCM
+          ══════════════════════════════════════════════ */}
+      <section
+        aria-labelledby="discover-heading"
+        style={{ background: '#F4F4F1' }}
+        className="px-6 md:px-14 pt-16 pb-14 md:pt-24 md:pb-20"
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="mb-12 md:mb-16" style={{ maxWidth: '640px' }}>
+            <p style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#5F5E5A', fontWeight: 500, marginBottom: '24px' }}>
+              DISCOVER SGCM
+            </p>
+            <p id="discover-heading" className="text-[19px] md:text-[22px]"
+              style={{ lineHeight: 1.45, color: '#1A1F2C', fontWeight: 400 }}>
+              We are a compliance integrator structuring DRC mineral supply chains
+              for international due diligence — independently of any underlying
+              mineral transaction.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {discoverCards.map((card) => (
+              <a key={card.href} href={card.href} aria-label={card.ariaLabel}
+                style={{ aspectRatio: '4/5', borderRadius: '14px', overflow: 'hidden', position: 'relative', background: card.bg, textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%)' }} />
+                <div style={{ position: 'relative', padding: '24px 22px', height: '100%', display: 'flex', flexDirection: 'column', color: '#FFFFFF', boxSizing: 'border-box' }}>
+                  <p style={{ fontSize: '10.5px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{card.eyebrow}</p>
+                  <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.35, marginTop: '12px' }}>{card.title}</p>
+                  <div style={{ flex: 1 }} />
+                  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <span aria-hidden="true" style={{ width: '34px', height: '34px', border: '1px solid rgba(255,255,255,0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontSize: '13px' }}>→</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
