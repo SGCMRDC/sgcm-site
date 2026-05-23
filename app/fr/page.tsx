@@ -112,6 +112,21 @@ const networkItems = [
   { title: 'Acheteurs internationaux', desc: 'Fonderies industrielles, affineurs et offtakers' },
 ];
 
+interface DiscoverCard {
+  eyebrow: string;
+  title: string;
+  href: string;
+  ariaLabel: string;
+  bg: string;
+}
+
+const discoverCards: DiscoverCard[] = [
+  { eyebrow: 'PROGRAMME CRP', title: 'Un standard propriétaire pour des chaînes minières responsables.', href: '#program', ariaLabel: 'En savoir plus sur le Programme CRP', bg: '#0A1628' },
+  { eyebrow: 'CADRE DE CONFORMITÉ', title: "Aligné sur l'OCDE, la LBMA, l'ICGLR, le Règlement UE 2017/821.", href: '#framework', ariaLabel: 'En savoir plus sur le Cadre de Conformité', bg: '#1A2638' },
+  { eyebrow: 'PARTENAIRES INSTITUTIONNELS', title: 'Engager les régulateurs, coopératives et acheteurs internationaux.', href: '#partners', ariaLabel: 'En savoir plus sur les Partenaires Institutionnels', bg: '#2A3648' },
+  { eyebrow: 'IMPACT STRUCTUREL', title: 'Une formalisation qui dure. Une conformité qui se renforce.', href: '#impact', ariaLabel: "En savoir plus sur l'Impact Structurel", bg: '#3A4658' },
+];
+
 // ─────────────────────────────────────────────
 // NAV ITEM
 // ─────────────────────────────────────────────
@@ -440,6 +455,47 @@ export default function Home() {
               </button>
             );
           })}
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════
+          DÉCOUVRIR SGCM
+          ══════════════════════════════════════════════ */}
+      <section
+        aria-labelledby="discover-heading"
+        style={{ background: '#F4F4F1' }}
+        className="px-6 md:px-14 pt-16 pb-14 md:pt-24 md:pb-20"
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="mb-12 md:mb-16" style={{ maxWidth: '640px' }}>
+            <p style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#5F5E5A', fontWeight: 500, marginBottom: '24px' }}>
+              DÉCOUVRIR SGCM
+            </p>
+            <p id="discover-heading" className="text-[19px] md:text-[22px]"
+              style={{ lineHeight: 1.45, color: '#1A1F2C', fontWeight: 400 }}>
+              Nous sommes un intégrateur de conformité qui structure les chaînes
+              d'approvisionnement minérales RDC pour la diligence raisonnable
+              internationale — indépendamment de toute transaction minérale
+              sous-jacente.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {discoverCards.map((card) => (
+              <a key={card.href} href={card.href} aria-label={card.ariaLabel}
+                style={{ aspectRatio: '4/5', borderRadius: '14px', overflow: 'hidden', position: 'relative', background: card.bg, textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%)' }} />
+                <div style={{ position: 'relative', padding: '24px 22px', height: '100%', display: 'flex', flexDirection: 'column', color: '#FFFFFF', boxSizing: 'border-box' }}>
+                  <p style={{ fontSize: '10.5px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{card.eyebrow}</p>
+                  <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.35, marginTop: '12px' }}>{card.title}</p>
+                  <div style={{ flex: 1 }} />
+                  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <span aria-hidden="true" style={{ width: '34px', height: '34px', border: '1px solid rgba(255,255,255,0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontSize: '13px' }}>→</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
