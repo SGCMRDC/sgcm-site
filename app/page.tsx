@@ -193,8 +193,9 @@ export default function Home() {
   }, [current]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -220,6 +221,7 @@ export default function Home() {
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
         }}
       >
+        <div className={`absolute inset-0 transition-colors duration-200 ${scrolled || menuOpen ? 'bg-[#0A1628] lg:bg-transparent' : 'bg-transparent'}`} />
         {/* ── TOP BAR ── */}
         <div
           className="px-4 md:px-8 lg:px-12"
