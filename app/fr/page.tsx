@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 // ─────────────────────────────────────────────
@@ -85,13 +86,6 @@ const services = [
     title: 'Conseil stratégique minier',
     desc: "Sur la base des données collectées dans nos audits, SGCM oriente acheteurs industriels, fonds d'investissement et institutions publiques sur la structuration de leurs partenariats RDC : cartographie des risques, sélection des opérateurs, ingénierie contractuelle, suivi opérationnel.",
   },
-];
-
-const platformItems = [
-  { title: 'SGCM Certified™',               desc: 'Vérification documentaire complète de chaque opérateur et unité de production de notre réseau.' },
-  { title: 'Cadre de conformité',            desc: 'Protocoles d\'alignement réglementaire conformes aux normes RDC, OCDE et UE' },
-  { title: 'Traçabilité & Chaîne de custody numérique', desc: 'Traçabilité minérale de bout en bout avec des pistes d\'audit immuables' },
-  { title: 'Structuration des transactions', desc: 'Allocation contractuelle des risques et assistance à la documentation des opérations' },
 ];
 
 const networkItems = [
@@ -590,42 +584,92 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           PLATEFORME
           ══════════════════════════════════════════════ */}
-      <section id="platform" className="py-12 md:py-16 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">Plateforme</p>
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16 mb-12 lg:mb-0">
-            <div className="flex flex-col gap-4 lg:max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-light">
-                SGCM Certified™ <br />Notre standard de vérification
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-3">
-                SGCM Certified™ est notre standard de vérification interne. Avant d&apos;engager toute
-                unité de production ou opérateur économique, SGCM procède à une revue documentaire
-                complète au regard des principales normes internationales, garantissant que chaque
-                partenaire présenté à nos acheteurs dispose d&apos;une documentation complète, conforme
-                et vérifiable.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-3">
-                Les protocoles SGCM Certified™ sont alignés avec les lignes directrices OCDE sur
-                le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en
-                minerais provenant de zones à haut risque.
-              </p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Conçu pour préparer les coopératives à l&apos;éligibilité aux chaînes d&apos;approvisionnement internationales.
-              </p>
-            </div>
-            <img src="/sgcm-certified.png" alt="SGCM Certified"
-              className="block object-contain lg:ml-20 w-40 sm:w-56 md:w-64 lg:w-[420px] flex-shrink-0 mx-auto md:mx-0"
-              style={{ height: 'auto' }} />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-gray-200">
-            {platformItems.map((item) => (
-              <div key={item.title} className="pt-6 md:pt-8 pr-4 md:pr-8 pb-6 md:pb-0">
-                <div className="w-8 h-px bg-[rgba(26,31,44,0.15)] mb-4 md:mb-6" />
-                <h3 className="font-semibold mb-2 text-sm uppercase tracking-wide">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+      <section
+        id="platform"
+        style={{ background: '#F4F4F1' }}
+        className="py-20 md:py-28"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-10 lg:gap-16">
+
+            {/* Colonne gauche : eyebrow + titre + sous-titre + logo sceau */}
+            <div>
+              <div className="text-[11px] font-medium text-[#5F5E5A] tracking-[0.16em] uppercase mb-4">
+                PLATEFORME
               </div>
-            ))}
+              <h2 className="text-2xl md:text-3xl font-medium text-[#1A1F2C] leading-tight mb-4">
+                SGCM Certified™
+              </h2>
+              <p className="text-sm text-[#5F5E5A] leading-relaxed mb-8">
+                Notre standard de vérification.
+              </p>
+              <div className="inline-flex items-center gap-3 px-5 py-4 bg-white border border-[rgba(26,31,44,0.15)]">
+                <Image
+                  src="/SGCMCRPLOGO.png"
+                  alt="SGCM Certified"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+                <span className="text-sm font-medium text-[#1A1F2C]">
+                  Certified™
+                </span>
+              </div>
+            </div>
+
+            {/* Colonne droite : 3 chapitres + CTA */}
+            <div className="flex flex-col gap-6">
+
+              {/* Chapitre 01 */}
+              <div className="grid grid-cols-[24px_1fr] gap-4">
+                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">01</div>
+                <div>
+                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
+                    Un standard de vérification documentaire, augmenté par l&apos;IA
+                  </h3>
+                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
+                    Avant tout engagement avec une unité de production ou un opérateur économique, SGCM procède à une revue documentaire complète au regard des normes internationales primaires — combinant intelligence artificielle pour le traitement documentaire et validation humaine SGCM pour chaque décision.
+                  </p>
+                </div>
+              </div>
+
+              {/* Chapitre 02 */}
+              <div className="grid grid-cols-[24px_1fr] gap-4">
+                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">02</div>
+                <div>
+                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
+                    Aligné sur la diligence raisonnable OCDE
+                  </h3>
+                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
+                    Les protocoles SGCM Certified™ sont alignés sur le Guide OCDE sur le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en minéraux provenant de zones de conflit ou à haut risque.
+                  </p>
+                </div>
+              </div>
+
+              {/* Chapitre 03 */}
+              <div className="grid grid-cols-[24px_1fr] gap-4">
+                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">03</div>
+                <div>
+                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
+                    Conçu pour l&apos;éligibilité internationale
+                  </h3>
+                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
+                    Conçu pour préparer coopératives et opérateurs à l&apos;intégration dans des chaînes minières internationales conformes.
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA unique */}
+              <div className="mt-2 pt-4 border-t border-[rgba(26,31,44,0.15)]">
+                <Link
+                  href="/fr/sgcm-certified"
+                  className="text-[11px] font-medium text-[#1A1F2C] tracking-widest uppercase hover:underline"
+                >
+                  DÉCOUVRIR LE STANDARD →
+                </Link>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
