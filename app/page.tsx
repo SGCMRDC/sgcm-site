@@ -101,20 +101,6 @@ const networkItems = [
   { title: 'Technology and traceability partners', desc: 'Blockchain traceability infrastructure and documentary solutions enabling international buyers and investors to access, through the SGCM platform, the audit of minerals they wish to source.' },
 ];
 
-interface DiscoverCard {
-  eyebrow: string;
-  title: string;
-  href: string;
-  ariaLabel: string;
-  bg: string;
-}
-
-const discoverCards: DiscoverCard[] = [
-  { eyebrow: 'CRP PROGRAM', title: 'The SGCM standard for audit and classification of mining operators.', href: '#program', ariaLabel: 'Learn more about the CRP Program', bg: '#0A1628' },
-  { eyebrow: 'COMPLIANCE FRAMEWORK', title: 'Aligned with OECD, LBMA, ICGLR and EU 2017/821.', href: '#framework', ariaLabel: 'Learn more about the Compliance Framework', bg: '#1A2638' },
-  { eyebrow: 'INSTITUTIONAL PARTNERS', title: 'Single point of contact for regulators, mining operators and international buyers.', href: '#partners', ariaLabel: 'Learn more about Institutional Partners', bg: '#2A3648' },
-  { eyebrow: 'STRUCTURAL IMPACT', title: 'Documented, verifiable, lasting compliance.', href: '#impact', ariaLabel: 'Learn more about Structural Impact', bg: '#3A4658' },
-];
 
 // ─────────────────────────────────────────────
 // NAV ITEM
@@ -533,20 +519,67 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {discoverCards.map((card) => (
-              <a key={card.href} href={card.href} aria-label={card.ariaLabel}
-                style={{ aspectRatio: '4/5', borderRadius: '14px', overflow: 'hidden', position: 'relative', background: card.bg, textDecoration: 'none', color: 'inherit', display: 'block' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%)' }} />
-                <div style={{ position: 'relative', padding: '24px 22px', height: '100%', display: 'flex', flexDirection: 'column', color: '#FFFFFF', boxSizing: 'border-box' }}>
-                  <p style={{ fontSize: '10.5px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{card.eyebrow}</p>
-                  <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.35, marginTop: '12px' }}>{card.title}</p>
-                  <div style={{ flex: 1 }} />
-                  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <span aria-hidden="true" style={{ width: '34px', height: '34px', border: '1px solid rgba(255,255,255,0.6)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontSize: '13px' }}>→</span>
-                  </div>
-                </div>
-              </a>
-            ))}
+
+            <a href="#program" aria-label="Learn more about the CRP Program"
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
+              <Image src="/DRC-MINER-ASM.png" alt="Artisanal mining operator in DRC" fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0" aria-hidden="true"
+                style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(10,22,40,0) 25%, rgba(10,22,40,0) 50%, rgba(10,22,40,0.92) 100%)' }} />
+              <div className="absolute top-5 left-5 right-5 text-[11px] font-medium tracking-[0.14em] text-white/90 uppercase">01 — PROGRAMME</div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <h3 className="text-lg font-medium text-white leading-tight mb-2">CRP Program</h3>
+                <p className="text-sm text-white/70 leading-snug mb-4">The SGCM standard for audit and classification of mining operators.</p>
+                <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
+              </div>
+            </a>
+
+            <a href="#framework" aria-label="Learn more about the Compliance Framework"
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
+              <Image src="/PANAFRICANISME.png" alt="Pan-African compliance framework" fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0" aria-hidden="true"
+                style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(10,22,40,0) 25%, rgba(10,22,40,0) 50%, rgba(10,22,40,0.92) 100%)' }} />
+              <div className="absolute top-5 left-5 right-5 text-[11px] font-medium tracking-[0.14em] text-white/90 uppercase">02 — FRAMEWORK</div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <h3 className="text-lg font-medium text-white leading-tight mb-2">Compliance Framework</h3>
+                <p className="text-sm text-white/70 leading-snug mb-4">Aligned with OECD, LBMA, ICGLR and EU 2017/821.</p>
+                <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
+              </div>
+            </a>
+
+            <a href="#partners" aria-label="Learn more about Institutional Partners"
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
+              <Image src="/kin-rdc-sgcm.jpg" alt="Kinshasa, institutional capital" fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0" aria-hidden="true"
+                style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(10,22,40,0) 25%, rgba(10,22,40,0) 50%, rgba(10,22,40,0.92) 100%)' }} />
+              <div className="absolute top-5 left-5 right-5 text-[11px] font-medium tracking-[0.14em] text-white/90 uppercase">03 — PARTNERS</div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <h3 className="text-lg font-medium text-white leading-tight mb-2">Institutional Partners</h3>
+                <p className="text-sm text-white/70 leading-snug mb-4">Single point of contact for regulators, mining operators and international buyers.</p>
+                <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
+              </div>
+            </a>
+
+            <a href="#impact" aria-label="Learn more about Structural Impact"
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
+              <Image src="/trace-sgcm.jpg" alt="SGCM documentary traceability" fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0" aria-hidden="true"
+                style={{ background: 'linear-gradient(180deg, rgba(10,22,40,0.4) 0%, rgba(10,22,40,0) 25%, rgba(10,22,40,0) 50%, rgba(10,22,40,0.92) 100%)' }} />
+              <div className="absolute top-5 left-5 right-5 text-[11px] font-medium tracking-[0.14em] text-white/90 uppercase">04 — IMPACT</div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <h3 className="text-lg font-medium text-white leading-tight mb-2">Structural Impact</h3>
+                <p className="text-sm text-white/70 leading-snug mb-4">Documented, verifiable, lasting compliance.</p>
+                <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
+              </div>
+            </a>
+
           </div>
         </div>
       </section>
