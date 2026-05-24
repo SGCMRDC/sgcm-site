@@ -195,12 +195,12 @@ export default function Home() {
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
           transition: 'background 0.4s ease, box-shadow 0.4s ease',
           background: scrolled || menuOpen
-            ? 'rgba(8,8,8,0.97)'
+            ? 'rgba(31,41,55,0.97)'
             : 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.0) 100%)',
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
         }}
       >
-        <div className={`absolute inset-0 transition-colors duration-200 ${scrolled || menuOpen ? 'bg-[#0A1628] lg:bg-transparent' : 'bg-transparent'}`} />
+        <div className={`absolute inset-0 transition-colors duration-200 ${scrolled || menuOpen ? 'bg-[#1F2937] lg:bg-transparent' : 'bg-transparent'}`} />
         {/* ── TOP BAR ── */}
         <div
           className="px-4 md:px-8 lg:px-12"
