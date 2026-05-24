@@ -66,36 +66,24 @@ const navItems = [
 ];
 
 const aboutCards = [
-  { label: 'Mission',   text: 'Formaliser et structurer les chaînes d\'approvisionnement minérales en RDC' },
+  { label: 'Mission',   text: 'Structurer la conformité des opérateurs miniers de la RDC selon les standards internationaux' },
   { label: 'Vision',    text: 'Devenir l\'intégrateur de conformité de référence en Afrique centrale' },
   { label: 'Présence',  text: 'Kinshasa · Kolwezi (RDC) et Bruxelles (Belgique)' },
-  { label: 'Domaines',  text: 'Cathodes de cuivre, or, cobalt et minéraux stratégiques, approvisionnés de manière responsable et entièrement traçables.' },
+  { label: 'Domaines',  text: 'Minéraux stratégiques produits en RDC dans le cadre de chaînes auditées et documentées selon les standards internationaux de diligence raisonnable.' },
 ];
 
 const services = [
   {
-    title: 'Facilitation stratégique des minéraux',
-    desc: 'Mise en relation acheteurs–producteurs et vérification de conformité pour les cathodes de cuivre de qualité LME, l\'or, le cobalt et d\'autres minéraux stratégiques issus de sources certifiées en RDC.',
-  },
-  {
-    title: 'Coordination logistique et export',
-    desc: 'Planification du transport intérieur, documentation export, préparation des expéditions et collaboration avec les entités logistiques agréées.',
-  },
-  {
-    title: 'Conformité & Documentation',
-    desc: 'Alignement réglementaire avec les cadres RDC, OCDE et UE. Diligence raisonnable de type KYC/AML et transparence administrative.',
-  },
-  {
-    title: 'Structuration multi-minéraux de la chaîne d\'approvisionnement',
-    desc: 'Structuration de bout en bout pour les chaînes d\'approvisionnement en or, cobalt, coltan et cuivre — de l\'approvisionnement certifié à la préparation export et à l\'intégrité documentaire.',
+    title: 'Structuration multi-minéraux de la conformité',
+    desc: "Audit et mise en conformité de bout en bout des chaînes minières — or, cobalt, coltan, cuivre — depuis la production certifiée jusqu'à la documentation export. Chaque maillon est tracé, documenté, vérifiable.",
   },
   {
     title: 'Interface institutionnelle',
-    desc: 'Communication structurée avec les organismes de réglementation, les autorités douanières et les institutions internationales de conformité.',
+    desc: "SGCM dialogue avec les régulateurs RDC, les autorités douanières, le CEEC, le SAEMAPE et les institutions internationales de conformité — pour anticiper les exigences, sécuriser les documents et représenter les intérêts compliance de ses clients.",
   },
   {
     title: 'Conseil stratégique minier',
-    desc: 'Conseil de niveau exécutif sur la structuration des chaînes d\'approvisionnement, l\'allocation des risques, les cadres de traçabilité et le développement de partenariats industriels à long terme dans le secteur minier de la RDC.',
+    desc: "Sur la base des données collectées dans nos audits, SGCM oriente acheteurs industriels, fonds d'investissement et institutions publiques sur la structuration de leurs partenariats RDC : cartographie des risques, sélection des opérateurs, ingénierie contractuelle, suivi opérationnel.",
   },
 ];
 
@@ -122,10 +110,10 @@ interface DiscoverCard {
 }
 
 const discoverCards: DiscoverCard[] = [
-  { eyebrow: 'PROGRAMME CRP', title: 'Un standard propriétaire pour des chaînes minières responsables.', href: '#program', ariaLabel: 'En savoir plus sur le Programme CRP', bg: '#0A1628' },
-  { eyebrow: 'CADRE DE CONFORMITÉ', title: "Aligné sur l'OCDE, la LBMA, l'ICGLR, le Règlement UE 2017/821.", href: '#framework', ariaLabel: 'En savoir plus sur le Cadre de Conformité', bg: '#1A2638' },
-  { eyebrow: 'PARTENAIRES INSTITUTIONNELS', title: 'Engager les régulateurs, coopératives et acheteurs internationaux.', href: '#partners', ariaLabel: 'En savoir plus sur les Partenaires Institutionnels', bg: '#2A3648' },
-  { eyebrow: 'IMPACT STRUCTUREL', title: 'Une formalisation qui dure. Une conformité qui se renforce.', href: '#impact', ariaLabel: "En savoir plus sur l'Impact Structurel", bg: '#3A4658' },
+  { eyebrow: 'PROGRAMME CRP', title: "Le standard SGCM d'audit et de classification des opérateurs miniers.", href: '#program', ariaLabel: 'En savoir plus sur le Programme CRP', bg: '#0A1628' },
+  { eyebrow: 'CADRE DE CONFORMITÉ', title: "Aligné sur l'OCDE, la LBMA, l'ICGLR et le Règlement UE 2017/821.", href: '#framework', ariaLabel: 'En savoir plus sur le Cadre de Conformité', bg: '#1A2638' },
+  { eyebrow: 'PARTENAIRES INSTITUTIONNELS', title: 'Interlocuteur unique des régulateurs, des opérateurs miniers et des acheteurs internationaux.', href: '#partners', ariaLabel: 'En savoir plus sur les Partenaires Institutionnels', bg: '#2A3648' },
+  { eyebrow: 'IMPACT STRUCTUREL', title: 'Une conformité documentée, vérifiable, durable.', href: '#impact', ariaLabel: "En savoir plus sur l'Impact Structurel", bg: '#3A4658' },
 ];
 
 // ─────────────────────────────────────────────
@@ -477,10 +465,10 @@ export default function Home() {
             </p>
             <p id="discover-heading" className="text-[19px] md:text-[22px]"
               style={{ lineHeight: 1.45, color: '#1A1F2C', fontWeight: 400 }}>
-              Nous sommes un intégrateur de conformité qui structure les chaînes
-              d'approvisionnement minérales RDC pour la diligence raisonnable
-              internationale — indépendamment de toute transaction minérale
-              sous-jacente.
+              Nous structurons l'éligibilité des chaînes minières RDC aux standards
+              internationaux de diligence raisonnable. SGCM conçoit, déploie et opère
+              le cadre de conformité qui permet aux opérateurs miniers d'accéder
+              aux marchés exigeants.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -510,19 +498,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
             <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
-            <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la facilitation minière</h2>
+            <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la conformité minière</h2>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Société de Gestion et Consultation Minières (SGCM) est un intermédiaire structurant
-              basé à Kinshasa, reliant des producteurs certifiés en RDC (cuivre cathodique, or,
-              cobalt) à la demande industrielle internationale.
+              Société de Gestion et Consultation Minières (SGCM) est une société congolaise
+              basée à Kinshasa, spécialisée dans la structuration de la conformité des chaînes
+              minières. Nous accompagnons les opérateurs miniers, les institutions et les
+              acheteurs internationaux dans la mise en œuvre des standards de diligence
+              raisonnable applicables au secteur extractif.
             </p>
             <p className="text-gray-700 font-medium leading-relaxed mb-4">
-              Nous ne négocions pas. Nous structurons.
+              Notre rôle : structurer, documenter, certifier.
             </p>
             <p className="text-gray-500 leading-relaxed">
-              SGCM intègre conformité, traçabilité et structuration logistique — en alignement
-              avec les lignes directrices OCDE — afin de garantir des chaînes d&apos;approvisionnement
-              vérifiables, documentées et prêtes à l&apos;export.
+              SGCM intègre conformité documentaire, traçabilité et audit opérationnel —
+              en alignement avec les lignes directrices OCDE — pour livrer aux acheteurs
+              internationaux des dossiers de diligence raisonnable complets, vérifiables
+              et auditables.
             </p>
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
@@ -543,7 +534,7 @@ export default function Home() {
       <section id="services" className="py-16 md:py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">Services</p>
-          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Ce que nous faisons pour nos partenaires</h2>
+          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Nos prestations</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
             {services.map((service) => (
               <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default">
