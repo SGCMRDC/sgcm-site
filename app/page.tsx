@@ -69,7 +69,7 @@ const aboutCards = [
   { label: 'Mission',  text: 'Structure the compliance of DRC mining operators according to international standards' },
   { label: 'Vision',   text: 'Become the reference compliance integrator in Central Africa' },
   { label: 'Presence', text: 'Kinshasa · Kolwezi (DRC) and Brussels (Belgium)' },
-  { label: 'Focus',    text: 'Strategic minerals produced in DRC through audited and documented supply chains aligned with international due diligence standards.' },
+  { label: 'Focus',    text: 'Strategic minerals from the DRC, integrated into audited supply chains aligned with international standards.' },
 ];
 
 const services = [
@@ -95,10 +95,10 @@ const platformItems = [
 ];
 
 const networkItems = [
-  { title: 'Mining Producers',     desc: 'Certified copper and gold production facilities in the DRC' },
-  { title: 'Logistics Partners',   desc: 'Authorized inland and export logistics operators' },
-  { title: 'Legal Advisors',       desc: 'Congolese legal experts in DRC mining law, regulatory frameworks, and export compliance.' },
-  { title: 'International Buyers', desc: 'Industrial smelters, refiners, and off-takers' },
+  { title: 'Certified mining operators',          desc: 'Mining production units in DRC that have completed or integrated the CRP audit program.' },
+  { title: 'Regulators and public institutions',  desc: 'CEEC, SAEMAPE, Ministry of Mines, customs authorities, compliance bodies.' },
+  { title: 'Legal Advisors',                      desc: 'Law firms and experts in DRC mining law, international compliance, and extractive sector litigation.' },
+  { title: 'Technology and traceability partners', desc: 'Blockchain traceability infrastructure and documentary solutions enabling international buyers and investors to access, through the SGCM platform, the audit of minerals they wish to source.' },
 ];
 
 interface DiscoverCard {
@@ -609,13 +609,13 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default"
+                className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default flex flex-col h-full"
               >
                 <h3 className="text-base font-semibold mb-3 group-hover:text-[#1A1F2C] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.desc}</p>
-                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest">
+                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest mt-auto">
                   Learn more →
                 </span>
               </div>
@@ -705,17 +705,17 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 px-6 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
-            Working with DRC copper, gold, or cobalt? Let&apos;s structure your supply chain.
+            Mining operator, international buyer or institutional partner? SGCM structures, audits and documents your compliance.
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
-            Whether you are a producer, buyer, or institutional partner, SGCM is ready to
-            support your compliance and facilitation needs.
+            SGCM supports its clients in aligning their mineral supply chains with international
+            due diligence standards.
           </p>
           <a
             href="mailto:contact@sgcm-mining.com"
             className="inline-block bg-transparent text-white border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors"
           >
-            Contact Us
+            Contact SGCM
           </a>
         </div>
       </section>
