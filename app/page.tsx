@@ -677,20 +677,17 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-medium text-[#1A1F2C] leading-tight mb-4">
                 SGCM Certified™
               </h2>
-              <p className="text-sm text-[#5F5E5A] leading-relaxed mb-8">
+              <p className="text-sm text-[#5F5E5A] leading-relaxed mb-6">
                 Our verification standard.
               </p>
-              <div className="inline-flex items-center gap-3 px-5 py-4 bg-white border border-[rgba(26,31,44,0.2)]">
+              <div className="mt-2">
                 <Image
                   src="/SGCM-CRP-LOGO-BLACK.png"
                   alt="SGCM Certified"
-                  width={48}
-                  height={48}
-                  className="object-contain"
+                  width={400}
+                  height={120}
+                  className="h-30 w-auto object-contain"
                 />
-                <span className="text-sm font-medium text-[#1A1F2C]">
-                  Certified™
-                </span>
               </div>
             </div>
 
