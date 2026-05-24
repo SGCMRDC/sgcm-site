@@ -586,7 +586,7 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section
         id="platform"
-        style={{ background: '#F4F4F1' }}
+        style={{ background: '#FFFFFF' }}
         className="py-20 md:py-28"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -603,12 +603,12 @@ export default function Home() {
               <p className="text-sm text-[#5F5E5A] leading-relaxed mb-8">
                 Notre standard de vérification.
               </p>
-              <div className="inline-flex items-center gap-3 px-5 py-4 bg-white border border-[rgba(26,31,44,0.15)]">
+              <div className="inline-flex items-center gap-3 px-5 py-4 bg-white border border-[rgba(26,31,44,0.2)]">
                 <Image
-                  src="/SGCMCRPLOGO.png"
+                  src="/SGCM-CRP-LOGO-BLACK.png"
                   alt="SGCM Certified"
-                  width={32}
-                  height={32}
+                  width={48}
+                  height={48}
                   className="object-contain"
                 />
                 <span className="text-sm font-medium text-[#1A1F2C]">
