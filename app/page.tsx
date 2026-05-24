@@ -66,36 +66,24 @@ const navItems = [
 ];
 
 const aboutCards = [
-  { label: 'Mission',  text: 'Formalize and structure mineral supply chains in the DRC' },
+  { label: 'Mission',  text: 'Structure the compliance of DRC mining operators according to international standards' },
   { label: 'Vision',   text: 'Become the reference compliance integrator in Central Africa' },
   { label: 'Presence', text: 'Kinshasa · Kolwezi (DRC) and Brussels (Belgium)' },
-  { label: 'Focus',    text: 'Copper cathodes, gold, cobalt, and strategic minerals, responsibly sourced and fully traceable.' },
+  { label: 'Focus',    text: 'Strategic minerals produced in DRC through audited and documented supply chains aligned with international due diligence standards.' },
 ];
 
 const services = [
   {
-    title: 'Strategic Mineral Facilitation',
-    desc: 'Buyer–producer matching and compliance verification for LME-grade copper cathodes, gold, cobalt, and other strategic minerals from certified DRC sources.',
-  },
-  {
-    title: 'Logistics & Export Coordination',
-    desc: 'Inland transport planning, export documentation, shipment preparation, and collaboration with authorized logistics entities.',
-  },
-  {
-    title: 'Compliance & Documentation',
-    desc: 'Regulatory alignment with DRC, OECD, and EU-aligned frameworks. KYC/AML-style due diligence and administrative transparency.',
-  },
-  {
-    title: 'Multi-Mineral Supply Chain Structuring',
-    desc: 'End-to-end structuring for gold, cobalt, coltan, and copper supply chains — from certified sourcing to export readiness and documentation integrity.',
+    title: 'Multi-mineral compliance structuring',
+    desc: 'End-to-end audit and compliance for mining supply chains — gold, cobalt, coltan, copper — from certified production to export documentation. Every link traced, documented, verifiable.',
   },
   {
     title: 'Institutional Interface',
-    desc: 'Structured communication with regulatory bodies, customs authorities, and international compliance institutions.',
+    desc: 'SGCM engages with DRC regulators, customs authorities, CEEC, SAEMAPE and international compliance institutions — to anticipate requirements, secure documentation and represent the compliance interests of its clients.',
   },
   {
     title: 'Strategic Mining Advisory',
-    desc: 'Executive-level advisory on supply chain structuring, risk allocation, traceability frameworks, and long-term industrial partnership development in the DRC mineral sector.',
+    desc: 'Drawing on data collected through its audits, SGCM advises industrial buyers, investment funds and public institutions on the structuring of their DRC partnerships: risk mapping, operator selection, contractual engineering, operational monitoring.',
   },
 ];
 
@@ -122,10 +110,10 @@ interface DiscoverCard {
 }
 
 const discoverCards: DiscoverCard[] = [
-  { eyebrow: 'CRP PROGRAM', title: 'A proprietary standard for responsible mineral supply chains.', href: '#program', ariaLabel: 'Learn more about the CRP Program', bg: '#0A1628' },
-  { eyebrow: 'COMPLIANCE FRAMEWORK', title: 'Aligned with OECD, LBMA, ICGLR, EU 2017/821.', href: '#framework', ariaLabel: 'Learn more about the Compliance Framework', bg: '#1A2638' },
-  { eyebrow: 'INSTITUTIONAL PARTNERS', title: 'Engaging regulators, cooperatives, and international buyers.', href: '#partners', ariaLabel: 'Learn more about Institutional Partners', bg: '#2A3648' },
-  { eyebrow: 'STRUCTURAL IMPACT', title: 'Formalization that lasts. Compliance that compounds.', href: '#impact', ariaLabel: 'Learn more about Structural Impact', bg: '#3A4658' },
+  { eyebrow: 'CRP PROGRAM', title: 'The SGCM standard for audit and classification of mining operators.', href: '#program', ariaLabel: 'Learn more about the CRP Program', bg: '#0A1628' },
+  { eyebrow: 'COMPLIANCE FRAMEWORK', title: 'Aligned with OECD, LBMA, ICGLR and EU 2017/821.', href: '#framework', ariaLabel: 'Learn more about the Compliance Framework', bg: '#1A2638' },
+  { eyebrow: 'INSTITUTIONAL PARTNERS', title: 'Single point of contact for regulators, mining operators and international buyers.', href: '#partners', ariaLabel: 'Learn more about Institutional Partners', bg: '#2A3648' },
+  { eyebrow: 'STRUCTURAL IMPACT', title: 'Documented, verifiable, lasting compliance.', href: '#impact', ariaLabel: 'Learn more about Structural Impact', bg: '#3A4658' },
 ];
 
 // ─────────────────────────────────────────────
@@ -537,9 +525,9 @@ export default function Home() {
             </p>
             <p id="discover-heading" className="text-[19px] md:text-[22px]"
               style={{ lineHeight: 1.45, color: '#1A1F2C', fontWeight: 400 }}>
-              We are a compliance integrator structuring DRC mineral supply chains
-              for international due diligence — independently of any underlying
-              mineral transaction.
+              We structure the eligibility of DRC mineral supply chains to international
+              due diligence standards. SGCM designs, deploys and operates the compliance
+              framework that gives mining operators access to demanding markets.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -572,20 +560,21 @@ export default function Home() {
               About SGCM
             </p>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
-              A structured approach to mineral facilitation
+              A structured approach to mining compliance
             </h2>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Société de Gestion et Consultation Minières (SGCM) is a structured intermediary
-              headquartered in Kinshasa, connecting certified DRC producers of copper cathodes,
-              gold, and cobalt with international industrial buyers.
+              Société de Gestion et Consultation Minières (SGCM) is a Congolese company
+              based in Kinshasa, specialized in structuring the compliance of mineral supply
+              chains. We support mining operators, institutions and international buyers in
+              implementing the due diligence standards applicable to the extractive sector.
             </p>
             <p className="text-gray-700 font-medium leading-relaxed mb-4">
-              We do not trade. We structure.
+              Our role: structuring, documenting, certifying.
             </p>
             <p className="text-gray-500 leading-relaxed">
-              SGCM integrates compliance, traceability, and logistics coordination — aligned with
-              OECD Due Diligence Guidance — to ensure every supply chain is verifiable,
-              documented, and export-ready.
+              SGCM integrates documentary compliance, traceability and operational audit —
+              aligned with OECD guidelines — to deliver to international buyers complete,
+              verifiable and auditable due diligence dossiers.
             </p>
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
@@ -614,7 +603,7 @@ export default function Home() {
             Services
           </p>
           <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">
-            What we do for our partners
+            Our services
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
             {services.map((service) => (
