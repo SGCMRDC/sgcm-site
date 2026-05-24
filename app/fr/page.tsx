@@ -607,9 +607,9 @@ export default function Home() {
                 <Image
                   src="/SGCM-CRP-LOGO-BLACK.png"
                   alt="SGCM Certified"
-                  width={400}
-                  height={120}
-                  className="h-30 w-auto object-contain"
+                  width={480}
+                  height={144}
+                  className="h-36 w-auto object-contain"
                 />
               </div>
             </div>
