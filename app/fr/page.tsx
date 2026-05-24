@@ -69,7 +69,7 @@ const aboutCards = [
   { label: 'Mission',   text: 'Structurer la conformité des opérateurs miniers de la RDC selon les standards internationaux' },
   { label: 'Vision',    text: 'Devenir l\'intégrateur de conformité de référence en Afrique centrale' },
   { label: 'Présence',  text: 'Kinshasa · Kolwezi (RDC) et Bruxelles (Belgique)' },
-  { label: 'Domaines',  text: 'Minéraux stratégiques produits en RDC dans le cadre de chaînes auditées et documentées selon les standards internationaux de diligence raisonnable.' },
+  { label: 'Domaines',  text: 'Minéraux stratégiques de la RDC, intégrés dans des chaînes auditées et conformes aux standards internationaux.' },
 ];
 
 const services = [
@@ -95,10 +95,10 @@ const platformItems = [
 ];
 
 const networkItems = [
-  { title: 'Producteurs miniers',      desc: 'Installations certifiées de production de cuivre et d\'or en RDC' },
-  { title: 'Partenaires logistiques',  desc: 'Opérateurs logistiques intérieurs et à l\'export agréés' },
-  { title: 'Conseillers juridiques',   desc: 'Experts juridiques congolais en droit minier de la RDC, cadres réglementaires et conformité à l\'export.' },
-  { title: 'Acheteurs internationaux', desc: 'Fonderies industrielles, affineurs et offtakers' },
+  { title: 'Opérateurs miniers certifiés',           desc: "Unités de production minière en RDC ayant complété ou intégré le programme d'audit CRP." },
+  { title: 'Régulateurs et institutions publiques',   desc: 'CEEC, SAEMAPE, Ministère des Mines, autorités douanières, organismes de conformité.' },
+  { title: 'Conseillers juridiques',                  desc: 'Cabinets et experts en droit minier RDC, conformité internationale et contentieux extractif.' },
+  { title: 'Partenaires technologiques et de traçabilité', desc: "Infrastructures de traçabilité blockchain et solutions documentaires permettant aux acheteurs et investisseurs internationaux d'accéder, via la plateforme SGCM, à l'audit des minéraux qu'ils souhaitent sourcer." },
 ];
 
 interface DiscoverCard {
@@ -537,10 +537,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Nos prestations</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
             {services.map((service) => (
-              <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default">
+              <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default flex flex-col h-full">
                 <h3 className="text-base font-semibold mb-3 group-hover:text-[#1A1F2C] transition-colors">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.desc}</p>
-                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest">En savoir plus →</span>
+                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest mt-auto">En savoir plus →</span>
               </div>
             ))}
           </div>
@@ -619,15 +619,15 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 px-6 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
-            Vous travaillez avec le cuivre, l&apos;or ou le cobalt de la RDC ? Structurons votre chaîne d&apos;approvisionnement.
+            Opérateur minier, acheteur international ou partenaire institutionnel ? SGCM structure, audite et documente votre conformité.
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
-            Que vous soyez producteur, acheteur ou partenaire institutionnel, SGCM est prêt à
-            accompagner vos besoins en matière de conformité et de facilitation.
+            SGCM accompagne ses clients dans la mise en conformité de leurs chaînes minières aux
+            standards internationaux de diligence raisonnable.
           </p>
           <a href="mailto:contact@sgcm-mining.com"
             className="inline-block bg-transparent text-white border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors">
-            Nous contacter
+            Contacter SGCM
           </a>
         </div>
       </section>
