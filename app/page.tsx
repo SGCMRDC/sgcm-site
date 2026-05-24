@@ -22,7 +22,7 @@ const slides: Slide[] = [
   {
     label: 'COMPLIANCE INFRASTRUCTURE',
     title: 'Compliance infrastructure for DRC mineral supply chains.',
-    body: 'SGCM structures, validates, and certifies — independently of any transaction.',
+    body: 'SGCM structures, documents and validates — independently of any transaction.',
     subtitle: 'About SGCM',
     ctaHref: '#about',
     image: '/SGCM Electrorefining plant.png',
@@ -31,7 +31,7 @@ const slides: Slide[] = [
   {
     label: 'THE CRP FRAMEWORK',
     title: 'The Certified Responsible Partner framework.',
-    body: 'A proprietary standard for evaluating and certifying DRC production units.',
+    body: 'A proprietary standard for evaluating and validating DRC production units.',
     subtitle: 'Explore the Program',
     ctaHref: '#platform',
     image: '/sgcm-africa-tracability.jpg',
@@ -89,10 +89,10 @@ const services = [
 ];
 
 const networkItems = [
-  { title: 'Certified mining operators',          desc: 'Mining production units in DRC that have completed or integrated the CRP audit program.' },
-  { title: 'Regulators and public institutions',  desc: 'CEEC, SAEMAPE, Ministry of Mines, customs authorities, compliance bodies.' },
-  { title: 'Legal Advisors',                      desc: 'Law firms and experts in DRC mining law, international compliance, and extractive sector litigation.' },
-  { title: 'Technology and traceability partners', desc: 'Blockchain traceability infrastructure and documentary solutions enabling international buyers and investors to access, through the SGCM platform, the audit of minerals they wish to source.' },
+  { title: 'MINING OPERATORS',       desc: 'Mining production units in DRC that have completed or integrated the CRP audit program.' },
+  { title: 'PUBLIC INSTITUTIONS',    desc: 'CEEC, SAEMAPE, Ministry of Mines, customs authorities, compliance bodies.' },
+  { title: 'LEGAL ADVISORY',         desc: 'Law firms and experts in DRC mining law, international compliance, and extractive sector litigation.' },
+  { title: 'TECHNOLOGY TRACEABILITY', desc: 'Blockchain infrastructures and documentary solutions giving international buyers access to audited mineral chains.' },
 ];
 
 
@@ -602,7 +602,7 @@ export default function Home() {
               implementing the due diligence standards applicable to the extractive sector.
             </p>
             <p className="text-gray-700 font-medium leading-relaxed mb-4">
-              Our role: structuring, documenting, certifying.
+              Our role: structuring, documenting, validating.
             </p>
             <p className="text-gray-500 leading-relaxed">
               SGCM integrates documentary compliance, traceability and operational audit —
@@ -780,11 +780,10 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 px-6 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
-            Mining operator, international buyer or institutional partner? SGCM structures, audits and documents your compliance.
+            SGCM structures, documents and validates the mineral chains of the DRC in alignment with international due diligence standards.
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
-            SGCM supports its clients in aligning their mineral supply chains with international
-            due diligence standards.
+            A compliance infrastructure serving mining operators, public institutions and industrial partners.
           </p>
           <a
             href="mailto:contact@sgcm-mining.com"
