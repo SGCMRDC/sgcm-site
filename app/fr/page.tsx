@@ -22,7 +22,7 @@ const slides: Slide[] = [
   {
     label: 'INFRASTRUCTURE DE CONFORMITÉ',
     title: 'Infrastructure de conformité pour les chaînes minières RDC.',
-    body: 'SGCM structure, valide et certifie — indépendamment de toute transaction.',
+    body: 'SGCM structure, documente et valide — indépendamment de toute transaction.',
     subtitle: 'À propos de SGCM',
     ctaHref: '#about',
     image: '/SGCM Electrorefining plant.png',
@@ -31,7 +31,7 @@ const slides: Slide[] = [
   {
     label: 'LE CADRE CRP',
     title: 'Le cadre Certified Responsible Partner.',
-    body: 'Un standard propriétaire d\'évaluation et de certification des unités de production RDC.',
+    body: 'Un standard propriétaire d\'évaluation et de validation des unités de production RDC.',
     subtitle: 'Découvrir le Programme',
     ctaHref: '#platform',
     image: '/sgcm-africa-tracability.jpg',
@@ -89,10 +89,10 @@ const services = [
 ];
 
 const networkItems = [
-  { title: 'Opérateurs miniers certifiés',           desc: "Unités de production minière en RDC ayant complété ou intégré le programme d'audit CRP." },
-  { title: 'Régulateurs et institutions publiques',   desc: 'CEEC, SAEMAPE, Ministère des Mines, autorités douanières, organismes de conformité.' },
-  { title: 'Conseillers juridiques',                  desc: 'Cabinets et experts en droit minier RDC, conformité internationale et contentieux extractif.' },
-  { title: 'Partenaires technologiques et de traçabilité', desc: "Infrastructures de traçabilité blockchain et solutions documentaires permettant aux acheteurs et investisseurs internationaux d'accéder, via la plateforme SGCM, à l'audit des minéraux qu'ils souhaitent sourcer." },
+  { title: 'OPÉRATEURS MINIERS',        desc: "Unités de production minière en RDC ayant complété ou intégré le programme d'audit CRP." },
+  { title: 'INSTITUTIONS PUBLIQUES',    desc: 'CEEC, SAEMAPE, Ministère des Mines, autorités douanières, organismes de conformité.' },
+  { title: 'CONSEIL JURIDIQUE',         desc: 'Cabinets et experts en droit minier RDC, conformité internationale et contentieux extractif.' },
+  { title: 'TRAÇABILITÉ TECHNOLOGIQUE', desc: "Infrastructures blockchain et solutions documentaires donnant aux acheteurs internationaux accès à l'audit des chaînes minières." },
 ];
 
 
@@ -540,7 +540,7 @@ export default function Home() {
               raisonnable applicables au secteur extractif.
             </p>
             <p className="text-gray-700 font-medium leading-relaxed mb-4">
-              Notre rôle : structurer, documenter, certifier.
+              Notre rôle : structurer, documenter, valider.
             </p>
             <p className="text-gray-500 leading-relaxed">
               SGCM intègre conformité documentaire, traçabilité et audit opérationnel —
@@ -699,11 +699,10 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 px-6 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
-            Opérateur minier, acheteur international ou partenaire institutionnel ? SGCM structure, audite et documente votre conformité.
+            SGCM structure, documente et valide les chaînes minières de la RDC selon les standards internationaux de diligence raisonnable.
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-10 leading-relaxed">
-            SGCM accompagne ses clients dans la mise en conformité de leurs chaînes minières aux
-            standards internationaux de diligence raisonnable.
+            Une infrastructure de conformité au service des opérateurs miniers, des institutions publiques et des partenaires industriels.
           </p>
           <a href="mailto:contact@sgcm-mining.com"
             className="inline-block bg-transparent text-white border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-white/10 transition-colors">
