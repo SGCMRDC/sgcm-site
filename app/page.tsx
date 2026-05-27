@@ -201,7 +201,7 @@ export default function Home() {
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
         }}
       >
-        <div className={`absolute inset-0 transition-colors duration-200 ${scrolled || menuOpen ? 'bg-[#1F2937] lg:bg-transparent' : 'bg-transparent'}`} />
+        <div className={`absolute inset-0 transition-colors duration-200 pointer-events-none ${scrolled || menuOpen ? 'bg-[#1F2937] lg:bg-transparent' : 'bg-transparent'}`} aria-hidden="true" />
         {/* ── TOP BAR ── */}
         <div
           className="px-4 md:px-8 lg:px-12"
