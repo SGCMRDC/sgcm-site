@@ -595,26 +595,39 @@ export default function Home() {
         className="py-20 md:py-28"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1fr] gap-10 lg:gap-16">
 
-            {/* Colonne gauche : eyebrow + logo */}
+            {/* Colonne gauche : eyebrow + barre d'ancrage + logo + doctrine */}
             <div>
-              <div className="text-[11px] font-medium text-[#5F5E5A] tracking-[0.16em] uppercase mb-4">
+              <div className="text-[11px] font-medium text-[#5F5E5A] tracking-[0.16em] uppercase mb-3">
                 PLATEFORME
               </div>
-              <div className="mt-8 md:mt-10">
-                <Image
-                  src="/SGCM-CRP-LOGO-BLACK.png"
-                  alt="SGCM Certified — Société de Gestion et Consultation Minières"
-                  width={260}
-                  height={78}
-                  className="w-full max-w-65 h-auto"
-                  priority
-                />
-              </div>
+              <div className="w-6 h-0.5 bg-[#1F2937] mb-6" />
+              <Image
+                src="/SGCM-CRP-LOGO-BLACK.png"
+                alt="SGCM Certified — Société de Gestion et Consultation Minières"
+                width={260}
+                height={78}
+                className="w-full max-w-65 h-auto mb-8"
+                priority
+              />
+              <p className="text-[10px] font-medium text-[#5F5E5A] tracking-[0.14em] uppercase mb-4">
+                Approche SGCM
+              </p>
+              <ul className="flex flex-col gap-2">
+                <li className="text-sm text-gray-600">
+                  <span className="font-semibold text-[#0A1628]">Cartographier</span> chaque unité de production.
+                </li>
+                <li className="text-sm text-gray-600">
+                  <span className="font-semibold text-[#0A1628]">Vérifier</span> chaque document.
+                </li>
+                <li className="text-sm text-gray-600">
+                  <span className="font-semibold text-[#0A1628]">Valider</span> chaque opérateur.
+                </li>
+              </ul>
             </div>
 
-            {/* Colonne droite : 3 chapitres + CTA */}
+            {/* Colonne droite : 3 chapitres */}
             <div className="flex flex-col gap-6">
 
               {/* Chapitre 01 */}
@@ -656,8 +669,14 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CTA unique */}
-              <div className="mt-2 pt-4 border-t border-[rgba(26,31,44,0.15)]">
+            </div>
+
+            {/* Pied partagé : référentiels + CTA */}
+            <div className="col-span-full mt-6 pt-5 border-t border-gray-200 grid grid-cols-1 md:grid-cols-[0.85fr_1fr] gap-y-3 md:gap-12 items-center">
+              <p className="text-[11px] text-gray-500 font-medium tracking-wide">
+                OCDE 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC
+              </p>
+              <div>
                 <Link
                   href="/fr/sgcm-certified"
                   className="text-[11px] font-medium text-[#1A1F2C] tracking-widest uppercase hover:underline"
@@ -665,8 +684,8 @@ export default function Home() {
                   DÉCOUVRIR LE STANDARD →
                 </Link>
               </div>
-
             </div>
+
           </div>
         </div>
       </section>
