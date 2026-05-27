@@ -36,7 +36,7 @@ function NavItem({ label, href, active, onClick }: { label: string; href: string
         position: 'absolute',
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
-        background: '#C94010',
+        background: '#0A1628',
         transform: hovered || active ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
@@ -70,7 +70,7 @@ export default function ContactPageFr() {
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'background 0.4s ease, box-shadow 0.4s ease',
-        background: scrolled || menuOpen ? 'rgba(8,8,8,0.97)' : '#080808',
+        background: scrolled || menuOpen ? 'rgba(31,41,55,0.97)' : '#1F2937',
       }}>
         {/* Top bar */}
         <div className="px-4 md:px-8 lg:px-12" style={{
@@ -212,7 +212,7 @@ export default function ContactPageFr() {
           backgroundPosition: 'center',
         }} />
         <div className="relative z-10 px-6 md:px-12 pb-8 md:pb-16 max-w-2xl">
-          <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Contact
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px]"
@@ -238,10 +238,10 @@ export default function ContactPageFr() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-10 md:py-12 border-b border-gray-200">
             <div className="md:pr-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Siège social</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Siège social</p>
               <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>SGCM</p>
               <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>Kinshasa, République Démocratique du Congo</p>
-              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#C94010', fontSize: '13px', fontWeight: 600, textDecoration: 'none', marginBottom: '8px' }}>
+              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#1A1F2C', fontSize: '13px', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px', marginBottom: '8px' }}>
                 ✉ contact@sgcm-mining.com
               </a>
               <a href="mailto:verify@sgcm-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
@@ -249,22 +249,21 @@ export default function ContactPageFr() {
               </a>
             </div>
             <div className="md:px-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Liens rapides</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Liens rapides</p>
               {['À propos de SGCM', 'Notre écosystème commercial', 'Standard SGCM Certified™'].map((item) => (
                 <a key={item} href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item}
+                  <span style={{ color: '#1A1F2C' }}>→</span>{item}
                 </a>
               ))}
             </div>
             <div className="md:pl-12">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Nous suivre</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Nous suivre</p>
               {[
                 { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
-                { label: 'Portail de vérification', href: 'https://sgcm-mining.com/verify' },
               ].map((item) => (
                 <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item.label}
+                  <span style={{ color: '#1A1F2C' }}>→</span>{item.label}
                 </a>
               ))}
             </div>
@@ -279,9 +278,9 @@ export default function ContactPageFr() {
             { title: 'Conformité & Documentation', desc: 'Pour la vérification de mandat, les demandes de documentation KYC ou les questions relatives au standard SGCM Certified™, utilisez notre canal de vérification dédié.', email: 'verify@sgcm-mining.com' },
           ].map((dept, i) => (
             <div key={dept.title} className={`${i > 0 ? 'md:pl-12' : ''} ${i < 2 ? 'md:pr-12 md:border-r md:border-gray-200' : ''}`}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '2px solid #C94010', display: 'inline-block' }}>{dept.title}</p>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(26,31,44,0.15)', display: 'inline-block' }}>{dept.title}</p>
               <p style={{ fontSize: '13px', lineHeight: 1.75, color: '#555', marginBottom: '12px', marginTop: '8px' }}>{dept.desc}</p>
-              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#C94010', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 Envoyer une demande →
               </a>
             </div>
@@ -292,7 +291,7 @@ export default function ContactPageFr() {
         <div className="py-12 md:py-14 border-b border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start">
             <div>
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Carrières</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Carrières</p>
               <h3 style={{ fontSize: '24px', fontWeight: 400, color: '#111', marginBottom: '12px' }}>Rejoignez l'équipe SGCM</h3>
               <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.7 }}>SGCM accepte actuellement les candidatures de professionnels congolais engagés dans la construction de chaînes d'approvisionnement minérales responsables et transparentes en RDC.</p>
             </div>
@@ -309,7 +308,7 @@ export default function ContactPageFr() {
                   </div>
                   <a href={`mailto:contact@sgcm-mining.com?subject=Candidature: ${job.title}`}
                     className="shrink-0"
-                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C94010', textDecoration: 'none', border: '1px solid #C94010', padding: '8px 16px' }}>
+                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1A1F2C', textDecoration: 'none', border: '1px solid rgba(26,31,44,0.4)', padding: '8px 16px' }}>
                     Postuler
                   </a>
                 </div>
@@ -330,12 +329,12 @@ export default function ContactPageFr() {
               className="object-contain"
               style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Facilitateur de chaînes d'approvisionnement minérales. Structurer des flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
+              Intégrateur de conformité pour des chaînes d'approvisionnement minérales responsables. Structurer la documentation, la traçabilité et l'alignement réglementaire depuis la RDC vers les marchés internationaux.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
             {[
               { label: 'À propos',   href: '/fr/#aboutus' },
               { label: 'Plateforme', href: '/fr/#platform' },
@@ -347,13 +346,13 @@ export default function ContactPageFr() {
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Cathode de cuivre', 'Chaîne or', 'Conformité', 'Logistique', 'Conseil'].map((item) => (
-              <a key={item} href="/fr/#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
+              <a key={item} href="/fr#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -362,13 +361,9 @@ export default function ContactPageFr() {
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
             <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
             <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
-            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
-              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
-              <span>Vérifier un mandat →</span>
-            </a>
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">

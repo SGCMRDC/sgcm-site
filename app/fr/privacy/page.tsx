@@ -34,7 +34,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
         position: 'absolute',
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
-        background: '#C94010',
+        background: '#0A1628',
         transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
@@ -68,7 +68,7 @@ export default function FrPrivacyPage() {
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'background 0.4s ease, box-shadow 0.4s ease',
-        background: scrolled || menuOpen ? 'rgba(8,8,8,0.97)' : '#080808',
+        background: scrolled || menuOpen ? 'rgba(31,41,55,0.97)' : '#1F2937',
       }}>
         {/* Top bar */}
         <div className="px-4 md:px-8 lg:px-12" style={{
@@ -200,7 +200,7 @@ export default function FrPrivacyPage() {
       ══════════════════════════════════════════════ */}
       <div className="bg-[#0a0a0a]" style={{ marginTop: '102px', paddingTop: '52px', paddingBottom: '52px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-3">Juridique</p>
+          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-3">Juridique</p>
           <h1 className="text-3xl md:text-4xl text-white" style={{ fontWeight: 300 }}>
             Politique de Confidentialité
           </h1>
@@ -238,7 +238,7 @@ export default function FrPrivacyPage() {
           </div>
           <p className="text-gray-500 leading-relaxed mt-4">
             Contact conformité :{' '}
-            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
               compliance@sgcm-mining.com
             </a>
           </p>
@@ -251,15 +251,15 @@ export default function FrPrivacyPage() {
           </p>
           <ul className="space-y-3">
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Formulaires de contact (nom, adresse email, société, message)
             </li>
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Données de navigation (cookies techniques, logs serveur)
             </li>
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Documents transmis dans le cadre de processus de due diligence
             </li>
           </ul>
@@ -269,19 +269,19 @@ export default function FrPrivacyPage() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Finalités du traitement</h2>
           <ul className="space-y-3">
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Réponse aux demandes d&apos;information et de partenariat
             </li>
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Processus de Due Diligence SGCM Certified®
             </li>
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Conformité aux obligations légales applicables (OCDE, LBMA, LME, CRMA, Code Minier RDC)
             </li>
             <li className="flex gap-3 text-gray-500 leading-relaxed">
-              <span style={{ color: '#C94010', flexShrink: 0, marginTop: '2px' }}>-</span>
+              <span style={{ color: '#5F5E5A', flexShrink: 0, marginTop: '2px' }}>-</span>
               Amélioration du site et de ses services
             </li>
           </ul>
@@ -328,7 +328,7 @@ export default function FrPrivacyPage() {
           </p>
           <p className="text-gray-500 leading-relaxed">
             Pour exercer l&apos;un de ces droits, veuillez adresser votre demande à :{' '}
-            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#C94010', textDecoration: 'none' }}>
+            <a href="mailto:compliance@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
               compliance@sgcm-mining.com
             </a>
           </p>
@@ -364,25 +364,25 @@ export default function FrPrivacyPage() {
               className="object-contain"
               style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Facilitateur de chaînes d&apos;approvisionnement minérales. Structuration de flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
+              Intégrateur de conformité pour des chaînes d'approvisionnement minérales responsables. Structurer la documentation, la traçabilité et l'alignement réglementaire depuis la RDC vers les marchés internationaux.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
-            {[['About Us', 'aboutus'], ['Platform', 'platform'], ['Network', 'network'], ['Insights', 'insights']].map(([label, anchor]) => (
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            {[['À propos', 'aboutus'], ['Plateforme', 'platform'], ['Réseau', 'network'], ['Actualités', 'insights']].map(([label, anchor]) => (
               <a key={label} href={`/fr#${anchor}`} className="text-white/40 text-xs hover:text-white transition-colors">{label}</a>
             ))}
-            <a href="/fr/careers" className="text-white/40 text-xs hover:text-white transition-colors">Careers</a>
+            <a href="/fr/careers" className="text-white/40 text-xs hover:text-white transition-colors">Carrières</a>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Copper Cathode', 'Gold Supply Chain', 'Compliance', 'Logistics', 'Advisory'].map((item) => (
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
               <a key={item} href="/fr#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Connect</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -391,13 +391,9 @@ export default function FrPrivacyPage() {
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Legal</p>
-            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Legal Notice</a>
-            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
-              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
-              <span>Verify a Mandate →</span>
-            </a>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
+            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">

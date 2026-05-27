@@ -29,3 +29,9 @@ img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
+
+*:focus-visible {
+  outline: 2px solid #FF7F2A;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

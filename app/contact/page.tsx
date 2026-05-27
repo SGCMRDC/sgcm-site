@@ -36,7 +36,7 @@ function NavItem({ label, href, active, onClick }: { label: string; href: string
         position: 'absolute',
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
-        background: '#C94010',
+        background: '#0A1628',
         transform: hovered || active ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
@@ -70,7 +70,7 @@ export default function ContactPage() {
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'background 0.4s ease, box-shadow 0.4s ease',
-        background: scrolled || menuOpen ? 'rgba(8,8,8,0.97)' : '#080808',
+        background: scrolled || menuOpen ? 'rgba(31,41,55,0.97)' : '#1F2937',
       }}>
         {/* Top bar */}
         <div className="px-4 md:px-8 lg:px-12" style={{
@@ -211,7 +211,7 @@ export default function ContactPage() {
           backgroundPosition: 'center',
         }} />
         <div className="relative z-10 px-6 md:px-12 pb-8 md:pb-16 max-w-2xl">
-          <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
             Contact
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px]"
@@ -237,10 +237,10 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-10 md:py-12 border-b border-gray-200">
             <div className="md:pr-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Head Office</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Head Office</p>
               <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>SGCM</p>
               <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>Kinshasa, Democratic Republic of Congo</p>
-              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#C94010', fontSize: '13px', fontWeight: 600, textDecoration: 'none', marginBottom: '8px' }}>
+              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#1A1F2C', fontSize: '13px', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px', marginBottom: '8px' }}>
                 ✉ contact@sgcm-mining.com
               </a>
               <a href="mailto:verify@sgcm-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
@@ -248,22 +248,21 @@ export default function ContactPage() {
               </a>
             </div>
             <div className="md:px-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Quick Links</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Quick Links</p>
               {['About SGCM', 'Our Commercial Ecosystem', 'SGCM Certified™ Standard'].map((item) => (
                 <a key={item} href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item}
+                  <span style={{ color: '#1A1F2C' }}>→</span>{item}
                 </a>
               ))}
             </div>
             <div className="md:pl-12">
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
               {[
                 { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
-                { label: 'Verification Portal', href: 'https://sgcm-mining.com/verify' },
               ].map((item) => (
                 <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#C94010' }}>→</span>{item.label}
+                  <span style={{ color: '#1A1F2C' }}>→</span>{item.label}
                 </a>
               ))}
             </div>
@@ -278,9 +277,9 @@ export default function ContactPage() {
             { title: 'Compliance & Documentation', desc: 'For mandate verification, KYC documentation requests, or SGCM Certified™ inquiries, use our dedicated verification channel.', email: 'verify@sgcm-mining.com' },
           ].map((dept, i) => (
             <div key={dept.title} className={`${i > 0 ? 'md:pl-12' : ''} ${i < 2 ? 'md:pr-12 md:border-r md:border-gray-200' : ''}`}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '2px solid #C94010', display: 'inline-block' }}>{dept.title}</p>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(26,31,44,0.15)', display: 'inline-block' }}>{dept.title}</p>
               <p style={{ fontSize: '13px', lineHeight: 1.75, color: '#555', marginBottom: '12px', marginTop: '8px' }}>{dept.desc}</p>
-              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#C94010', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 Send an inquiry →
               </a>
             </div>
@@ -291,7 +290,7 @@ export default function ContactPage() {
         <div className="py-12 md:py-14 border-b border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start">
             <div>
-              <p style={{ color: '#C94010', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Careers</p>
+              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Careers</p>
               <h3 style={{ fontSize: '24px', fontWeight: 400, color: '#111', marginBottom: '12px' }}>Join the SGCM team</h3>
               <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.7 }}>SGCM is currently accepting applications from Congolese professionals committed to building responsible and transparent mineral supply chains in the DRC.</p>
             </div>
@@ -308,7 +307,7 @@ export default function ContactPage() {
                   </div>
                   <a href={`mailto:contact@sgcm-mining.com?subject=Application: ${job.title}`}
                     className="shrink-0"
-                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C94010', textDecoration: 'none', border: '1px solid #C94010', padding: '8px 16px' }}>
+                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1A1F2C', textDecoration: 'none', border: '1px solid rgba(26,31,44,0.4)', padding: '8px 16px' }}>
                     Apply
                   </a>
                 </div>
@@ -329,25 +328,25 @@ export default function ContactPage() {
               className="object-contain"
               style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Mineral supply chain facilitator. Structuring compliant, traceable, and responsible mineral flows from the DRC to international markets.
+              Compliance integrator for responsible mineral supply chains. Structuring documentation, traceability, and regulatory alignment from the DRC to international markets.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Brussels</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
             {['About Us', 'Platform', 'Network', 'Insights'].map((item) => (
               <a key={item} href={`/#${item.toLowerCase().replace(/\s+/g, '')}`} className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
             <a href="/careers" className="text-white/40 text-xs hover:text-white transition-colors">Careers</a>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Copper Cathode', 'Gold Supply Chain', 'Compliance', 'Logistics', 'Advisory'].map((item) => (
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            {['CRP Program', 'Compliance Framework', 'Traceability Integration', 'Partner Verification', 'Institutional Advisory'].map((item) => (
               <a key={item} href="/#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Connect</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Connect</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -356,13 +355,9 @@ export default function ContactPage() {
             <span className="text-white/25 text-xs">Brussels Office</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Legal</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Legal</p>
             <a href="/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Privacy Policy</a>
             <a href="/legal" className="text-white/40 text-xs hover:text-white transition-colors">Legal Notice</a>
-            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
-              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
-              <span>Verify a Mandate →</span>
-            </a>
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">

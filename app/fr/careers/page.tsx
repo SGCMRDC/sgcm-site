@@ -34,7 +34,7 @@ function NavItem({ label, href }: { label: string; href: string }) {
         position: 'absolute',
         bottom: 0, left: '14px', right: '14px',
         height: '2px',
-        background: '#C94010',
+        background: '#0A1628',
         transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left',
         transition: 'transform 0.25s ease',
@@ -68,7 +68,7 @@ export default function FrCareersPage() {
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'background 0.4s ease, box-shadow 0.4s ease',
-        background: scrolled || menuOpen ? 'rgba(8,8,8,0.97)' : '#080808',
+        background: scrolled || menuOpen ? 'rgba(31,41,55,0.97)' : '#1F2937',
       }}>
         {/* Top bar */}
         <div className="px-4 md:px-8 lg:px-12" style={{
@@ -200,7 +200,7 @@ export default function FrCareersPage() {
       ══════════════════════════════════════════════ */}
       <div className="bg-[#0a0a0a]" style={{ marginTop: '102px', paddingTop: '52px', paddingBottom: '52px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-3">Rejoignez SGCM</p>
+          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-3">Rejoignez SGCM</p>
           <h1 className="text-3xl md:text-4xl text-white" style={{ fontWeight: 300 }}>
             Carrières
           </h1>
@@ -218,10 +218,10 @@ export default function FrCareersPage() {
           alignItems: 'center',
           justifyContent: 'center',
           width: '64px', height: '64px',
-          border: '1px solid rgba(201,64,16,0.3)',
+          border: '1px solid rgba(26,31,44,0.2)',
           marginBottom: '32px',
         }}>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C94010" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1F2C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
             <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
           </svg>
@@ -247,12 +247,12 @@ export default function FrCareersPage() {
           maxWidth: '480px',
           margin: '0 auto',
         }}>
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#C94010] mb-4">Envoyer votre candidature</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#5F5E5A] mb-4">Envoyer votre candidature</p>
           <a
             href="mailto:careers@sgcm-mining.com"
             style={{
               display: 'inline-block',
-              background: '#C94010',
+              background: '#0A1628',
               color: 'white',
               textDecoration: 'none',
               fontSize: '13px',
@@ -261,8 +261,8 @@ export default function FrCareersPage() {
               padding: '14px 32px',
               transition: 'background 0.2s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = '#a8340c')}
-            onMouseLeave={e => (e.currentTarget.style.background = '#C94010')}
+            onMouseEnter={e => (e.currentTarget.style.background = '#0D1F36')}
+            onMouseLeave={e => (e.currentTarget.style.background = '#0A1628')}
           >
             careers@sgcm-mining.com
           </a>
@@ -280,25 +280,25 @@ export default function FrCareersPage() {
               className="object-contain"
               style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
             <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Facilitateur de chaînes d&apos;approvisionnement minérales. Structuration de flux minéraux conformes, traçables et responsables depuis la RDC vers les marchés internationaux.
+              Intégrateur de conformité pour des chaînes d'approvisionnement minérales responsables. Structurer la documentation, la traçabilité et l'alignement réglementaire depuis la RDC vers les marchés internationaux.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
-            {[['About Us', 'aboutus'], ['Platform', 'platform'], ['Network', 'network'], ['Insights', 'insights']].map(([label, anchor]) => (
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
+            {[['À propos', 'aboutus'], ['Plateforme', 'platform'], ['Réseau', 'network'], ['Actualités', 'insights']].map(([label, anchor]) => (
               <a key={label} href={`/fr#${anchor}`} className="text-white/40 text-xs hover:text-white transition-colors">{label}</a>
             ))}
             <a href="/fr/careers" className="text-white/40 text-xs hover:text-white transition-colors">Carrières</a>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Copper Cathode', 'Gold Supply Chain', 'Compliance', 'Logistics', 'Advisory'].map((item) => (
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
+            {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
               <a key={item} href="/fr#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Connect</p>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
             <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
             <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
             {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
@@ -307,13 +307,9 @@ export default function FrCareersPage() {
             <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-[#C94010] text-xs font-semibold uppercase tracking-widest mb-2">Legal</p>
-            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Legal Notice</a>
-            <a href="https://sgcm-mining.com/verify" target="_blank" rel="noopener noreferrer"
-              className="text-white/70 text-xs hover:text-white transition-colors inline-flex items-center gap-2 mt-2 border border-white/20 px-3 py-2 hover:border-[#C94010] transition-all w-fit">
-              <span>Verify a Mandate →</span>
-            </a>
+            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
+            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
+            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
           </div>
         </div>
         <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
