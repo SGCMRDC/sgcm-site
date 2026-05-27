@@ -674,24 +674,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-10 lg:gap-16">
 
-            {/* Left column: eyebrow + title + subtitle + seal logo */}
+            {/* Left column: eyebrow + logo */}
             <div>
               <div className="text-[11px] font-medium text-[#5F5E5A] tracking-[0.16em] uppercase mb-4">
                 PLATFORM
               </div>
-              <h2 className="text-2xl md:text-3xl font-medium text-[#1A1F2C] leading-tight mb-4">
-                SGCM Certified™
-              </h2>
-              <p className="text-sm text-[#5F5E5A] leading-relaxed mb-6">
-                Our verification standard.
-              </p>
-              <div className="mt-2">
+              <div className="mt-8 md:mt-10">
                 <Image
                   src="/SGCM-CRP-LOGO-BLACK.png"
-                  alt="SGCM Certified"
-                  width={480}
-                  height={144}
-                  className="h-36 w-auto object-contain"
+                  alt="SGCM Certified — Société de Gestion et Consultation Minières"
+                  width={260}
+                  height={78}
+                  className="w-full max-w-65 h-auto"
+                  priority
                 />
               </div>
             </div>
