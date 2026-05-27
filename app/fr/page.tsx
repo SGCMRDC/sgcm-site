@@ -551,7 +551,12 @@ export default function Home() {
           </div>
           <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
             {aboutCards.map((item) => (
-              <div key={item.label} className="flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6 border-l-2 border-transparent hover:border-[#1A1F2C] transition-colors duration-200">
+              <div key={item.label} className="group relative flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-y-0 left-0 w-0.75 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{ background: 'linear-gradient(180deg, #FF7F2A 0%, #F7B500 100%)' }}
+                />
                 <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-2">{item.label}</p>
                 <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
               </div>
