@@ -52,8 +52,8 @@ const slides: Slide[] = [
     body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
     ctaHref: '#network',
-    image: '/SGCM-community.jpg',
-    alt: 'Structural impact of compliance integration in DRC mining sector',
+    image: '/ASM-SGCM-V2.png',
+    alt: 'Congolese artisanal miners — ASM operation structured by SGCM',
   },
 ];
 

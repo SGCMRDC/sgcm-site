@@ -52,8 +52,8 @@ const slides: Slide[] = [
     body: 'Des conditions structurelles d\'accès aux marchés internationaux — et de valeur locale durable.',
     subtitle: 'Résultats Structurels',
     ctaHref: '#network',
-    image: '/SGCM-community.jpg',
-    alt: 'Impact structurel de l\'intégration de la conformité dans le secteur minier RDC',
+    image: '/ASM-SGCM-V2.png',
+    alt: 'Mineurs artisanaux congolais — opération ASM structurée par SGCM',
   },
 ];
 
