@@ -25,7 +25,7 @@ const slides: Slide[] = [
     body: 'SGCM structures, documents and validates — independently of any transaction.',
     subtitle: 'About SGCM',
     ctaHref: '#about',
-    image: '/SGCM Electrorefining plant.png',
+    image: '/SGCM-HOME-V1.jpg',
     alt: 'SGCM compliance infrastructure — DRC mineral supply chain',
   },
   {
