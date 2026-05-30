@@ -16,21 +16,24 @@ export interface ProgramPageProps {
   baseline: string;
   heroImage: string;
   lede: string;
-  paragraphs: [string, string];
+  /** Two body columns; each column is an array of paragraphs. */
+  columns: [string[], string[]];
   cards: [ProgramCard, ProgramCard, ProgramCard];
 }
 
 export function ProgramPage({
-  breadcrumbLabel, title, baseline, heroImage, lede, paragraphs, cards,
+  breadcrumbLabel, title, baseline, heroImage, lede, columns, cards,
 }: ProgramPageProps) {
   const [heroFailed, setHeroFailed] = useState(false);
 
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO ──
+          mt-[138px] = 102px nav height + 36px deliberate gap below nav.
+          mx gives the inset; rounded-[18px] per mockup. */}
       <div
-        className="relative mx-4 md:mx-8 lg:mx-12 mt-24 md:mt-28 rounded-2xl overflow-hidden bg-[#0A1628]"
-        style={{ height: 'clamp(480px, 60vw, 760px)' }}
+        className="relative mx-4 md:mx-10 lg:mx-[70px] rounded-[18px] overflow-hidden bg-[#0A1628]"
+        style={{ marginTop: '138px', height: 'clamp(460px, 55vw, 740px)' }}
       >
         {!heroFailed && (
           <Image
@@ -54,18 +57,38 @@ export function ProgramPage({
         />
 
         {/* Breadcrumb */}
-        <div className="absolute top-10 left-10 md:left-12 flex items-center gap-2">
-          <Image src="/symbol_SGCM-5.png" alt="SGCM" width={30} height={30} className="h-[30px] w-auto" />
-          <span className="text-white/55 text-sm">›</span>
-          <span className="text-white text-sm tracking-wide">{breadcrumbLabel}</span>
+        <div
+          className="absolute flex items-center gap-2"
+          style={{ top: '46px', left: '52px' }}
+        >
+          <Image
+            src="/symbol_SGCM-5.png"
+            alt="SGCM"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
+          />
+          <span className="text-white/55 text-base">›</span>
+          <span className="text-white tracking-wide" style={{ fontSize: '15px' }}>
+            {breadcrumbLabel}
+          </span>
         </div>
 
         {/* Bottom content */}
-        <div className="absolute bottom-16 md:bottom-24 left-10 md:left-12 right-10 md:right-12 max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium text-white tracking-tight mb-4 leading-tight">
+        <div
+          className="absolute max-w-3xl"
+          style={{ bottom: '118px', left: '52px', right: '52px' }}
+        >
+          <h1
+            className="text-5xl md:text-[66px] text-white tracking-tight mb-5 leading-tight"
+            style={{ fontWeight: 300 }}
+          >
             {title}
           </h1>
-          <p className="text-white/90 text-lg md:text-[26px] font-light mb-10 leading-snug">
+          <p
+            className="text-white/90 text-xl md:text-[26px] mb-10 leading-snug"
+            style={{ fontWeight: 300 }}
+          >
             {baseline}
           </p>
           <div className="flex flex-wrap items-center gap-6">
@@ -91,37 +114,43 @@ export function ProgramPage({
         </div>
       </div>
 
-      {/* ── LEDE ── */}
-      <section className="px-4 md:px-8 lg:px-12 pt-20 md:pt-28 pb-16 md:pb-24">
+      {/* ── LEDE + BODY ── */}
+      <section className="px-4 md:px-10 lg:px-[70px] pt-20 md:pt-28 pb-16 md:pb-24">
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <p className="text-[11px] font-medium tracking-[0.14em] text-gray-500 uppercase mb-8">
+          <p className="text-[11px] font-medium tracking-[0.14em] text-[#6b7280] uppercase mb-8">
             DÉCOUVRIR LE PROGRAMME
           </p>
           <p
             className="text-[#0A1628] font-light leading-snug mb-14"
-            style={{ fontSize: 'clamp(20px, 2vw, 26px)', maxWidth: '680px' }}
+            style={{ fontSize: '25px', maxWidth: '720px' }}
           >
             {lede}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12" style={{ maxWidth: '760px' }}>
-            <p className="text-[15px] text-gray-600" style={{ lineHeight: 1.75 }}>
-              {paragraphs[0]}
-            </p>
-            <p className="text-[15px] text-gray-600" style={{ lineHeight: 1.75 }}>
-              {paragraphs[1]}
-            </p>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ maxWidth: '920px', gap: '54px' }}
+          >
+            {columns.map((col, colIdx) => (
+              <div key={colIdx} className="flex flex-col gap-5">
+                {col.map((para, pIdx) => (
+                  <p key={pIdx} className="text-[15px] text-[#6b7280]" style={{ lineHeight: 1.78 }}>
+                    {para}
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── CARDS ── */}
-      <section id="standard" className="px-4 md:px-8 lg:px-12 pb-24 md:pb-32">
+      <section id="standard" className="px-4 md:px-10 lg:px-[70px] pb-24 md:pb-32">
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8">
             {cards.map((card, i) => (
               <article key={i} className="flex flex-col">
                 <div
-                  className="relative rounded-xl overflow-hidden bg-[#0A1628] mb-5 flex-shrink-0"
+                  className="relative rounded-[14px] overflow-hidden bg-[#0A1628] mb-5 flex-shrink-0"
                   style={{ height: '190px' }}
                 >
                   {card.image && (
@@ -131,7 +160,7 @@ export function ProgramPage({
                 <h3 className="text-[19px] font-medium text-[#0A1628] mb-3 leading-snug">
                   {card.title}
                 </h3>
-                <p className="text-[14px] text-gray-500 leading-relaxed flex-1 mb-5">
+                <p className="text-[14px] text-[#6b7280] leading-relaxed flex-1 mb-5">
                   {card.body}
                 </p>
                 <Link

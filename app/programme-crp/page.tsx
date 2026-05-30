@@ -32,7 +32,8 @@ export default function ProgrammeCRPPage() {
     <main className="min-h-screen bg-white text-gray-900 font-sans">
 
       {/* ══════════════════════════════════════════════
-          LIGHT HEADER
+          LIGHT HEADER (variant="light")
+          White bg · dark nav items · PLATEFORME orange+border
           ══════════════════════════════════════════════ */}
       <header
         style={{
@@ -46,7 +47,8 @@ export default function ProgrammeCRPPage() {
         <div
           className="px-4 md:px-8 lg:px-12"
           style={{
-            height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            height: '38px', display: 'flex', alignItems: 'center',
+            justifyContent: 'space-between',
             borderBottom: '1px solid rgba(0,0,0,0.07)',
           }}
         >
@@ -114,7 +116,7 @@ export default function ProgrammeCRPPage() {
             )}
           </button>
 
-          {/* Logo — right */}
+          {/* Logo — right, inverted to black on white bg */}
           <Link href="/fr" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <Image
               src="/sgcm-logo.png"
@@ -122,7 +124,7 @@ export default function ProgrammeCRPPage() {
               width={100}
               height={32}
               className="h-8 w-auto"
-              style={{ filter: 'invert(1) brightness(0.15)' }}
+              style={{ filter: 'invert(1)' }}
             />
           </Link>
         </div>
@@ -166,9 +168,15 @@ export default function ProgrammeCRPPage() {
         baseline="Structurer la conformité. Documenter la preuve. Valider l'éligibilité."
         heroImage="/images/programme-crp-hero.jpg"
         lede="Le programme CRP transforme les coopératives minières artisanales en participants pleinement structurés, documentés et éligibles aux chaînes d'approvisionnement responsables."
-        paragraphs={[
-          "SGCM se positionne comme le pont entre l'économie minière informelle et les exigences des marchés responsables. Nous structurons et documentons ce qui était jusqu'ici dispersé, pour transformer des opérateurs en partenaires traçables et reconnus.",
-          "Notre approche répond d'abord aux standards internationaux de diligence raisonnable : c'est cette rigueur, et la rapidité qu'apporte l'intelligence artificielle, qui profitent ensuite à l'ensemble de l'écosystème — opérateurs comme institutions.",
+        columns={[
+          [
+            "En République Démocratique du Congo, le Code minier de 2018 impose à l'exploitation artisanale de s'organiser en coopératives opérant à l'intérieur de zones d'exploitation artisanale officiellement délimitées, sous l'encadrement des services de l'État. Cette exigence crée un besoin structurel. Doter ces coopératives d'une capacité de gestion, de documentation et de preuve qui réponde aux attentes des marchés exigeants. C'est précisément l'espace qu'occupe SGCM, non comme acteur commercial de la filière, mais comme intégrateur de conformité.",
+            "Le programme CRP articule les obligations nationales avec les référentiels internationaux de diligence raisonnable. Le Guide OCDE sur le devoir de diligence pour des chaînes d'approvisionnement responsables en minerais en constitue la colonne vertébrale, avec son processus en cinq étapes. S'y ajoutent le Responsible Gold Guidance du LBMA dans sa neuvième version, le mécanisme régional de certification de la CIRGL, et pour l'aval européen le Règlement (UE) 2017/821 encadrant les obligations des importateurs de l'Union.",
+          ],
+          [
+            "Chaque coopérative engagée fait l'objet d'une structuration administrative, d'une collecte documentaire normalisée et d'une évaluation des risques selon des critères pondérés. L'intelligence artificielle intervient en appui de cette documentation. Elle accélère le traitement et le classement des pièces, met en évidence les écarts, et ramène à quelques jours un travail qui mobilisait jusqu'ici plusieurs semaines.",
+            "La rigueur prime sur la rapidité. Aucune évaluation n'est arrêtée sans la validation d'un agent SGCM identifié et traçable, conformément au principe qui gouverne l'ensemble du dispositif. La certification, au sens réglementaire, demeure la prérogative des autorités congolaises compétentes. SGCM en prépare la matière. Une conformité documentée, vérifiable et défendable devant les acheteurs les plus exigeants.",
+          ],
         ]}
         cards={[
           {
@@ -178,12 +186,12 @@ export default function ProgrammeCRPPage() {
           },
           {
             title: "Aux standards du monde",
-            body: "Aligné sur la diligence raisonnable OCDE en cinq étapes, le LBMA RGG V9, l'ICGLR et le Règlement UE 2017/821. Une conformité documentée, vérifiable et défendable.",
+            body: "Aligné sur la diligence raisonnable OCDE en cinq étapes, le LBMA RGG V9, la CIRGL et le Règlement UE 2017/821. Une conformité documentée, vérifiable et défendable.",
             href: '#',
           },
           {
             title: "Conçu pour les exigences internationales",
-            body: "En intégrant l'IA à la documentation, SGCM répond aux standards mondiaux et accélère le traitement des dossiers — offrant aux institutions congolaises un outil de cartographie et de suivi des coopératives.",
+            body: "En intégrant l'IA à la documentation, SGCM répond aux standards mondiaux et accélère le traitement des dossiers. Cette capacité offre aux institutions congolaises un outil de cartographie et de suivi des coopératives.",
             href: '#',
           },
         ]}
@@ -198,7 +206,7 @@ export default function ProgrammeCRPPage() {
             <div>
               <Image src="/sgcm-logo.png" alt="SGCM" width={100} height={32} className="h-8 w-auto mb-4" />
               <p className="text-white/40 text-xs leading-relaxed max-w-[200px]">
-                Société de Gestion et Consultation Minières.<br />Kinshasa — Kolwezi — Brussels.
+                Société de Gestion et Consultation Minières.<br />Kinshasa · Kolwezi · Brussels.
               </p>
             </div>
             <div>
@@ -233,7 +241,7 @@ export default function ProgrammeCRPPage() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-white/25 text-xs">© {new Date().getFullYear()} SGCM — Société de Gestion et Consultation Minières</p>
+            <p className="text-white/25 text-xs">© {new Date().getFullYear()} SGCM · Société de Gestion et Consultation Minières</p>
             <div className="flex gap-6">
               <Link href="/fr/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Confidentialité</Link>
               <Link href="/fr/legal" className="text-white/25 text-xs hover:text-white/50 transition">Juridique</Link>
