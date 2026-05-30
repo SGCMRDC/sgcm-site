@@ -27,11 +27,21 @@ export interface ProgramPageProps {
   subsectionIntro?: string;
   /** Subsections with labeled eyebrows — appended after columns when both are present. */
   subsections?: ProgramSubsection[];
+  /** Primary hero link (circled arrow button). Defaults to "Le standard CRP" → #standard. */
+  heroLink1?: { label: string; href: string };
+  /** Secondary hero link (plain text). Defaults to "→ Le cadre de conformité" → #conformite. */
+  heroLink2?: { label: string; href: string };
+  /** Top eyebrow above the lede. Defaults to "DÉCOUVRIR LE PROGRAMME". */
+  bodyEyebrow?: string;
   cards: [ProgramCard, ProgramCard, ProgramCard];
 }
 
 export function ProgramPage({
-  breadcrumbLabel, title, baseline, heroImage, lede, columns, subsectionIntro, subsections, cards,
+  breadcrumbLabel, title, baseline, heroImage, lede, columns, subsectionIntro, subsections,
+  heroLink1 = { label: 'Le standard CRP', href: '#standard' },
+  heroLink2 = { label: '→ Le cadre de conformité', href: '#conformite' },
+  bodyEyebrow = 'DÉCOUVRIR LE PROGRAMME',
+  cards,
 }: ProgramPageProps) {
   const [heroFailed, setHeroFailed] = useState(false);
 
@@ -102,10 +112,10 @@ export function ProgramPage({
           </p>
           <div className="flex flex-wrap items-center gap-6">
             <Link
-              href="#standard"
+              href={heroLink1.href}
               className="flex items-center gap-3 text-white text-sm font-medium tracking-wide group"
             >
-              Le standard CRP
+              {heroLink1.label}
               <span
                 className="flex items-center justify-center w-11 h-11 rounded-full transition-colors group-hover:bg-white group-hover:text-[#0A1628]"
                 style={{ border: '1.5px solid rgba(255,255,255,0.65)' }}
@@ -114,10 +124,10 @@ export function ProgramPage({
               </span>
             </Link>
             <Link
-              href="#conformite"
+              href={heroLink2.href}
               className="text-white/80 text-sm tracking-wide transition-colors hover:text-white"
             >
-              → Le cadre de conformité
+              {heroLink2.label}
             </Link>
           </div>
         </div>
@@ -127,7 +137,7 @@ export function ProgramPage({
       <section className="px-4 md:px-10 lg:px-[70px] pt-20 md:pt-28 pb-16 md:pb-24">
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <p className="text-[11px] font-medium tracking-[0.14em] text-[#6b7280] uppercase mb-8">
-            DÉCOUVRIR LE PROGRAMME
+            {bodyEyebrow}
           </p>
           <p
             className="text-[#0A1628] font-light leading-snug mb-14"

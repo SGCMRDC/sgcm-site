@@ -471,7 +471,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <a href="#framework" aria-label="En savoir plus sur le Cadre de Conformité"
+            <Link href="/cadre-de-conformite" aria-label="En savoir plus sur le Cadre de Conformité"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
               <Image src="/PANAFRICANISME.png" alt="Cadre panafricain de conformité" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -485,7 +485,7 @@ export default function Home() {
                 <p className="text-sm text-white/70 leading-snug mb-4">Aligné sur l'OCDE, la LBMA, l'ICGLR et le Règlement UE 2017/821.</p>
                 <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">EN SAVOIR PLUS →</span>
               </div>
-            </a>
+            </Link>
 
             <a href="#partners" aria-label="En savoir plus sur les Partenaires Institutionnels"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
