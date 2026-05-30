@@ -23,13 +23,15 @@ export interface ProgramPageProps {
   lede: string;
   /** Two body columns; each column is an array of paragraphs. */
   columns?: [string[], string[]];
-  /** Subsections with labeled eyebrows — replaces columns when provided. */
+  /** Intro paragraph above subsections (rendered between columns and subsection list). */
+  subsectionIntro?: string;
+  /** Subsections with labeled eyebrows — appended after columns when both are present. */
   subsections?: ProgramSubsection[];
   cards: [ProgramCard, ProgramCard, ProgramCard];
 }
 
 export function ProgramPage({
-  breadcrumbLabel, title, baseline, heroImage, lede, columns, subsections, cards,
+  breadcrumbLabel, title, baseline, heroImage, lede, columns, subsectionIntro, subsections, cards,
 }: ProgramPageProps) {
   const [heroFailed, setHeroFailed] = useState(false);
 
@@ -134,25 +136,7 @@ export function ProgramPage({
             {lede}
           </p>
 
-          {subsections && (
-            <div className="flex flex-col" style={{ gap: '28px' }}>
-              {subsections.map((s, i) => (
-                <div key={i}>
-                  <p
-                    className="font-medium uppercase text-[#6b7280] mb-3"
-                    style={{ fontSize: '12px', letterSpacing: '.12em' }}
-                  >
-                    {s.eyebrow}
-                  </p>
-                  <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.75 }}>
-                    {s.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {!subsections && columns && (
+          {columns && (
             <div
               className="grid grid-cols-1 md:grid-cols-2"
               style={{ maxWidth: '920px', gap: '54px' }}
@@ -166,6 +150,31 @@ export function ProgramPage({
                   ))}
                 </div>
               ))}
+            </div>
+          )}
+
+          {subsections && (
+            <div style={{ marginTop: '56px' }}>
+              {subsectionIntro && (
+                <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.75, marginBottom: '28px' }}>
+                  {subsectionIntro}
+                </p>
+              )}
+              <div className="flex flex-col" style={{ gap: '28px' }}>
+                {subsections.map((s, i) => (
+                  <div key={i}>
+                    <p
+                      className="font-medium uppercase text-[#6b7280] mb-3"
+                      style={{ fontSize: '12px', letterSpacing: '.12em' }}
+                    >
+                      {s.eyebrow}
+                    </p>
+                    <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.75 }}>
+                      {s.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
