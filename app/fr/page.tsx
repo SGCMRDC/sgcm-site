@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useHideOnScroll } from '../../components/useHideOnScroll';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -154,7 +155,12 @@ export default function Home() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [reducedMotion] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
   const pathname = usePathname();
+  const hidden = useHideOnScroll();
+  const headerHidden = hidden && !menuOpen;
 
   useEffect(() => {
     setProgress(0);
@@ -193,11 +199,15 @@ export default function Home() {
       <header
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-          transition: 'background 0.4s ease, box-shadow 0.4s ease',
           background: scrolled || menuOpen
             ? 'rgba(31,41,55,0.97)'
             : 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.0) 100%)',
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
+          transform: headerHidden ? 'translateY(-100%)' : 'translateY(0)',
+          transition: reducedMotion
+            ? 'background 0.4s ease, box-shadow 0.4s ease'
+            : 'background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease',
+          willChange: 'transform',
         }}
       >
         <div className={`absolute inset-0 transition-colors duration-200 pointer-events-none ${scrolled || menuOpen ? 'bg-[#1F2937] lg:bg-transparent' : 'bg-transparent'}`} aria-hidden="true" />
