@@ -562,7 +562,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <a href="#impact" aria-label="Learn more about Structural Impact"
+            <Link href="/impact-structurel" aria-label="Learn more about Structural Impact"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
               <Image src="/trace-sgcm.jpg" alt="SGCM documentary traceability" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -576,7 +576,7 @@ export default function Home() {
                 <p className="text-sm text-white/70 leading-snug mb-4">Documented, verifiable, lasting compliance.</p>
                 <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
               </div>
-            </a>
+            </Link>
 
           </div>
         </div>
