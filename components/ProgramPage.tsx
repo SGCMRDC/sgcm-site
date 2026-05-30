@@ -10,6 +10,11 @@ export interface ProgramCard {
   href?: string;
 }
 
+export interface ProgramSubsection {
+  eyebrow: string;
+  text: string;
+}
+
 export interface ProgramPageProps {
   breadcrumbLabel: string;
   title: string;
@@ -17,12 +22,14 @@ export interface ProgramPageProps {
   heroImage: string;
   lede: string;
   /** Two body columns; each column is an array of paragraphs. */
-  columns: [string[], string[]];
+  columns?: [string[], string[]];
+  /** Subsections with labeled eyebrows — replaces columns when provided. */
+  subsections?: ProgramSubsection[];
   cards: [ProgramCard, ProgramCard, ProgramCard];
 }
 
 export function ProgramPage({
-  breadcrumbLabel, title, baseline, heroImage, lede, columns, cards,
+  breadcrumbLabel, title, baseline, heroImage, lede, columns, subsections, cards,
 }: ProgramPageProps) {
   const [heroFailed, setHeroFailed] = useState(false);
 
@@ -116,30 +123,51 @@ export function ProgramPage({
 
       {/* ── LEDE + BODY ── */}
       <section className="px-4 md:px-10 lg:px-[70px] pt-20 md:pt-28 pb-16 md:pb-24">
-        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <p className="text-[11px] font-medium tracking-[0.14em] text-[#6b7280] uppercase mb-8">
             DÉCOUVRIR LE PROGRAMME
           </p>
           <p
             className="text-[#0A1628] font-light leading-snug mb-14"
-            style={{ fontSize: '25px', maxWidth: '720px' }}
+            style={{ fontSize: '25px' }}
           >
             {lede}
           </p>
-          <div
-            className="grid grid-cols-1 md:grid-cols-2"
-            style={{ maxWidth: '920px', gap: '54px' }}
-          >
-            {columns.map((col, colIdx) => (
-              <div key={colIdx} className="flex flex-col gap-5">
-                {col.map((para, pIdx) => (
-                  <p key={pIdx} className="text-[15px] text-[#6b7280]" style={{ lineHeight: 1.78 }}>
-                    {para}
+
+          {subsections && (
+            <div className="flex flex-col" style={{ gap: '28px' }}>
+              {subsections.map((s, i) => (
+                <div key={i}>
+                  <p
+                    className="font-medium uppercase text-[#6b7280] mb-3"
+                    style={{ fontSize: '12px', letterSpacing: '.12em' }}
+                  >
+                    {s.eyebrow}
                   </p>
-                ))}
-              </div>
-            ))}
-          </div>
+                  <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.75 }}>
+                    {s.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {!subsections && columns && (
+            <div
+              className="grid grid-cols-1 md:grid-cols-2"
+              style={{ maxWidth: '920px', gap: '54px' }}
+            >
+              {columns.map((col, colIdx) => (
+                <div key={colIdx} className="flex flex-col gap-5">
+                  {col.map((para, pIdx) => (
+                    <p key={pIdx} className="text-[15px] text-[#6b7280]" style={{ lineHeight: 1.78 }}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
