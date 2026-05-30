@@ -166,7 +166,7 @@ export default function ProgrammeCRPPage() {
         breadcrumbLabel="Programme CRP"
         title="Programme CRP"
         baseline="Structurer la conformité. Documenter la preuve. Valider l'éligibilité."
-        heroImage="/images/programme-crp-hero.jpg"
+        heroImage="/CRP-PROGRAMME.png"
         lede="Le programme CRP transforme les coopératives minières artisanales en participants pleinement structurés, documentés et éligibles aux chaînes d'approvisionnement responsables."
         columns={[
           [

@@ -38,7 +38,7 @@ export function ProgramPage({
         {!heroFailed && (
           <Image
             src={heroImage}
-            alt={title}
+            alt="Site minier — Programme CRP"
             fill
             priority
             className="object-cover"
