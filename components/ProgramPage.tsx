@@ -51,8 +51,13 @@ export function ProgramPage({
           mt-[138px] = 102px nav height + 36px deliberate gap below nav.
           mx gives the inset; rounded-[18px] per mockup. */}
       <div
-        className="relative mx-4 md:mx-10 lg:mx-[70px] rounded-[18px] overflow-hidden bg-[#0A1628]"
-        style={{ marginTop: '138px', height: 'clamp(460px, 55vw, 740px)' }}
+        className="relative rounded-[18px] overflow-hidden bg-[#0A1628]"
+        style={{
+          marginTop: '138px',
+          marginLeft: 'clamp(16px, 5vw, 70px)',
+          marginRight: 'clamp(16px, 5vw, 70px)',
+          height: 'clamp(460px, 64vh, 740px)',
+        }}
       >
         {!heroFailed && (
           <Image
@@ -78,39 +83,67 @@ export function ProgramPage({
         {/* Breadcrumb */}
         <div
           className="absolute flex items-center gap-2"
-          style={{ top: '46px', left: '52px' }}
+          style={{
+            top: 'clamp(22px, 4vh, 46px)',
+            left: 'clamp(20px, 4vw, 52px)',
+          }}
         >
           <Image
             src="/symbol_SGCM-5.png"
             alt="SGCM"
             width={48}
             height={48}
-            className="h-12 w-auto"
+            style={{ height: 'clamp(34px, 4.5vw, 48px)', width: 'auto' }}
           />
           <span className="text-white/55 text-base">›</span>
-          <span className="text-white tracking-wide" style={{ fontSize: '15px' }}>
+          <span
+            className="text-white tracking-wide"
+            style={{ fontSize: 'clamp(13px, 1.6vw, 15px)' }}
+          >
             {breadcrumbLabel}
           </span>
         </div>
 
         {/* Bottom content */}
         <div
-          className="absolute max-w-3xl"
-          style={{ bottom: '118px', left: '52px', right: '52px' }}
+          className="absolute"
+          style={{
+            bottom: 'clamp(48px, 9vh, 118px)',
+            left: 'clamp(20px, 4vw, 52px)',
+            right: 'clamp(20px, 4vw, 52px)',
+            maxWidth: 'min(680px, 86%)',
+          }}
         >
           <h1
-            className="text-5xl md:text-[66px] text-white tracking-tight mb-5 leading-tight"
-            style={{ fontWeight: 300 }}
+            className="text-white mb-5"
+            style={{
+              fontWeight: 300,
+              fontSize: 'clamp(34px, 6vw, 66px)',
+              lineHeight: 1.04,
+              letterSpacing: '-0.01em',
+            }}
           >
             {title}
           </h1>
           <p
-            className="text-white/90 text-xl md:text-[26px] mb-10 leading-snug"
-            style={{ fontWeight: 300 }}
+            className="text-white/90"
+            style={{
+              fontWeight: 300,
+              fontSize: 'clamp(17px, 2.4vw, 26px)',
+              lineHeight: 1.3,
+              maxWidth: 'min(520px, 92%)',
+            }}
           >
             {baseline}
           </p>
-          <div className="flex flex-wrap items-center gap-6">
+          <div
+            className="flex items-center"
+            style={{
+              flexWrap: 'wrap',
+              gap: 'clamp(20px, 4vw, 46px)',
+              marginTop: 'clamp(28px, 5vh, 46px)',
+            }}
+          >
             <Link
               href={heroLink1.href}
               className="flex items-center gap-3 text-white text-sm font-medium tracking-wide group"
