@@ -154,7 +154,7 @@ export function ProgramPage({
           )}
 
           {subsections && (
-            <div style={{ marginTop: '56px' }}>
+            <div style={{ marginTop: columns ? '56px' : '0' }}>
               {subsectionIntro && (
                 <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.75, marginBottom: '28px' }}>
                   {subsectionIntro}

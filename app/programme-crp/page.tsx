@@ -167,18 +167,7 @@ export default function ProgrammeCRPPage() {
         title="Programme CRP"
         baseline="Structurer la conformité. Documenter la preuve. Valider l'éligibilité."
         heroImage="/CRP-PROGRAMME.png"
-        lede="Le programme CRP transforme les coopératives minières artisanales en participants pleinement structurés, documentés et éligibles aux chaînes d'approvisionnement responsables."
-        columns={[
-          [
-            "En République Démocratique du Congo, le Code minier de 2018 impose à l'exploitation artisanale de s'organiser en coopératives opérant à l'intérieur de zones d'exploitation artisanale officiellement délimitées, sous l'encadrement des services de l'État. Cette exigence crée un besoin structurel. Doter ces coopératives d'une capacité de gestion, de documentation et de preuve qui réponde aux attentes des marchés exigeants. C'est précisément l'espace qu'occupe SGCM, non comme acteur commercial de la filière, mais comme intégrateur de conformité.",
-            "Le programme CRP articule les obligations nationales avec les référentiels internationaux de diligence raisonnable. Le Guide OCDE sur le devoir de diligence pour des chaînes d'approvisionnement responsables en minerais en constitue la colonne vertébrale, avec son processus en cinq étapes. S'y ajoutent le Responsible Gold Guidance du LBMA dans sa neuvième version, le mécanisme régional de certification de la CIRGL, et pour l'aval européen le Règlement (UE) 2017/821 encadrant les obligations des importateurs de l'Union.",
-          ],
-          [
-            "Chaque coopérative engagée fait l'objet d'une structuration administrative, d'une collecte documentaire normalisée et d'une évaluation des risques selon des critères pondérés. L'intelligence artificielle intervient en appui de cette documentation. Elle accélère le traitement et le classement des pièces, met en évidence les écarts, et ramène à quelques jours un travail qui mobilisait jusqu'ici plusieurs semaines.",
-            "La rigueur prime sur la rapidité. Aucune évaluation n'est arrêtée sans la validation d'un agent SGCM identifié et traçable, conformément au principe qui gouverne l'ensemble du dispositif. La certification, au sens réglementaire, demeure la prérogative des autorités congolaises compétentes. SGCM en prépare la matière. Une conformité documentée, vérifiable et défendable devant les acheteurs les plus exigeants.",
-          ],
-        ]}
-        subsectionIntro="Le programme CRP, pour Certified Responsible Partner, établit le standard selon lequel une coopérative minière artisanale est structurée, documentée et validée pour intégrer les chaînes d'approvisionnement responsables. Il constitue le socle de conformité qui relie la production de terrain aux exigences des marchés internationaux."
+        lede="Le programme CRP, pour Certified Responsible Partner, établit le standard selon lequel une coopérative minière artisanale est structurée, documentée et validée pour intégrer les chaînes d'approvisionnement responsables. Il constitue le socle de conformité qui relie la production de terrain aux exigences des marchés internationaux."
         subsections={[
           {
             eyebrow: 'POURQUOI LE CRP',
