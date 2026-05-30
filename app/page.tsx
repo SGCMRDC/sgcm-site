@@ -514,7 +514,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
-            <a href="#program" aria-label="Learn more about the CRP Program"
+            <Link href="/programme-crp" aria-label="Learn more about the CRP Program"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
               <Image src="/DRC-MINER-ASM.png" alt="Artisanal mining operator in DRC" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -528,7 +528,7 @@ export default function Home() {
                 <p className="text-sm text-white/70 leading-snug mb-4">The SGCM standard for audit and classification of mining operators.</p>
                 <span className="text-[11px] font-medium tracking-[0.1em] text-white uppercase">Learn more →</span>
               </div>
-            </a>
+            </Link>
 
             <a href="#framework" aria-label="Learn more about the Compliance Framework"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
