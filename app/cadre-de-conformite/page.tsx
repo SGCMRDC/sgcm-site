@@ -1,70 +1,65 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LightHeader } from '../../components/LightHeader';
+import { SiteHeader } from '../../components/SiteHeader';
 import { ProgramPage } from '../../components/ProgramPage';
 
 export default function CadreDeConformitePage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans">
-      <LightHeader />
+      <SiteHeader variant="light" activeLang="en" enHref="/cadre-de-conformite" frHref="/fr/cadre-de-conformite" />
 
-      {/* ══════════════════════════════════════════════
-          PAGE CONTENT
-          ══════════════════════════════════════════════ */}
       <ProgramPage
-        breadcrumbLabel="Cadre de Conformité"
-        title="Cadre de Conformité"
-        baseline="Aligner la production congolaise sur les standards mondiaux de diligence raisonnable."
-        heroImage="/CADRE-CONFORMITE.png"
-        heroLink1={{ label: 'Les standards de référence', href: '#standard' }}
-        heroLink2={{ label: '→ Le programme CRP', href: '/programme-crp' }}
-        bodyEyebrow="DÉCOUVRIR LE CADRE"
-        lede="Le Cadre de Conformité constitue le référentiel sur lequel repose le programme CRP. Il traduit les standards internationaux de diligence raisonnable en exigences opérables pour les opérateurs miniers de la République Démocratique du Congo, et établit la méthode par laquelle la conformité est structurée, documentée et validée tout au long de la chaîne."
+        breadcrumbLabel="Compliance Framework"
+        title="Compliance Framework"
+        baseline="Aligning Congolese production with the world's due diligence standards."
+        heroImage="/images/CADRE-CONFORMITE.png"
+        heroLink1={{ label: 'The reference standards', href: '#standard' }}
+        heroLink2={{ label: '→ The CRP program', href: '/programme-crp' }}
+        bodyEyebrow="DISCOVER THE FRAMEWORK"
+        cardCta="LEARN MORE →"
+        lede="The Compliance Framework is the reference on which the CRP program rests. It translates international due diligence standards into operable requirements for mining operators in the Democratic Republic of the Congo, and sets the method by which compliance is structured, documented and validated across the chain."
         subsections={[
           {
-            eyebrow: 'UN SOCLE DE STANDARDS RECONNUS',
-            text: "Le cadre s'appuie sur les principaux référentiels qui gouvernent aujourd'hui l'approvisionnement responsable en minerais. Le Guide OCDE sur le devoir de diligence en constitue la référence centrale. Il est complété par le Responsible Gold Guidance du LBMA dans sa neuvième version, par le mécanisme régional de certification de la Conférence Internationale sur la Région des Grands Lacs, et par le Règlement (UE) 2017/821 applicable depuis 2021 aux importateurs de l'Union. À l'échelle nationale, il s'articule avec le Code minier de 2018 et l'encadrement des services compétents de l'État congolais.",
+            eyebrow: 'A FOUNDATION OF RECOGNISED STANDARDS',
+            text: 'The framework draws on the leading references that govern responsible mineral sourcing today. The OECD Due Diligence Guidance is its central reference. It is complemented by the LBMA Responsible Gold Guidance in its ninth version, the regional certification mechanism of the International Conference on the Great Lakes Region, and Regulation (EU) 2017/821, applicable since 2021 to Union importers. Nationally, it articulates with the 2018 Mining Code and the oversight of the competent Congolese state services.',
           },
           {
-            eyebrow: 'LA DILIGENCE RAISONNABLE EN CINQ ÉTAPES',
-            text: "La méthode de l'OCDE structure l'ensemble du dispositif. Elle repose sur cinq étapes : l'établissement d'un système de gestion solide, l'identification et l'évaluation des risques dans la chaîne d'approvisionnement, la conception et la mise en œuvre d'une stratégie de réponse, la conduite d'un audit indépendant par un tiers aux points identifiés, et la publication d'un rapport régulier sur la diligence exercée. Cette approche fondée sur le risque vaut pour tous les acteurs, de la production à l'utilisateur final.",
+            eyebrow: 'RISK-BASED DUE DILIGENCE IN FIVE STEPS',
+            text: 'The OECD method structures the entire system. It rests on five steps: establishing a strong management system, identifying and assessing risks in the supply chain, designing and implementing a strategy to respond to those risks, carrying out an independent third-party audit at identified points, and reporting regularly on the due diligence performed. This risk-based approach applies to all actors, from production to end user.',
           },
           {
-            eyebrow: 'DE LA NORME À LA PREUVE',
-            text: "Le Cadre de Conformité transforme ces exigences en preuve. La provenance, les conditions de production, le transport et les parties prenantes sont documentés selon un format normalisé qui établit la chaîne de traçabilité. Les risques propres aux zones de conflit ou à haut risque sont cartographiés et traités. L'intelligence artificielle accélère le traitement et le classement de cette documentation, tandis que la validation demeure humaine et traçable, conformément au principe qui gouverne l'ensemble du dispositif.",
+            eyebrow: 'FROM STANDARD TO PROOF',
+            text: 'The Compliance Framework turns these requirements into proof. Provenance, production conditions, transport and stakeholders are documented in a standardised format that establishes the chain of custody. Risks specific to conflict-affected or high-risk areas are mapped and addressed. Artificial intelligence accelerates the processing and classification of this documentation, while validation remains human and traceable, in line with the principle that governs the entire system.',
           },
           {
-            eyebrow: 'UNE CONFORMITÉ OPPOSABLE',
-            text: "Pour les acteurs de l'aval, raffineries accréditées, importateurs européens soumis à leurs seuils réglementaires, groupes industriels et institutions financières, le cadre produit une conformité documentée, vérifiable et défendable. Il offre une assurance d'origine alignée sur les attentes des marchés les plus exigeants et sur les schémas de diligence reconnus à l'échelle internationale.",
+            eyebrow: 'AN ENFORCEABLE COMPLIANCE',
+            text: 'For downstream actors, accredited refiners, European importers subject to their regulatory thresholds, industrial groups and financial institutions, the framework produces compliance that is documented, verifiable and defensible. It offers an assurance of origin aligned with the expectations of the most demanding markets and with internationally recognised due diligence schemes.',
           },
           {
-            eyebrow: 'ALIGNEMENT ET RESPONSABILITÉ',
-            text: "Le Cadre de Conformité aligne, structure et documente. Il prépare la matière sur laquelle les autorités compétentes fondent leurs décisions. La certification, au sens réglementaire, demeure leur prérogative. SGCM en garantit la rigueur, la traçabilité et la lisibilité, sans jamais se substituer à l'autorité de l'État ni intervenir dans la transaction commerciale.",
+            eyebrow: 'ALIGNMENT AND RESPONSIBILITY',
+            text: 'The Compliance Framework aligns, structures and documents. It prepares the substance on which the competent authorities base their decisions. Certification, in the regulatory sense, remains their prerogative. SGCM guarantees its rigour, traceability and legibility, without ever substituting for the authority of the state or intervening in the commercial transaction.',
           },
         ]}
         cards={[
           {
-            title: 'Les standards de référence',
-            body: "OCDE, LBMA RGG V9, CIRGL et Règlement UE 2017/821 réunis en un référentiel unique, articulé avec le Code minier 2018.",
+            title: 'The reference standards',
+            body: 'OECD, LBMA RGG V9, ICGLR and Regulation (EU) 2017/821 brought together in a single reference, articulated with the 2018 Mining Code.',
             href: '#',
           },
           {
-            title: 'La diligence en cinq étapes',
-            body: "Du système de gestion au rapport public, le processus fondé sur le risque qui gouverne chaque dossier.",
+            title: 'Due diligence in five steps',
+            body: 'From the management system to public reporting, the risk-based process that governs every case.',
             href: '#',
           },
           {
-            title: 'Une preuve opposable',
-            body: "Une chaîne de traçabilité documentée et vérifiable, défendable devant les acheteurs comme devant les régulateurs.",
+            title: 'An enforceable proof',
+            body: 'A documented and verifiable chain of custody, defensible before buyers and regulators alike.',
             href: '#',
           },
         ]}
       />
 
-      {/* ══════════════════════════════════════════════
-          FOOTER
-          ══════════════════════════════════════════════ */}
       <footer className="bg-[#0A1628] text-white px-6 md:px-12 pt-16 pb-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
@@ -75,26 +70,20 @@ export default function CadreDeConformitePage() {
               </p>
             </div>
             <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">Programmes</p>
+              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">Programs</p>
               <ul className="space-y-2">
-                {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map(item => (
-                  <li key={item}>
-                    <Link href="#" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link>
-                  </li>
+                {['CRP Program', 'Compliance Framework', 'Traceability Integration', 'Partner Verification', 'Institutional Advisory'].map(item => (
+                  <li key={item}><Link href="#" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">À Propos</p>
+              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">About</p>
               <ul className="space-y-2">
-                {['Mission', 'Vision', 'Présence'].map(item => (
-                  <li key={item}>
-                    <Link href="/fr/#aboutus" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link>
-                  </li>
+                {['Mission', 'Vision', 'Presence'].map(item => (
+                  <li key={item}><Link href="/#aboutus" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
                 ))}
-                <li>
-                  <Link href="/fr/careers" className="text-white/50 text-sm hover:text-white transition-colors">Carrières</Link>
-                </li>
+                <li><Link href="/careers" className="text-white/50 text-sm hover:text-white transition-colors">Careers</Link></li>
               </ul>
             </div>
             <div>
@@ -108,13 +97,12 @@ export default function CadreDeConformitePage() {
           <div className="border-t border-white/10 pt-8 flex flex-wrap items-center justify-between gap-4">
             <p className="text-white/25 text-xs">© {new Date().getFullYear()} SGCM · Société de Gestion et Consultation Minières</p>
             <div className="flex gap-6">
-              <Link href="/fr/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Confidentialité</Link>
-              <Link href="/fr/legal" className="text-white/25 text-xs hover:text-white/50 transition">Juridique</Link>
+              <Link href="/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Privacy</Link>
+              <Link href="/legal" className="text-white/25 text-xs hover:text-white/50 transition">Legal</Link>
             </div>
           </div>
         </div>
       </footer>
-
     </main>
   );
 }

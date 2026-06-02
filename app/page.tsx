@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useHideOnScroll } from '../components/useHideOnScroll';
+import { CardCarousel } from '../components/CardCarousel';
+import { SiteHeader } from '../components/SiteHeader';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -35,7 +35,7 @@ const slides: Slide[] = [
     body: 'A proprietary standard for evaluating and validating DRC production units.',
     subtitle: 'Explore the Program',
     ctaHref: '#platform',
-    image: '/sgcm-africa-tracability.jpg',
+    image: '/images/CRP-WEB.png',
     alt: 'SGCM Certified Responsible Partner framework',
   },
   {
@@ -44,7 +44,7 @@ const slides: Slide[] = [
     body: 'OECD · LBMA · ICGLR · EU 2017/821 · DRC Mining Code 2018',
     subtitle: 'Regulatory Framework',
     ctaHref: '#services',
-    image: '/dar-es-salaam.jpg',
+    image: '/images/diligence-crp.png',
     alt: 'International due diligence frameworks alignment',
   },
   {
@@ -53,18 +53,9 @@ const slides: Slide[] = [
     body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
     ctaHref: '#network',
-    image: '/ASM-SGCM-V2.png',
+    image: '/images/IMPACT-STRUCTUREL.png',
     alt: 'Congolese artisanal miners — ASM operation structured by SGCM',
   },
-];
-
-const navItems = [
-  { label: 'ABOUT US', href: '#aboutus'  },
-  { label: 'PLATFORM', href: '#platform' },
-  { label: 'SERVICES', href: '#services' },
-  { label: 'NETWORK',  href: '#network'  },
-  { label: 'INSIGHTS', href: '#insights' },
-  { label: 'CONTACT',  href: '/contact'  },
 ];
 
 const aboutCards = [
@@ -98,69 +89,12 @@ const networkItems = [
 
 
 // ─────────────────────────────────────────────
-// NAV ITEM
-// ─────────────────────────────────────────────
-
-function NavItem({ label, href, onClick, pathname }: { label: string; href: string; onClick?: () => void; pathname: string }) {
-  const [hovered, setHovered] = useState(false);
-  const isActive = pathname === href;
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        position: 'relative',
-        display: 'inline-flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '4px 14px',
-        fontSize: '11px',
-        fontWeight: 500,
-        letterSpacing: '0.13em',
-        textTransform: 'uppercase',
-        color: isActive ? '#FF7F2A' : hovered ? 'rgba(255,127,42,0.4)' : 'rgba(255,255,255,0.72)',
-        textDecoration: 'none',
-        transition: 'color 0.2s',
-        whiteSpace: 'nowrap',
-      }}
-    >
-      {label}
-      <span
-        style={{
-          position: 'absolute',
-          bottom: '-2px',
-          left: '14px',
-          right: '14px',
-          height: '1.5px',
-          background: '#FF7F2A',
-          transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
-          transformOrigin: 'left',
-          transition: 'transform 0.25s ease',
-          borderRadius: '1px',
-        }}
-      />
-    </a>
-  );
-}
-
-// ─────────────────────────────────────────────
 // MAIN PAGE
 // ─────────────────────────────────────────────
 
 export default function Home() {
   const [current, setCurrent]   = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
-  const [scrolled, setScrolled] = useState<boolean>(false);
-  const [searchOpen, setSearchOpen] = useState<boolean>(false);
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [reducedMotion] = useState(() =>
-    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  );
-  const pathname = usePathname();
-  const hidden = useHideOnScroll();
-  const headerHidden = hidden && !menuOpen;
 
   useEffect(() => {
     setProgress(0);
@@ -178,222 +112,11 @@ export default function Home() {
     return () => { clearInterval(progressTimer); clearTimeout(slideTimer); };
   }, [current]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
-
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans">
 
-      {/* ══════════════════════════════════════════════
-          HEADER
-          ══════════════════════════════════════════════ */}
-      <header
-        style={{
-          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-          background: scrolled || menuOpen
-            ? 'rgba(31,41,55,0.97)'
-            : 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.0) 100%)',
-          boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
-          transform: headerHidden ? 'translateY(-100%)' : 'translateY(0)',
-          transition: reducedMotion
-            ? 'background 0.4s ease, box-shadow 0.4s ease'
-            : 'background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease',
-          willChange: 'transform',
-        }}
-      >
-        <div className={`absolute inset-0 transition-colors duration-200 pointer-events-none ${scrolled || menuOpen ? 'bg-[#1F2937] lg:bg-transparent' : 'bg-transparent'}`} aria-hidden="true" />
-        {/* ── TOP BAR ── */}
-        <div
-          className="px-4 md:px-8 lg:px-12"
-          style={{
-            borderBottom: '1px solid rgba(255,255,255,0.09)',
-            height: '38px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <a href="/fr" style={{
-              fontSize: '12px', letterSpacing: '0.07em',
-              color: 'rgba(255,255,255,0.42)', textDecoration: 'none',
-              padding: '0 4px', transition: 'color 0.2s',
-            }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'white')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.42)')}>
-              FR
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '11px' }}>|</span>
-            <a href="/" style={{
-              fontSize: '12px', letterSpacing: '0.07em',
-              color: 'white', textDecoration: 'none',
-              padding: '0 4px', fontWeight: 600,
-            }}>
-              EN
-            </a>
-          </div>
-          {/* Locations — hidden on mobile */}
-          <div
-            className="hidden md:flex"
-            style={{ alignItems: 'center', gap: '6px', fontSize: '12px', color: 'rgba(255,255,255,0.42)', letterSpacing: '0.07em' }}
-          >
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
-              stroke="rgba(255,255,255,0.35)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>Kinshasa</span>
-            <span style={{ color: 'rgba(255,255,255,0.20)' }}>·</span>
-            <span>Kolwezi</span>
-            <span style={{ color: 'rgba(255,255,255,0.20)' }}>·</span>
-            <span>Brussels</span>
-          </div>
-        </div>
+      <SiteHeader variant="dark" solid={false} activeLang="en" enHref="/" frHref="/fr" activeLabel="" />
 
-        {/* ── MAIN NAVBAR ── */}
-        <div
-          className="px-4 md:px-8 lg:px-12"
-          style={{ height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-        >
-          {/* Desktop: search + nav */}
-          <div className="hidden lg:flex items-center" style={{ gap: '36px' }}>
-            <button
-              onClick={() => setSearchOpen(o => !o)}
-              aria-label="Search"
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                color: 'rgba(255,255,255,0.5)', display: 'flex', alignItems: 'center',
-                padding: 0, transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'white')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-            </button>
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
-              {navItems.map((item) => (
-                <NavItem key={item.label} label={item.label} href={item.href} pathname={pathname} />
-              ))}
-            </nav>
-          </div>
-
-          {/* Mobile: hamburger */}
-          <button
-            className="lg:hidden"
-            onClick={() => setMenuOpen(o => !o)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: 'white', padding: '4px',
-            }}
-          >
-            {menuOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-              </svg>
-            ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
-              </svg>
-            )}
-          </button>
-
-          {/* Logo */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-            <img
-              src="/sgcm-logo.png"
-              alt="SGCM"
-              className="object-contain"
-              style={{ width: '140px', height: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
-          </a>
-        </div>
-
-        {/* ── SEARCH DROPDOWN ── */}
-        <div style={{
-          overflow: 'hidden',
-          maxHeight: searchOpen ? '72px' : '0',
-          transition: 'max-height 0.3s ease',
-          borderTop: searchOpen ? '1px solid rgba(255,255,255,0.08)' : 'none',
-          background: 'rgba(0,0,0,0.94)',
-        }}>
-          <div className="px-4 md:px-12" style={{ padding: '14px 0', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-              stroke="rgba(255,255,255,0.30)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input
-              autoFocus={searchOpen}
-              type="text"
-              placeholder="Search SGCM…"
-              style={{
-                background: 'none', border: 'none', outline: 'none',
-                color: 'white', fontSize: '14px',
-                letterSpacing: '0.04em', width: '100%',
-                fontFamily: 'inherit',
-              }}
-            />
-            <button onClick={() => setSearchOpen(false)} style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: 'rgba(255,255,255,0.4)', fontSize: '20px',
-              lineHeight: 1, padding: '0 4px',
-            }}>×</button>
-          </div>
-        </div>
-      </header>
-
-      {/* ── MOBILE MENU OVERLAY ── */}
-      {menuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-50 flex flex-col"
-          style={{ background: 'rgba(8,8,8,0.98)', paddingTop: '102px' }}
-        >
-          <nav className="flex flex-col items-center gap-8 pt-12">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  color: 'rgba(255,255,255,0.8)',
-                  textDecoration: 'none',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center justify-center gap-6 mt-auto mb-12">
-            <a href="/fr" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em' }}>FR</a>
-            <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.1em', fontWeight: 600 }}>EN</a>
-          </div>
-        </div>
-      )}
 
 
       {/* ══════════════════════════════════════════════
@@ -522,11 +245,11 @@ export default function Home() {
               framework that gives mining operators access to demanding markets.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <CardCarousel>
 
             <Link href="/programme-crp" aria-label="Learn more about the CRP Program"
-              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
-              <Image src="/DRC-MINER-ASM.png" alt="Artisanal mining operator in DRC" fill
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
+              <Image src="/images/DRC-MINER-ASM.png" alt="Artisanal mining operator in DRC" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -541,8 +264,8 @@ export default function Home() {
             </Link>
 
             <Link href="/cadre-de-conformite" aria-label="Learn more about the Compliance Framework"
-              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
-              <Image src="/PANAFRICANISME.png" alt="Pan-African compliance framework" fill
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
+              <Image src="/images/CADRE-CONFORMITE.png" alt="Cadre de Conformité" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -557,7 +280,7 @@ export default function Home() {
             </Link>
 
             <Link href="/partenaires-institutionnels" aria-label="Learn more about Institutional Partners"
-              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
               <Image src="/kin-rdc-sgcm.jpg" alt="Kinshasa, institutional capital" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -573,8 +296,8 @@ export default function Home() {
             </Link>
 
             <Link href="/impact-structurel" aria-label="Learn more about Structural Impact"
-              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px]">
-              <Image src="/trace-sgcm.jpg" alt="SGCM documentary traceability" fill
+              className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
+              <Image src="/images/IMPACT-STRUCTUREL.png" alt="Impact Structurel" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -588,7 +311,7 @@ export default function Home() {
               </div>
             </Link>
 
-          </div>
+          </CardCarousel>
         </div>
       </section>
 

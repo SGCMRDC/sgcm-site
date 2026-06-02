@@ -1,70 +1,65 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { LightHeader } from '../../components/LightHeader';
+import { SiteHeader } from '../../components/SiteHeader';
 import { ProgramPage } from '../../components/ProgramPage';
 
 export default function PartenairesInstitutionnelsPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans">
-      <LightHeader />
+      <SiteHeader variant="light" activeLang="en" enHref="/partenaires-institutionnels" frHref="/fr/partenaires-institutionnels" />
 
-      {/* ══════════════════════════════════════════════
-          PAGE CONTENT
-          ══════════════════════════════════════════════ */}
       <ProgramPage
-        breadcrumbLabel="Partenaires Institutionnels"
-        title="Partenaires Institutionnels"
-        baseline="Relier les institutions, les opérateurs et les marchés autour d'une même preuve de conformité."
+        breadcrumbLabel="Institutional Partners"
+        title="Institutional Partners"
+        baseline="Connecting institutions, operators and markets around a single proof of compliance."
         heroImage="/kin-rdc-sgcm.jpg"
-        heroLink1={{ label: 'Notre écosystème', href: '#standard' }}
-        heroLink2={{ label: '→ Le cadre de conformité', href: '/cadre-de-conformite' }}
-        bodyEyebrow="DÉCOUVRIR L'ÉCOSYSTÈME"
-        lede="SGCM offre une interface unique et coordonnée entre les régulateurs congolais, les opérateurs miniers et les acheteurs internationaux. En réunissant ces acteurs autour d'une conformité documentée et partagée, SGCM facilite le dialogue et la confiance, chacun conservant pleinement son rôle et son autorité."
+        heroLink1={{ label: 'Our ecosystem', href: '#standard' }}
+        heroLink2={{ label: '→ The compliance framework', href: '/cadre-de-conformite' }}
+        bodyEyebrow="DISCOVER THE ECOSYSTEM"
+        cardCta="LEARN MORE →"
+        lede="SGCM provides a single, coordinated interface between Congolese regulators, mining operators and international buyers. By bringing these actors together around documented, shared compliance, SGCM enables dialogue and trust, each retaining its full role and authority."
         subsections={[
           {
-            eyebrow: 'LES INSTITUTIONS CONGOLAISES',
-            text: "Le dispositif s'articule avec les services compétents de l'État. Le Centre d'Expertise, d'Évaluation et de Certification, le Service d'Assistance et d'Encadrement de l'Exploitation Minière Artisanale et à Petite Échelle, et le Ministère des Mines exercent les missions d'encadrement, d'évaluation et de certification que leur confère le Code minier de 2018. SGCM leur apporte un appui structuré au suivi et à la formalisation du secteur, sans jamais se substituer à leur autorité.",
+            eyebrow: 'THE CONGOLESE INSTITUTIONS',
+            text: 'The system articulates with the competent state services. The Centre for Expertise, Evaluation and Certification, the Service for Assistance and Oversight of Artisanal and Small-Scale Mining, and the Ministry of Mines carry out the oversight, evaluation and certification missions conferred on them by the 2018 Mining Code. SGCM provides them with structured support for monitoring and formalising the sector, without ever substituting for their authority.',
           },
           {
-            eyebrow: 'LES RÉFÉRENTIELS INTERNATIONAUX',
-            text: "La crédibilité du cadre repose sur son alignement avec les standards qui font autorité dans l'approvisionnement responsable. Le Guide OCDE sur le devoir de diligence, le Responsible Gold Guidance du LBMA et le mécanisme régional de certification de la Conférence Internationale sur la Région des Grands Lacs constituent les références sur lesquelles la conformité est construite et rendue lisible.",
+            eyebrow: 'THE INTERNATIONAL REFERENCES',
+            text: "The framework's credibility rests on its alignment with the standards that hold authority in responsible sourcing. The OECD Due Diligence Guidance, the LBMA Responsible Gold Guidance and the regional certification mechanism of the International Conference on the Great Lakes Region are the references on which compliance is built and made legible.",
           },
           {
-            eyebrow: "LES ACTEURS DE L'AVAL",
-            text: "Raffineries accréditées, importateurs européens soumis au Règlement (UE) 2017/821, groupes industriels et institutions financières attendent une assurance d'origine vérifiable. SGCM leur fournit une conformité documentée et opposable, sans jamais intervenir dans la transaction commerciale ni dans la fixation des prix.",
+            eyebrow: 'THE DOWNSTREAM ACTORS',
+            text: 'Accredited refiners, European importers subject to Regulation (EU) 2017/821, industrial groups and financial institutions expect a verifiable assurance of origin. SGCM provides them with documented, enforceable compliance, without ever intervening in the commercial transaction or in price setting.',
           },
           {
-            eyebrow: 'LA TRAÇABILITÉ INTERNATIONALE',
-            text: "La conformité établie peut être publiée vers les standards internationaux de traçabilité, sous la forme d'un passeport numérique de produit. SGCM en demeure le système de référence interne, garantissant la continuité de la preuve depuis la production jusqu'à sa lecture par les marchés.",
+            eyebrow: 'INTERNATIONAL TRACEABILITY',
+            text: 'Established compliance can be published to international traceability standards, in the form of a digital product passport. SGCM remains the internal system of record, ensuring the continuity of proof from production to its reading by the markets.',
           },
           {
-            eyebrow: 'UN RÔLE DE COORDINATION',
-            text: "SGCM relie, structure et documente. Le programme ne se substitue à aucun de ses partenaires. Il fournit l'infrastructure commune qui permet aux institutions d'exercer leur mandat, aux opérateurs de prouver leur conformité, et aux marchés d'accorder leur confiance, autour d'une même source de vérité.",
+            eyebrow: 'A COORDINATING ROLE',
+            text: 'SGCM connects, structures and documents. The program substitutes for none of its partners. It provides the common infrastructure that allows institutions to exercise their mandate, operators to prove their compliance, and markets to extend their trust, around a single source of truth.',
           },
         ]}
         cards={[
           {
-            title: 'Les institutions congolaises',
-            body: "CEEC, SAEMAPE et Ministère des Mines, dans l'exercice de leurs missions d'encadrement et de certification.",
+            title: 'The Congolese institutions',
+            body: 'CEEC, SAEMAPE and the Ministry of Mines, in the exercise of their oversight and certification missions.',
             href: '#',
           },
           {
-            title: 'Les standards internationaux',
-            body: "OCDE, LBMA et CIRGL, références sur lesquelles repose la lisibilité de la conformité.",
+            title: 'The international standards',
+            body: 'OECD, LBMA and ICGLR, the references on which the legibility of compliance rests.',
             href: '#',
           },
           {
-            title: "Les marchés de l'aval",
-            body: "Raffineries, importateurs, industriels et financiers, destinataires d'une assurance d'origine vérifiable.",
+            title: 'The downstream markets',
+            body: 'Refiners, importers, industrial groups and financiers, recipients of a verifiable assurance of origin.',
             href: '#',
           },
         ]}
       />
 
-      {/* ══════════════════════════════════════════════
-          FOOTER
-          ══════════════════════════════════════════════ */}
       <footer className="bg-[#0A1628] text-white px-6 md:px-12 pt-16 pb-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
@@ -75,26 +70,20 @@ export default function PartenairesInstitutionnelsPage() {
               </p>
             </div>
             <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">Programmes</p>
+              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">Programs</p>
               <ul className="space-y-2">
-                {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map(item => (
-                  <li key={item}>
-                    <Link href="#" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link>
-                  </li>
+                {['CRP Program', 'Compliance Framework', 'Traceability Integration', 'Partner Verification', 'Institutional Advisory'].map(item => (
+                  <li key={item}><Link href="#" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">À Propos</p>
+              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">About</p>
               <ul className="space-y-2">
-                {['Mission', 'Vision', 'Présence'].map(item => (
-                  <li key={item}>
-                    <Link href="/fr/#aboutus" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link>
-                  </li>
+                {['Mission', 'Vision', 'Presence'].map(item => (
+                  <li key={item}><Link href="/#aboutus" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
                 ))}
-                <li>
-                  <Link href="/fr/careers" className="text-white/50 text-sm hover:text-white transition-colors">Carrières</Link>
-                </li>
+                <li><Link href="/careers" className="text-white/50 text-sm hover:text-white transition-colors">Careers</Link></li>
               </ul>
             </div>
             <div>
@@ -108,13 +97,12 @@ export default function PartenairesInstitutionnelsPage() {
           <div className="border-t border-white/10 pt-8 flex flex-wrap items-center justify-between gap-4">
             <p className="text-white/25 text-xs">© {new Date().getFullYear()} SGCM · Société de Gestion et Consultation Minières</p>
             <div className="flex gap-6">
-              <Link href="/fr/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Confidentialité</Link>
-              <Link href="/fr/legal" className="text-white/25 text-xs hover:text-white/50 transition">Juridique</Link>
+              <Link href="/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Privacy</Link>
+              <Link href="/legal" className="text-white/25 text-xs hover:text-white/50 transition">Legal</Link>
             </div>
           </div>
         </div>
       </footer>
-
     </main>
   );
 }

@@ -33,6 +33,8 @@ export interface ProgramPageProps {
   heroLink2?: { label: string; href: string };
   /** Top eyebrow above the lede. Defaults to "DÉCOUVRIR LE PROGRAMME". */
   bodyEyebrow?: string;
+  /** CTA label on cards. Defaults to "EN SAVOIR PLUS →". EN pages pass "LEARN MORE →". */
+  cardCta?: string;
   cards: [ProgramCard, ProgramCard, ProgramCard];
 }
 
@@ -41,12 +43,13 @@ export function ProgramPage({
   heroLink1 = { label: 'Le standard CRP', href: '#standard' },
   heroLink2 = { label: '→ Le cadre de conformité', href: '#conformite' },
   bodyEyebrow = 'DÉCOUVRIR LE PROGRAMME',
+  cardCta = 'EN SAVOIR PLUS →',
   cards,
 }: ProgramPageProps) {
   const [heroFailed, setHeroFailed] = useState(false);
 
   return (
-    <>
+    <div className="bg-white" style={{ display: 'flow-root' }}>
       {/* ── HERO ──
           mt-[138px] = 102px nav height + 36px deliberate gap below nav.
           mx gives the inset; rounded-[18px] per mockup. */}
@@ -248,13 +251,13 @@ export function ProgramPage({
                   className="text-[12px] font-medium tracking-widest uppercase self-start"
                   style={{ color: '#ff7f2a' }}
                 >
-                  EN SAVOIR PLUS →
+                  {cardCta}
                 </Link>
               </article>
             ))}
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
