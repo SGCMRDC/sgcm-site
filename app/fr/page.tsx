@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardCarousel } from '../../components/CardCarousel';
 import { SiteHeader } from '../../components/SiteHeader';
+import { Layers, Landmark, TrendingUp } from 'lucide-react';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -68,15 +69,18 @@ const aboutCards = [
 const services = [
   {
     title: 'Structuration multi-minéraux de la conformité',
-    desc: "Audit et mise en conformité de bout en bout des chaînes minières — or, cobalt, coltan, cuivre — depuis la production certifiée jusqu'à la documentation export. Chaque maillon est tracé, documenté, vérifiable.",
+    desc: "Audit et mise en conformité de bout en bout des chaînes minières (or, cobalt, coltan, cuivre), depuis la production certifiée jusqu'à la documentation export. Chaque maillon est tracé, documenté, vérifiable.",
+    Icon: Layers,
   },
   {
     title: 'Interface institutionnelle',
-    desc: "SGCM dialogue avec les régulateurs RDC, les autorités douanières, le CEEC, le SAEMAPE et les institutions internationales de conformité — pour anticiper les exigences, sécuriser les documents et représenter les intérêts compliance de ses clients.",
+    desc: "SGCM dialogue avec les régulateurs RDC, les autorités douanières, le CEEC, le SAEMAPE et les institutions internationales de conformité, pour anticiper les exigences, sécuriser les documents et représenter les intérêts compliance de ses clients.",
+    Icon: Landmark,
   },
   {
     title: 'Conseil stratégique minier',
     desc: "Sur la base des données collectées dans nos audits, SGCM oriente acheteurs industriels, fonds d'investissement et institutions publiques sur la structuration de leurs partenariats RDC : cartographie des risques, sélection des opérateurs, ingénierie contractuelle, suivi opérationnel.",
+    Icon: TrendingUp,
   },
 ];
 
@@ -383,16 +387,36 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section id="services" className="py-16 md:py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">Services</p>
-          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">Nos prestations</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
-            {services.map((service) => (
-              <div key={service.title} className="bg-white p-6 md:p-8 hover:bg-gray-50 transition-colors group cursor-default flex flex-col h-full">
-                <h3 className="text-base font-semibold mb-3 group-hover:text-[#1A1F2C] transition-colors">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.desc}</p>
-                <span className="text-[#1A1F2C] underline underline-offset-[3px] text-xs uppercase tracking-widest mt-auto">En savoir plus →</span>
-              </div>
-            ))}
+          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
+            Services
+          </p>
+          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">
+            Nos prestations
+          </h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+            {services.map((service) => {
+              const ServiceIcon = service.Icon;
+              return (
+                <div
+                  key={service.title}
+                  className="bg-white border border-gray-200 rounded-[14px] p-6 md:p-8 hover:bg-gray-50 transition-colors group flex flex-col"
+                >
+                  <ServiceIcon
+                    size={32}
+                    strokeWidth={1.5}
+                    className="mb-5 text-gray-400 group-hover:text-[#0A1628] transition-colors"
+                  />
+                  <h3 className="text-base font-semibold mb-3 text-gray-900">{service.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-500 flex-1">{service.desc}</p>
+                  <a
+                    href="#platform"
+                    className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-gray-900"
+                  >
+                    En savoir plus <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -403,101 +427,90 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section
         id="platform"
-        style={{ background: '#FFFFFF' }}
-        className="py-20 md:py-28"
+        className="py-20 md:py-28 bg-gray-50 border-y border-gray-200"
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1fr] gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16">
 
-            {/* Colonne gauche : eyebrow + barre d'ancrage + logo + doctrine */}
-            <div>
-              <div className="text-[11px] font-medium text-[#5F5E5A] tracking-[0.16em] uppercase mb-3">
-                PLATEFORME
-              </div>
-              <div className="w-6 h-0.5 bg-[#1F2937] mb-6" />
-              <Image
-                src="/SGCM-CRP-LOGO-BLACK.png"
-                alt="SGCM Certified — Société de Gestion et Consultation Minières"
-                width={260}
-                height={78}
-                className="w-full max-w-65 h-auto mb-8"
-                priority
-              />
-              <p className="text-[10px] font-medium text-[#5F5E5A] tracking-[0.14em] uppercase mb-4">
-                Approche SGCM
+            {/* Colonne gauche : eyebrow + carte logo + carte approche */}
+            <div className="flex flex-col gap-4">
+              <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest">
+                Technologie Propriétaire
               </p>
-              <ul className="flex flex-col gap-2">
-                <li className="text-sm text-gray-600">
-                  <span className="font-semibold text-[#0A1628]">Cartographier</span> chaque unité de production.
-                </li>
-                <li className="text-sm text-gray-600">
-                  <span className="font-semibold text-[#0A1628]">Vérifier</span> chaque document.
-                </li>
-                <li className="text-sm text-gray-600">
-                  <span className="font-semibold text-[#0A1628]">Valider</span> chaque opérateur.
-                </li>
-              </ul>
+              <div className="bg-white border border-gray-200 rounded-[14px] p-6 flex items-center">
+                <Image
+                  src="/SGCM-CRP-LOGO-BLACK.png"
+                  alt="SGCM Certified — Société de Gestion et Consultation Minières"
+                  width={260}
+                  height={78}
+                  className="w-full max-w-[200px] h-auto"
+                  priority
+                />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-[14px] p-6">
+                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
+                  Approche SGCM
+                </p>
+                <ul className="flex flex-col gap-3">
+                  <li className="text-sm text-gray-600">
+                    <span className="text-[#0A1628] font-medium">01. Cartographier</span> chaque unité de production.
+                  </li>
+                  <li className="text-sm text-gray-600">
+                    <span className="text-[#0A1628] font-medium">02. Vérifier</span> chaque document.
+                  </li>
+                  <li className="text-sm text-gray-600">
+                    <span className="text-[#0A1628] font-medium">03. Valider</span> chaque opérateur.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* Colonne droite : 3 chapitres */}
-            <div className="flex flex-col gap-6">
+            {/* Colonne droite : 3 blocs numérotés + normes + CTA */}
+            <div className="flex flex-col gap-2">
 
-              {/* Chapitre 01 */}
-              <div className="grid grid-cols-[24px_1fr] gap-4">
-                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">01</div>
-                <div>
-                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
-                    Un standard de vérification documentaire, augmenté par l&apos;IA
-                  </h3>
-                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
-                    Avant tout engagement avec une unité de production ou un opérateur économique, SGCM procède à une revue documentaire complète au regard des normes internationales primaires — combinant intelligence artificielle pour le traitement documentaire et validation humaine SGCM pour chaque décision.
-                  </p>
-                </div>
+              <div className="group rounded-[14px] px-4 py-5">
+                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">01</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  Un standard de vérification documentaire, augmenté par l&apos;IA
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-500">
+                  Avant tout engagement avec une unité de production ou un opérateur économique, SGCM procède à une revue documentaire complète au regard des normes internationales primaires, combinant intelligence artificielle pour le traitement documentaire et validation humaine SGCM pour chaque décision.
+                </p>
               </div>
 
-              {/* Chapitre 02 */}
-              <div className="grid grid-cols-[24px_1fr] gap-4">
-                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">02</div>
-                <div>
-                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
-                    Aligné sur la diligence raisonnable OCDE
-                  </h3>
-                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
-                    Les protocoles SGCM Certified™ sont alignés sur le Guide OCDE sur le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en minéraux provenant de zones de conflit ou à haut risque.
-                  </p>
-                </div>
+              <div className="group rounded-[14px] px-4 py-5">
+                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">02</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  Aligné sur la diligence raisonnable OCDE
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-500">
+                  Les protocoles SGCM Certified™ sont alignés sur le Guide OCDE sur le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en minéraux provenant de zones de conflit ou à haut risque.
+                </p>
               </div>
 
-              {/* Chapitre 03 */}
-              <div className="grid grid-cols-[24px_1fr] gap-4">
-                <div className="text-[11px] font-medium text-[#5F5E5A] pt-1">03</div>
-                <div>
-                  <h3 className="text-sm md:text-base font-medium text-[#1A1F2C] mb-2">
-                    Conçu pour l&apos;éligibilité internationale
-                  </h3>
-                  <p className="text-sm text-[#1A1F2C] leading-relaxed">
-                    Conçu pour préparer coopératives et opérateurs à l&apos;intégration dans des chaînes minières internationales conformes.
-                  </p>
-                </div>
+              <div className="group rounded-[14px] px-4 py-5">
+                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">03</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  Conçu pour l&apos;éligibilité internationale
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-500">
+                  Conçu pour préparer coopératives et opérateurs à l&apos;intégration dans des chaînes minières internationales conformes.
+                </p>
               </div>
 
-            </div>
-
-            {/* Pied partagé : référentiels + CTA */}
-            <div className="col-span-full mt-6 pt-5 border-t border-gray-200 grid grid-cols-1 md:grid-cols-[0.85fr_1fr] gap-y-3 md:gap-12 items-center">
-              <p className="text-[11px] text-gray-500 font-medium tracking-wide">
-                OCDE 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC
-              </p>
-              <div>
+              <div className="mt-4 pt-5 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
+                <p className="text-[11px] text-gray-500 font-medium tracking-wide flex-1">
+                  OCDE 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC
+                </p>
                 <Link
                   href="/fr/sgcm-certified"
-                  className="text-[11px] font-medium text-[#1A1F2C] tracking-widest uppercase hover:underline"
+                  className="inline-flex items-center bg-[#0A1628] text-white rounded-[8px] px-6 py-3 text-sm font-medium hover:bg-[#1A2940] transition-colors whitespace-nowrap"
                 >
                   DÉCOUVRIR LE STANDARD →
                 </Link>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
       </section>
