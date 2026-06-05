@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardCarousel } from '../../components/CardCarousel';
 import { SiteHeader } from '../../components/SiteHeader';
+import { PlatformScrollSection } from '../../components/PlatformScrollSection';
 import { Layers, Landmark, TrendingUp } from 'lucide-react';
 
 // ─────────────────────────────────────────────
@@ -425,95 +426,35 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           PLATEFORME
           ══════════════════════════════════════════════ */}
-      <section
-        id="platform"
-        className="py-20 md:py-28 bg-gray-50 border-y border-gray-200"
-      >
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16">
-
-            {/* Colonne gauche : eyebrow + carte logo + carte approche */}
-            <div className="flex flex-col gap-4">
-              <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest">
-                Technologie Propriétaire
-              </p>
-              <div className="bg-white border border-gray-200 rounded-[14px] p-6 flex items-center">
-                <Image
-                  src="/SGCM-CRP-LOGO-BLACK.png"
-                  alt="SGCM Certified — Société de Gestion et Consultation Minières"
-                  width={260}
-                  height={78}
-                  className="w-full max-w-[200px] h-auto"
-                  priority
-                />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-[14px] p-6">
-                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
-                  Approche SGCM
-                </p>
-                <ul className="flex flex-col gap-3">
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">01. Cartographier</span> chaque unité de production.
-                  </li>
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">02. Vérifier</span> chaque document.
-                  </li>
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">03. Valider</span> chaque opérateur.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Colonne droite : 3 blocs numérotés + normes + CTA */}
-            <div className="flex flex-col gap-2">
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">01</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  Un standard de vérification documentaire, augmenté par l&apos;IA
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Avant tout engagement avec une unité de production ou un opérateur économique, SGCM procède à une revue documentaire complète au regard des normes internationales primaires, combinant intelligence artificielle pour le traitement documentaire et validation humaine SGCM pour chaque décision.
-                </p>
-              </div>
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">02</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  Aligné sur la diligence raisonnable OCDE
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Les protocoles SGCM Certified™ sont alignés sur le Guide OCDE sur le devoir de diligence pour des chaînes d&apos;approvisionnement responsables en minéraux provenant de zones de conflit ou à haut risque.
-                </p>
-              </div>
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">03</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  Conçu pour l&apos;éligibilité internationale
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Conçu pour préparer coopératives et opérateurs à l&apos;intégration dans des chaînes minières internationales conformes.
-                </p>
-              </div>
-
-              <div className="mt-4 pt-5 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
-                <p className="text-[11px] text-gray-500 font-medium tracking-wide flex-1">
-                  OCDE 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC
-                </p>
-                <Link
-                  href="/fr/sgcm-certified"
-                  className="inline-flex items-center bg-[#0A1628] text-white rounded-[8px] px-6 py-3 text-sm font-medium hover:bg-[#1A2940] transition-colors whitespace-nowrap"
-                >
-                  DÉCOUVRIR LE STANDARD →
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <PlatformScrollSection
+        eyebrow="PLATEFORME"
+        doctrineLabel="Approche SGCM"
+        doctrineItems={[
+          { bold: '01. Cartographier', rest: ' chaque unité de production.' },
+          { bold: '02. Vérifier',      rest: ' chaque document.' },
+          { bold: '03. Valider',       rest: ' chaque opérateur.' },
+        ]}
+        chapters={[
+          {
+            number: '01',
+            title: "Un standard de vérification documentaire, augmenté par l'IA",
+            body: "Avant tout engagement avec une unité de production ou un opérateur économique, SGCM procède à une revue documentaire complète au regard des normes internationales primaires, combinant intelligence artificielle pour le traitement documentaire et validation humaine SGCM pour chaque décision.",
+          },
+          {
+            number: '02',
+            title: 'Aligné sur la diligence raisonnable OCDE',
+            body: "Les protocoles SGCM Certified™ sont alignés sur le Guide OCDE sur le devoir de diligence pour des chaînes d'approvisionnement responsables en minéraux provenant de zones de conflit ou à haut risque.",
+          },
+          {
+            number: '03',
+            title: "Conçu pour l'éligibilité internationale",
+            body: "Conçu pour préparer coopératives et opérateurs à l'intégration dans des chaînes minières internationales conformes.",
+          },
+        ]}
+        normes="OCDE 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC"
+        ctaLabel="DÉCOUVRIR LE STANDARD →"
+        ctaHref="/fr/sgcm-certified"
+      />
 
 
       {/* ══════════════════════════════════════════════

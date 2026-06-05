@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardCarousel } from '../components/CardCarousel';
 import { SiteHeader } from '../components/SiteHeader';
+import { PlatformScrollSection } from '../components/PlatformScrollSection';
 import { Layers, Landmark, TrendingUp } from 'lucide-react';
 
 // ─────────────────────────────────────────────
@@ -440,95 +441,35 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           PLATFORM
           ══════════════════════════════════════════════ */}
-      <section
-        id="platform"
-        className="py-20 md:py-28 bg-gray-50 border-y border-gray-200"
-      >
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16">
-
-            {/* Left column: eyebrow + logo card + approach card */}
-            <div className="flex flex-col gap-4">
-              <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest">
-                Proprietary Technology
-              </p>
-              <div className="bg-white border border-gray-200 rounded-[14px] p-6 flex items-center">
-                <Image
-                  src="/SGCM-CRP-LOGO-BLACK.png"
-                  alt="SGCM Certified — Société de Gestion et Consultation Minières"
-                  width={260}
-                  height={78}
-                  className="w-full max-w-[200px] h-auto"
-                  priority
-                />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-[14px] p-6">
-                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
-                  SGCM Approach
-                </p>
-                <ul className="flex flex-col gap-3">
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">01. Map</span> every production unit.
-                  </li>
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">02. Verify</span> every document.
-                  </li>
-                  <li className="text-sm text-gray-600">
-                    <span className="text-[#0A1628] font-medium">03. Validate</span> every operator.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Right column: 3 numbered blocs + normes + CTA */}
-            <div className="flex flex-col gap-2">
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">01</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  A documentary verification standard, augmented by AI
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Before engaging any production unit or economic operator, SGCM conducts a full documentary review against primary international norms, combining artificial intelligence for document processing and human SGCM validation for every decision.
-                </p>
-              </div>
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">02</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  Aligned with OECD due diligence
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  SGCM Certified™ protocols are aligned with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas.
-                </p>
-              </div>
-
-              <div className="group rounded-[14px] px-4 py-5">
-                <p className="text-4xl font-light text-gray-300 group-hover:text-[#0A1628] transition-colors mb-3">03</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
-                  Designed for international eligibility
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Designed to prepare cooperatives and operators for integration into compliant international supply chains.
-                </p>
-              </div>
-
-              <div className="mt-4 pt-5 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center gap-4">
-                <p className="text-[11px] text-gray-500 font-medium tracking-wide flex-1">
-                  OECD 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC
-                </p>
-                <Link
-                  href="/sgcm-certified"
-                  className="inline-flex items-center bg-[#0A1628] text-white rounded-[8px] px-6 py-3 text-sm font-medium hover:bg-[#1A2940] transition-colors whitespace-nowrap"
-                >
-                  DISCOVER THE STANDARD →
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <PlatformScrollSection
+        eyebrow="PLATFORM"
+        doctrineLabel="SGCM Approach"
+        doctrineItems={[
+          { bold: '01. Map',      rest: ' every production unit.' },
+          { bold: '02. Verify',   rest: ' every document.' },
+          { bold: '03. Validate', rest: ' every operator.' },
+        ]}
+        chapters={[
+          {
+            number: '01',
+            title: 'A documentary verification standard, augmented by AI',
+            body: 'Before engaging any production unit or economic operator, SGCM conducts a full documentary review against primary international norms, combining artificial intelligence for document processing and human SGCM validation for every decision.',
+          },
+          {
+            number: '02',
+            title: 'Aligned with OECD due diligence',
+            body: 'SGCM Certified™ protocols are aligned with the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas.',
+          },
+          {
+            number: '03',
+            title: 'Designed for international eligibility',
+            body: 'Designed to prepare cooperatives and operators for integration into compliant international supply chains.',
+          },
+        ]}
+        normes="OECD 5-Step · LBMA RGG V9 · ICGLR RCM · CEEC"
+        ctaLabel="DISCOVER THE STANDARD →"
+        ctaHref="/sgcm-certified"
+      />
 
 
       {/* ══════════════════════════════════════════════
