@@ -4,11 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface DoctrineItem {
-  bold: string;
-  rest: string;
-}
-
 interface Chapter {
   number: string;
   title: string;
@@ -19,8 +14,6 @@ export interface PlatformScrollSectionProps {
   eyebrow: string;
   heading: string;
   intro: string;
-  doctrineLabel: string;
-  doctrineItems: DoctrineItem[];
   chapters: [Chapter, Chapter, Chapter];
   normes: string;
   ctaLabel: string;
@@ -31,8 +24,6 @@ export function PlatformScrollSection({
   eyebrow,
   heading,
   intro,
-  doctrineLabel,
-  doctrineItems,
   chapters,
   normes,
   ctaLabel,
@@ -70,7 +61,7 @@ export function PlatformScrollSection({
   }, [reducedMotion]);
 
   const leftContent = (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-6">
       <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest">
         {eyebrow}
       </p>
@@ -79,24 +70,11 @@ export function PlatformScrollSection({
       <Image
         src="/SGCM-CRP-LOGO-BLACK.png"
         alt="SGCM Certified — Société de Gestion et Consultation Minières"
-        width={260}
-        height={78}
-        className="w-full max-w-[200px] h-auto"
+        width={320}
+        height={96}
+        className="w-full max-w-[240px] h-auto"
         priority
       />
-      <div className="border-l-2 border-[#0A1628] pl-5">
-        <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
-          {doctrineLabel}
-        </p>
-        <ul className="flex flex-col gap-3">
-          {doctrineItems.map((item, i) => (
-            <li key={i} className="text-sm text-gray-600">
-              <span className="text-[#0A1628] font-medium">{item.bold}</span>
-              {item.rest}
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 
@@ -117,7 +95,7 @@ export function PlatformScrollSection({
 
       {/* Static version: always on mobile; on desktop only if prefers-reduced-motion */}
       <section
-        className={`${reducedMotion ? 'block' : 'md:hidden'} py-16 md:py-24 px-6 md:px-10 bg-gray-50 border-y border-gray-200`}
+        className={`${reducedMotion ? 'block' : 'md:hidden'} py-16 md:py-24 px-6 md:px-10 bg-white`}
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-10">
@@ -140,8 +118,8 @@ export function PlatformScrollSection({
       {!reducedMotion && (
         <div
           ref={wrapperRef}
-          className="hidden md:block relative bg-gray-50 border-y border-gray-200"
-          style={{ height: '220vh' }}
+          className="hidden md:block relative bg-white"
+          style={{ height: '200vh' }}
         >
           <div className="sticky top-0 h-screen flex items-center">
             <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">

@@ -430,12 +430,6 @@ export default function Home() {
         eyebrow="PLATEFORME"
         heading="CRP, le standard SGCM de validation des opérateurs"
         intro="Chaque unité de production évaluée selon un protocole unique, documenté et auditable."
-        doctrineLabel="Approche SGCM"
-        doctrineItems={[
-          { bold: '01. Cartographier', rest: ' chaque unité de production.' },
-          { bold: '02. Vérifier',      rest: ' chaque document.' },
-          { bold: '03. Valider',       rest: ' chaque opérateur.' },
-        ]}
         chapters={[
           {
             number: '01',

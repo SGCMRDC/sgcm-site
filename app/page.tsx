@@ -445,12 +445,6 @@ export default function Home() {
         eyebrow="PLATFORM"
         heading="CRP, the SGCM operator validation standard"
         intro="Every production unit assessed under a single, documented and auditable protocol."
-        doctrineLabel="SGCM Approach"
-        doctrineItems={[
-          { bold: '01. Map',      rest: ' every production unit.' },
-          { bold: '02. Verify',   rest: ' every document.' },
-          { bold: '03. Validate', rest: ' every operator.' },
-        ]}
         chapters={[
           {
             number: '01',
