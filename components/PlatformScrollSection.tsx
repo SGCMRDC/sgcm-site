@@ -135,11 +135,11 @@ export function PlatformScrollSection({
         <div
           ref={wrapperRef}
           className="hidden md:block relative bg-gray-50 border-y border-gray-200"
-          style={{ height: '260vh' }}
+          style={{ height: '220vh' }}
         >
           <div className="sticky top-0 h-screen flex items-center">
             <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10">
 
                 {leftContent}
 
