@@ -60,13 +60,6 @@ const slides: Slide[] = [
   },
 ];
 
-const aboutCards = [
-  { label: 'Mission',   text: 'Structurer la conformité des opérateurs miniers de la RDC selon les standards internationaux' },
-  { label: 'Vision',    text: 'Devenir l\'intégrateur de conformité de référence en Afrique centrale' },
-  { label: 'Présence',  text: 'Kinshasa · Kolwezi (RDC) et Bruxelles (Belgique)' },
-  { label: 'Domaines',  text: 'Minéraux stratégiques de la RDC, intégrés dans des chaînes auditées et conformes aux standards internationaux.' },
-];
-
 const services = [
   {
     title: 'Structuration multi-minéraux de la conformité',
@@ -346,29 +339,6 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-            </div>
-          </div>
-
-          {/* Séparateur + bandeau 4 blocs : desktop uniquement */}
-          <div className="hidden md:block">
-            <div className="mt-14 h-[2px] bg-[#0A1628]" />
-            <div className="grid grid-cols-4">
-              {aboutCards.map((item, i) => {
-                const borderClass = [
-                  'border-r border-gray-200',
-                  'border-r border-gray-200',
-                  'border-r border-gray-200',
-                  'border-gray-200',
-                ][i];
-                return (
-                  <div key={item.label} className={`px-8 py-10 ${borderClass}`}>
-                    <p className="text-xs font-semibold uppercase tracking-widest mb-3 text-[#5F5E5A]">
-                      {item.label}
-                    </p>
-                    <p className="text-sm leading-relaxed text-gray-700">{item.text}</p>
-                  </div>
-                );
-              })}
             </div>
           </div>
 
