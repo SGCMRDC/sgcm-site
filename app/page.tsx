@@ -319,13 +319,17 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           ABOUT
           ══════════════════════════════════════════════ */}
-      <section id="aboutus" className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div>
+      <section id="aboutus" className="bg-white">
+
+        {/* Split: text left / photo right */}
+        <div className="lg:grid lg:grid-cols-[45fr_55fr]">
+
+          {/* Left column — gray bg, text */}
+          <div className="bg-gray-100 px-8 md:px-12 lg:px-16 py-16 md:py-24 flex flex-col justify-center">
             <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
               About SGCM
             </p>
-            <h2 className="text-3xl md:text-4xl font-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
               A structured approach to mining compliance
             </h2>
             <p className="text-gray-500 leading-relaxed mb-4">
@@ -334,34 +338,56 @@ export default function Home() {
               chains. We support mining operators, institutions and international buyers in
               implementing the due diligence standards applicable to the extractive sector.
             </p>
-            <p className="text-gray-700 font-medium leading-relaxed mb-4">
+            <p className="font-medium leading-relaxed mb-6" style={{ color: '#0A1628' }}>
               Our role: structuring, documenting, validating.
             </p>
-            <p className="text-gray-500 leading-relaxed">
-              SGCM integrates documentary compliance, traceability and operational audit —
-              aligned with OECD guidelines — to deliver to international buyers complete,
-              verifiable and auditable due diligence dossiers.
-            </p>
+            <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
+              Find out more
+              <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+            </a>
           </div>
-          <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
-            {aboutCards.map((item) => (
-              <div
-                key={item.label}
-                className="group relative flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6"
-              >
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-y-0 left-0 w-0.75 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{ background: 'linear-gradient(180deg, #FF7F2A 0%, #F7B500 100%)' }}
-                />
-                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-2">
+
+          {/* Right column — photo */}
+          <div className="relative min-h-[260px] lg:min-h-[420px]">
+            {/* TODO: remplacer par photo terrain RDC definitive */}
+            <Image
+              src="/kin-rdc-sgcm.jpg"
+              alt="Kinshasa, DRC — SGCM field operations"
+              fill
+              className="object-cover"
+            />
+            {/* Overlay navy bottom band */}
+            <div
+              className="absolute bottom-0 left-0 right-0 px-8 py-4"
+              style={{ background: 'rgba(10,22,40,0.85)' }}
+            >
+              <p className="text-white text-sm tracking-wide">
+                Kinshasa · Kolwezi (DRC) · Brussels (Belgium)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 4-bloc band: Mission / Vision / Presence / Focus */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t-2" style={{ borderColor: '#0A1628' }}>
+          {aboutCards.map((item, i) => {
+            const borderClass = [
+              'border-b sm:border-r lg:border-b-0 border-gray-200',
+              'border-b lg:border-r lg:border-b-0 border-gray-200',
+              'border-b sm:border-r sm:border-b-0 border-gray-200',
+              'border-gray-200',
+            ][i];
+            return (
+              <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
+                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
                   {item.label}
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
+
       </section>
 
 

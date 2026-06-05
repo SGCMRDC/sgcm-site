@@ -302,42 +302,76 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           À PROPOS
           ══════════════════════════════════════════════ */}
-      <section id="aboutus" className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          <div>
-            <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">À propos de SGCM</p>
-            <h2 className="text-3xl md:text-4xl font-light mb-6">Une approche structurée de la conformité minière</h2>
+      <section id="aboutus" className="bg-white">
+
+        {/* Split: texte gauche / photo droite */}
+        <div className="lg:grid lg:grid-cols-[45fr_55fr]">
+
+          {/* Colonne gauche — fond gris, texte */}
+          <div className="bg-gray-100 px-8 md:px-12 lg:px-16 py-16 md:py-24 flex flex-col justify-center">
+            <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
+              À propos de SGCM
+            </p>
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+              Une approche structurée de la conformité minière
+            </h2>
             <p className="text-gray-500 leading-relaxed mb-4">
               Société de Gestion et Consultation Minières (SGCM) est une société congolaise
               basée à Kinshasa, spécialisée dans la structuration de la conformité des chaînes
               minières. Nous accompagnons les opérateurs miniers, les institutions et les
-              acheteurs internationaux dans la mise en œuvre des standards de diligence
+              acheteurs internationaux dans la mise en oeuvre des standards de diligence
               raisonnable applicables au secteur extractif.
             </p>
-            <p className="text-gray-700 font-medium leading-relaxed mb-4">
+            <p className="font-medium leading-relaxed mb-6" style={{ color: '#0A1628' }}>
               Notre rôle : structurer, documenter, valider.
             </p>
-            <p className="text-gray-500 leading-relaxed">
-              SGCM intègre conformité documentaire, traçabilité et audit opérationnel —
-              en alignement avec les lignes directrices OCDE — pour livrer aux acheteurs
-              internationaux des dossiers de diligence raisonnable complets, vérifiables
-              et auditables.
-            </p>
+            <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
+              En savoir plus
+              <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+            </a>
           </div>
-          <div className="flex md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
-            {aboutCards.map((item) => (
-              <div key={item.label} className="group relative flex-none w-[80%] snap-start md:w-auto bg-gray-50 p-5 md:p-6">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-y-0 left-0 w-0.75 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{ background: 'linear-gradient(180deg, #FF7F2A 0%, #F7B500 100%)' }}
-                />
-                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-2">{item.label}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+
+          {/* Colonne droite — photo */}
+          <div className="relative min-h-[260px] lg:min-h-[420px]">
+            {/* TODO: remplacer par photo terrain RDC definitive */}
+            <Image
+              src="/kin-rdc-sgcm.jpg"
+              alt="Kinshasa, RDC — opérations terrain SGCM"
+              fill
+              className="object-cover"
+            />
+            {/* Bandeau overlay navy */}
+            <div
+              className="absolute bottom-0 left-0 right-0 px-8 py-4"
+              style={{ background: 'rgba(10,22,40,0.85)' }}
+            >
+              <p className="text-white text-sm tracking-wide">
+                Kinshasa · Kolwezi (RDC) · Bruxelles (Belgique)
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Bandeau 4 blocs : Mission / Vision / Présence / Domaines */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t-2" style={{ borderColor: '#0A1628' }}>
+          {aboutCards.map((item, i) => {
+            const borderClass = [
+              'border-b sm:border-r lg:border-b-0 border-gray-200',
+              'border-b lg:border-r lg:border-b-0 border-gray-200',
+              'border-b sm:border-r sm:border-b-0 border-gray-200',
+              'border-gray-200',
+            ][i];
+            return (
+              <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
+                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
+                  {item.label}
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            );
+          })}
+        </div>
+
       </section>
 
 
