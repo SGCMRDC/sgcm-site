@@ -54,7 +54,7 @@ const slides: Slide[] = [
     title: 'Formalization that lasts. Compliance that compounds.',
     body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
-    ctaHref: '#network',
+    ctaHref: '#contact',
     image: '/images/IMPACT-STRUCTUREL.png',
     alt: 'Congolese artisanal miners — ASM operation structured by SGCM',
   },
@@ -83,13 +83,6 @@ const services = [
     desc: 'Drawing on data collected through its audits, SGCM advises industrial buyers, investment funds and public institutions on the structuring of their DRC partnerships: risk mapping, operator selection, contractual engineering, operational monitoring.',
     Icon: TrendingUp,
   },
-];
-
-const networkItems = [
-  { title: 'MINING OPERATORS',       desc: 'Mining production units in DRC that have completed or integrated the CRP audit program.' },
-  { title: 'PUBLIC INSTITUTIONS',    desc: 'CEEC, SAEMAPE, Ministry of Mines, customs authorities, compliance bodies.' },
-  { title: 'LEGAL ADVISORY',         desc: 'Law firms and experts in DRC mining law, international compliance, and extractive sector litigation.' },
-  { title: 'TECHNOLOGY TRACEABILITY', desc: 'Blockchain infrastructures and documentary solutions giving international buyers access to audited mineral chains.' },
 ];
 
 
@@ -468,30 +461,6 @@ export default function Home() {
       />
 
 
-      {/* ══════════════════════════════════════════════
-          NETWORK
-          ══════════════════════════════════════════════ */}
-      <section id="network" className="py-16 md:py-24 px-6 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">
-            Network
-          </p>
-          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl text-white">
-            A trusted network of verified partners
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
-            {networkItems.map((item) => (
-              <div key={item.title} className="bg-gray-900 p-6 md:p-8">
-                <h3 className="font-semibold mb-3 text-sm uppercase tracking-wide">
-                  {item.title}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
 
       {/* ══════════════════════════════════════════════
           CONTACT CTA
@@ -533,7 +502,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Company</p>
-            {['About Us', 'Platform', 'Network', 'Insights'].map((item) => (
+            {['About Us', 'Platform', 'Insights'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '')}`} className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
             ))}
             <a href="/careers" className="text-white/40 text-xs hover:text-white transition-colors">Careers</a>

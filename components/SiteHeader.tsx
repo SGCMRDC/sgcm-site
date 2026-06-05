@@ -8,7 +8,6 @@ const NAV_EN = [
   { label: 'ABOUT US',  href: '/#aboutus'  },
   { label: 'PLATFORM',  href: '/#platform' },
   { label: 'SERVICES',  href: '/#services' },
-  { label: 'NETWORK',   href: '/#network'  },
   { label: 'INSIGHTS',  href: '/#insights' },
   { label: 'CONTACT',   href: '/contact'   },
 ];
@@ -17,7 +16,6 @@ const NAV_FR = [
   { label: 'À PROPOS',   href: '/fr/#aboutus'  },
   { label: 'PLATEFORME', href: '/fr/#platform' },
   { label: 'SERVICES',   href: '/fr/#services' },
-  { label: 'RÉSEAU',     href: '/fr/#network'  },
   { label: 'ACTUALITÉS', href: '/fr/#insights' },
   { label: 'CONTACT',    href: '/contact/fr'   },
 ];

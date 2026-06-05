@@ -54,7 +54,7 @@ const slides: Slide[] = [
     title: 'Une formalisation qui dure. Une conformité qui se renforce.',
     body: 'Des conditions structurelles d\'accès aux marchés internationaux — et de valeur locale durable.',
     subtitle: 'Résultats Structurels',
-    ctaHref: '#network',
+    ctaHref: '#contact',
     image: '/images/IMPACT-STRUCTUREL.png',
     alt: 'Mineurs artisanaux congolais — opération ASM structurée par SGCM',
   },
@@ -83,13 +83,6 @@ const services = [
     desc: "Sur la base des données collectées dans nos audits, SGCM oriente acheteurs industriels, fonds d'investissement et institutions publiques sur la structuration de leurs partenariats RDC : cartographie des risques, sélection des opérateurs, ingénierie contractuelle, suivi opérationnel.",
     Icon: TrendingUp,
   },
-];
-
-const networkItems = [
-  { title: 'OPÉRATEURS MINIERS',        desc: "Unités de production minière en RDC ayant complété ou intégré le programme d'audit CRP." },
-  { title: 'INSTITUTIONS PUBLIQUES',    desc: 'CEEC, SAEMAPE, Ministère des Mines, autorités douanières, organismes de conformité.' },
-  { title: 'CONSEIL JURIDIQUE',         desc: 'Cabinets et experts en droit minier RDC, conformité internationale et contentieux extractif.' },
-  { title: 'TRAÇABILITÉ TECHNOLOGIQUE', desc: "Infrastructures blockchain et solutions documentaires donnant aux acheteurs internationaux accès à l'audit des chaînes minières." },
 ];
 
 
@@ -453,26 +446,6 @@ export default function Home() {
       />
 
 
-      {/* ══════════════════════════════════════════════
-          RÉSEAU
-          ══════════════════════════════════════════════ */}
-      <section id="network" className="py-16 md:py-24 px-6 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-4">Réseau</p>
-          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl text-white">
-            Un réseau de confiance de partenaires vérifiés
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
-            {networkItems.map((item) => (
-              <div key={item.title} className="bg-gray-900 p-6 md:p-8">
-                <h3 className="font-semibold mb-3 text-sm uppercase tracking-wide">{item.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
 
       {/* ══════════════════════════════════════════════
           CONTACT CTA
@@ -512,7 +485,6 @@ export default function Home() {
             {[
               { label: 'À propos',   href: '#aboutus' },
               { label: 'Plateforme', href: '#platform' },
-              { label: 'Réseau',     href: '#network' },
               { label: 'Actualités', href: '#insights' },
               { label: 'Carrières',  href: '/fr/careers' },
             ].map((item) => (
