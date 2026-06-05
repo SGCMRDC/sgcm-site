@@ -328,7 +328,7 @@ export default function Home() {
               <p className="font-medium leading-relaxed mb-4" style={{ color: '#0A1628' }}>
                 Notre rôle : structurer, documenter, valider.
               </p>
-              <p className="text-gray-500 leading-relaxed mb-6">
+              <p className="hidden md:block text-gray-500 leading-relaxed mb-6">
                 SGCM intègre conformité documentaire, traçabilité et audit opérationnel,
                 en alignement avec les lignes directrices OCDE, pour livrer aux acheteurs
                 internationaux des dossiers de diligence raisonnable complets, vérifiables
@@ -340,8 +340,8 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Colonne droite — photo */}
-            <div className="relative min-h-[260px] md:min-h-0">
+            {/* Colonne droite — photo (au-dessus du texte sur mobile) */}
+            <div className="order-first md:order-last relative h-[220px] md:h-full">
               <Image
                 src="/images/about-mineral-structure.png"
                 alt="Conformité de la chaîne minérale — SGCM"
@@ -355,20 +355,20 @@ export default function Home() {
           <div className="mt-10 md:mt-14 h-[2px] bg-[#0A1628]" />
 
           {/* Bandeau 4 blocs : Mission / Vision / Présence / Domaines */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
             {aboutCards.map((item, i) => {
               const borderClass = [
-                'border-b sm:border-r lg:border-b-0 border-gray-200',
-                'border-b lg:border-r lg:border-b-0 border-gray-200',
-                'border-b sm:border-r sm:border-b-0 border-gray-200',
+                'border-b md:border-b-0 md:border-r border-gray-200',
+                'border-b md:border-b-0 md:border-r border-gray-200',
+                'md:border-r border-gray-200',
                 'border-gray-200',
               ][i];
               return (
                 <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
-                  <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
+                  <p className="text-[10px] md:text-xs font-semibold uppercase tracking-wider md:tracking-widest mb-3" style={{ color: '#5F5E5A' }}>
                     {item.label}
                   </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+                  <p className="text-xs md:text-sm leading-relaxed text-gray-700">{item.text}</p>
                 </div>
               );
             })}
