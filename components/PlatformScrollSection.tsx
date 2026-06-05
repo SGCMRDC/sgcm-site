@@ -17,6 +17,8 @@ interface Chapter {
 
 export interface PlatformScrollSectionProps {
   eyebrow: string;
+  heading: string;
+  intro: string;
   doctrineLabel: string;
   doctrineItems: DoctrineItem[];
   chapters: [Chapter, Chapter, Chapter];
@@ -27,6 +29,8 @@ export interface PlatformScrollSectionProps {
 
 export function PlatformScrollSection({
   eyebrow,
+  heading,
+  intro,
   doctrineLabel,
   doctrineItems,
   chapters,
@@ -66,10 +70,12 @@ export function PlatformScrollSection({
   }, [reducedMotion]);
 
   const leftContent = (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest">
         {eyebrow}
       </p>
+      <h2 className="text-3xl md:text-4xl font-light text-gray-900">{heading}</h2>
+      <p className="text-sm leading-relaxed text-gray-500 max-w-sm">{intro}</p>
       <Image
         src="/SGCM-CRP-LOGO-BLACK.png"
         alt="SGCM Certified — Société de Gestion et Consultation Minières"
@@ -116,7 +122,7 @@ export function PlatformScrollSection({
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-10">
             {leftContent}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 md:border-l md:border-gray-200 md:pl-8">
               {chapters.map((ch) => (
                 <div key={ch.number} className="rounded-[14px] px-4 py-5">
                   <p className="text-4xl font-light text-gray-300 mb-3">{ch.number}</p>
@@ -143,7 +149,7 @@ export function PlatformScrollSection({
 
                 {leftContent}
 
-                <div className="flex flex-col">
+                <div className="flex flex-col border-l border-gray-200 pl-8">
 
                   {/* Progress bar — 3 segments, decorative */}
                   <div className="flex gap-1.5 mb-8" aria-hidden="true">
@@ -194,7 +200,7 @@ export function PlatformScrollSection({
                   </div>
 
                   {/* Footer — always visible, outside animated zone */}
-                  <div className="mt-8">{footerContent}</div>
+                  <div className="mt-6">{footerContent}</div>
 
                 </div>
               </div>

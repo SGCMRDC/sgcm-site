@@ -443,6 +443,8 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <PlatformScrollSection
         eyebrow="PLATFORM"
+        heading="CRP, the SGCM operator validation standard"
+        intro="Every production unit assessed under a single, documented and auditable protocol."
         doctrineLabel="SGCM Approach"
         doctrineItems={[
           { bold: '01. Map',      rest: ' every production unit.' },
