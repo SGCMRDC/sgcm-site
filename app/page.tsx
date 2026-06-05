@@ -319,75 +319,79 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           ABOUT
           ══════════════════════════════════════════════ */}
-      <section id="aboutus" className="bg-white">
+      <section id="aboutus" className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
 
-        {/* Split: text left / photo right */}
-        <div className="lg:grid lg:grid-cols-[45fr_55fr]">
+          {/* Eyebrow + heading — above the split */}
+          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
+            About SGCM
+          </p>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-10 md:mb-14">
+            A structured approach to mining compliance
+          </h2>
 
-          {/* Left column — gray bg, text */}
-          <div className="bg-gray-100 px-8 md:px-12 lg:px-16 py-16 md:py-24 flex flex-col justify-center">
-            <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
-              About SGCM
-            </p>
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
-              A structured approach to mining compliance
-            </h2>
-            <p className="text-gray-500 leading-relaxed mb-4">
-              Société de Gestion et Consultation Minières (SGCM) is a Congolese company
-              based in Kinshasa, specialized in structuring the compliance of mineral supply
-              chains. We support mining operators, institutions and international buyers in
-              implementing the due diligence standards applicable to the extractive sector.
-            </p>
-            <p className="font-medium leading-relaxed mb-6" style={{ color: '#0A1628' }}>
-              Our role: structuring, documenting, validating.
-            </p>
-            <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
-              Find out more
-              <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-            </a>
-          </div>
+          {/* Split: text left / photo right */}
+          <div className="lg:grid lg:grid-cols-[45fr_55fr] overflow-hidden rounded-[14px]">
 
-          {/* Right column — photo */}
-          <div className="relative min-h-[260px] lg:min-h-[420px]">
-            {/* TODO: remplacer par photo terrain RDC definitive */}
-            <Image
-              src="/kin-rdc-sgcm.jpg"
-              alt="Kinshasa, DRC — SGCM field operations"
-              fill
-              className="object-cover"
-            />
-            {/* Overlay navy bottom band */}
-            <div
-              className="absolute bottom-0 left-0 right-0 px-8 py-4"
-              style={{ background: 'rgba(10,22,40,0.85)' }}
-            >
-              <p className="text-white text-sm tracking-wide">
-                Kinshasa · Kolwezi (DRC) · Brussels (Belgium)
+            {/* Left column — gray bg */}
+            <div className="bg-gray-100 px-8 md:px-10 py-10 md:py-14 flex flex-col justify-center">
+              <p className="text-gray-500 leading-relaxed mb-4">
+                Société de Gestion et Consultation Minières (SGCM) is a Congolese company
+                based in Kinshasa, specialized in structuring the compliance of mineral supply
+                chains. We support mining operators, institutions and international buyers in
+                implementing the due diligence standards applicable to the extractive sector.
               </p>
+              <p className="font-medium leading-relaxed mb-6" style={{ color: '#0A1628' }}>
+                Our role: structuring, documenting, validating.
+              </p>
+              <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
+                Find out more
+                <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+
+            {/* Right column — photo */}
+            <div className="relative min-h-[260px] lg:min-h-[420px]">
+              {/* TODO: remplacer par photo terrain RDC definitive */}
+              <Image
+                src="/kin-rdc-sgcm.jpg"
+                alt="Kinshasa, DRC — SGCM field operations"
+                fill
+                className="object-cover"
+              />
+              {/* Overlay navy bottom band */}
+              <div
+                className="absolute bottom-0 left-0 right-0 px-8 py-4"
+                style={{ background: 'rgba(10,22,40,0.85)' }}
+              >
+                <p className="text-white text-sm tracking-wide">
+                  Kinshasa · Kolwezi (DRC) · Brussels (Belgium)
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* 4-bloc band: Mission / Vision / Presence / Focus */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t-2" style={{ borderColor: '#0A1628' }}>
-          {aboutCards.map((item, i) => {
-            const borderClass = [
-              'border-b sm:border-r lg:border-b-0 border-gray-200',
-              'border-b lg:border-r lg:border-b-0 border-gray-200',
-              'border-b sm:border-r sm:border-b-0 border-gray-200',
-              'border-gray-200',
-            ][i];
-            return (
-              <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
-                <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
-                  {item.label}
-                </p>
-                <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            );
-          })}
-        </div>
+          {/* 4-bloc band: Mission / Vision / Presence / Focus */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t-2 mt-10 md:mt-14" style={{ borderColor: '#0A1628' }}>
+            {aboutCards.map((item, i) => {
+              const borderClass = [
+                'border-b sm:border-r lg:border-b-0 border-gray-200',
+                'border-b lg:border-r lg:border-b-0 border-gray-200',
+                'border-b sm:border-r sm:border-b-0 border-gray-200',
+                'border-gray-200',
+              ][i];
+              return (
+                <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
+                  <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-3">
+                    {item.label}
+                  </p>
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
 
+        </div>
       </section>
 
 
