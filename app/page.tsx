@@ -366,27 +366,27 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Separator */}
-          <div className="mt-10 md:mt-14 h-[2px] bg-[#0A1628]" />
-
-          {/* 4-bloc band: Mission / Vision / Presence / Focus */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
-            {aboutCards.map((item, i) => {
-              const borderClass = [
-                'border-b md:border-b-0 md:border-r border-gray-200',
-                'border-b md:border-b-0 md:border-r border-gray-200',
-                'md:border-r border-gray-200',
-                'border-gray-200',
-              ][i];
-              return (
-                <div key={item.label} className={`px-8 py-8 md:py-10 ${borderClass}`}>
-                  <p className="text-[10px] md:text-xs font-semibold uppercase tracking-wider md:tracking-widest mb-3" style={{ color: '#5F5E5A' }}>
-                    {item.label}
-                  </p>
-                  <p className="text-xs md:text-sm leading-relaxed text-gray-700">{item.text}</p>
-                </div>
-              );
-            })}
+          {/* Separator + 4-bloc band: desktop only */}
+          <div className="hidden md:block">
+            <div className="mt-14 h-[2px] bg-[#0A1628]" />
+            <div className="grid grid-cols-4">
+              {aboutCards.map((item, i) => {
+                const borderClass = [
+                  'border-r border-gray-200',
+                  'border-r border-gray-200',
+                  'border-r border-gray-200',
+                  'border-gray-200',
+                ][i];
+                return (
+                  <div key={item.label} className={`px-8 py-10 ${borderClass}`}>
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-3 text-[#5F5E5A]">
+                      {item.label}
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-700">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
