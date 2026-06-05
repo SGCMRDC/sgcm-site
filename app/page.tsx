@@ -352,22 +352,12 @@ export default function Home() {
 
             {/* Right column — photo */}
             <div className="relative min-h-[260px] lg:min-h-[420px]">
-              {/* TODO: remplacer par photo terrain RDC definitive */}
               <Image
-                src="/kin-rdc-sgcm.jpg"
-                alt="Kinshasa, DRC — SGCM field operations"
+                src="/images/about-mineral-structure.png"
+                alt="Mineral supply chain compliance — SGCM"
                 fill
                 className="object-cover"
               />
-              {/* Overlay navy bottom band */}
-              <div
-                className="absolute bottom-0 left-0 right-0 px-8 py-4"
-                style={{ background: 'rgba(10,22,40,0.85)' }}
-              >
-                <p className="text-white text-sm tracking-wide">
-                  Kinshasa · Kolwezi (DRC) · Brussels (Belgium)
-                </p>
-              </div>
             </div>
           </div>
 
