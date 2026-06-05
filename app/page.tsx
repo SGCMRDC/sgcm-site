@@ -331,18 +331,23 @@ export default function Home() {
           </h2>
 
           {/* Split: text left / photo right */}
-          <div className="lg:grid lg:grid-cols-[45fr_55fr] overflow-hidden rounded-[14px]">
+          <div className="grid grid-cols-1 md:grid-cols-5 overflow-hidden rounded-[14px]">
 
             {/* Left column — gray bg */}
-            <div className="bg-gray-100 px-8 md:px-10 py-10 md:py-14 flex flex-col justify-center">
+            <div className="md:col-span-3 bg-gray-100 px-8 md:px-10 py-10 md:py-14 flex flex-col justify-center">
               <p className="text-gray-500 leading-relaxed mb-4">
                 Société de Gestion et Consultation Minières (SGCM) is a Congolese company
                 based in Kinshasa, specialized in structuring the compliance of mineral supply
                 chains. We support mining operators, institutions and international buyers in
                 implementing the due diligence standards applicable to the extractive sector.
               </p>
-              <p className="font-medium leading-relaxed mb-6" style={{ color: '#0A1628' }}>
+              <p className="font-medium leading-relaxed mb-4" style={{ color: '#0A1628' }}>
                 Our role: structuring, documenting, validating.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                SGCM integrates documentary compliance, traceability and operational audit,
+                aligned with OECD guidelines, to deliver to international buyers complete,
+                verifiable and auditable due diligence dossiers.
               </p>
               <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
                 Find out more
@@ -351,7 +356,7 @@ export default function Home() {
             </div>
 
             {/* Right column — photo */}
-            <div className="relative min-h-[260px] lg:min-h-[420px]">
+            <div className="md:col-span-2 relative min-h-[260px] md:min-h-0">
               <Image
                 src="/images/about-mineral-structure.png"
                 alt="Mineral supply chain compliance — SGCM"
@@ -361,8 +366,14 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Gradient separator */}
+          <div
+            className="mt-10 md:mt-14 h-[3px]"
+            style={{ background: 'linear-gradient(to right, #FF7F2A, #F7B500)' }}
+          />
+
           {/* 4-bloc band: Mission / Vision / Presence / Focus */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t-2 mt-10 md:mt-14" style={{ borderColor: '#0A1628' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {aboutCards.map((item, i) => {
               const borderClass = [
                 'border-b sm:border-r lg:border-b-0 border-gray-200',
