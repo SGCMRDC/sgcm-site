@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { SiteHeader } from '../../../components/SiteHeader';
 import { SiteFooter } from '../../../components/SiteFooter';
 
-// Image hero en attente de confirmation — fond navy en placeholder.
-// Remplacer HERO_SRC par le chemin confirmé pour activer l'image.
-const HERO_SRC = '';
+const HERO_SRC = '/images/about-us-sgcm.png';
 
 export default function AProposPage() {
   return (
@@ -31,7 +29,7 @@ export default function AProposPage() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={HERO_SRC}
-              alt="À propos de SGCM"
+              alt="Strates géologiques minérales et visualisation de données de la chaîne d'approvisionnement"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
             />
           )}
