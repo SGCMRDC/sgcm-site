@@ -1,8 +1,7 @@
 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
 import { SiteHeader } from '../../../components/SiteHeader';
 import { ProgramPage } from '../../../components/ProgramPage';
+import { SiteFooter } from '../../../components/SiteFooter';
 
 export default function ProgrammeCRPPageFR() {
   return (
@@ -59,49 +58,7 @@ export default function ProgrammeCRPPageFR() {
         ]}
       />
 
-      <footer className="bg-[#0A1628] text-white px-6 md:px-12 pt-16 pb-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-            <div>
-              <Image src="/sgcm-logo.png" alt="SGCM" width={100} height={32} className="h-8 w-auto mb-4" />
-              <p className="text-white/40 text-xs leading-relaxed max-w-[200px]">
-                Société de Gestion et Consultation Minières.<br />Kinshasa · Kolwezi · Brussels.
-              </p>
-            </div>
-            <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">Programmes</p>
-              <ul className="space-y-2">
-                {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map(item => (
-                  <li key={item}><Link href="#" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-[11px] font-medium tracking-widest uppercase text-white/30 mb-4">À Propos</p>
-              <ul className="space-y-2">
-                {['Mission', 'Vision', 'Présence'].map(item => (
-                  <li key={item}><Link href="/fr/#aboutus" className="text-white/50 text-sm hover:text-white transition-colors">{item}</Link></li>
-                ))}
-                <li><Link href="/fr/careers" className="text-white/50 text-sm hover:text-white transition-colors">Carrières</Link></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-[11px] font-medium tracking-widests uppercase text-white/30 mb-4">Contact</p>
-              <ul className="space-y-2">
-                <li><a href="mailto:contact@sgcm-mining.com" className="text-white/50 text-sm hover:text-white transition-colors">contact@sgcm-mining.com</a></li>
-                <li><a href="mailto:verify@sgcm-mining.com" className="text-white/50 text-sm hover:text-white transition-colors">verify@sgcm-mining.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-white/25 text-xs">© {new Date().getFullYear()} SGCM · Société de Gestion et Consultation Minières</p>
-            <div className="flex gap-6">
-              <Link href="/fr/privacy" className="text-white/25 text-xs hover:text-white/50 transition">Confidentialité</Link>
-              <Link href="/fr/legal" className="text-white/25 text-xs hover:text-white/50 transition">Juridique</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter lang="fr" />
     </main>
   );
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { CardCarousel } from '../../components/CardCarousel';
 import { SiteHeader } from '../../components/SiteHeader';
 import { PlatformScrollSection } from '../../components/PlatformScrollSection';
+import { SiteFooter } from '../../components/SiteFooter';
 import { Layers, Landmark, TrendingUp } from 'lucide-react';
 
 // ─────────────────────────────────────────────
@@ -390,7 +391,7 @@ export default function Home() {
           PLATEFORME
           ══════════════════════════════════════════════ */}
       <PlatformScrollSection
-        eyebrow="PLATEFORME"
+        eyebrow="PROGRAMME"
         heading="CRP, le standard SGCM de validation des opérateurs"
         intro="Chaque unité de production évaluée selon un protocole unique, documenté et auditable."
         chapters={[
@@ -436,71 +437,7 @@ export default function Home() {
       </section>
 
 
-      {/* ══════════════════════════════════════════════
-          FOOTER
-          ══════════════════════════════════════════════ */}
-      <footer className="bg-[#0a0a0a] text-white">
-        <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
-          <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-2">
-            <img src="/sgcm-logo.png" alt="SGCM"
-              className="object-contain"
-              style={{ width: '220px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
-            <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
-              Intégrateur de conformité pour des chaînes d'approvisionnement minérales responsables. Structurer la documentation, la traçabilité et l'alignement réglementaire depuis la RDC vers les marchés internationaux.
-            </p>
-            <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>Kinshasa · Kolwezi · Bruxelles</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Entreprise</p>
-            {[
-              { label: 'À propos',   href: '#aboutus' },
-              { label: 'Plateforme', href: '#platform' },
-              { label: 'Actualités', href: '#insights' },
-              { label: 'Carrières',  href: '/fr/careers' },
-            ].map((item) => (
-              <a key={item.label} href={item.href} className="text-white/40 text-xs hover:text-white transition-colors">{item.label}</a>
-            ))}
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Services</p>
-            {['Programme CRP', 'Cadre de Conformité', 'Intégration Traçabilité', 'Vérification des Partenaires', 'Conseil Institutionnel'].map((item) => (
-              <a key={item} href="#services" className="text-white/40 text-xs hover:text-white transition-colors">{item}</a>
-            ))}
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Contact</p>
-            <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
-            <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
-            {/* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */}
-            <a href="#" className="text-white/40 text-xs hover:text-white transition-colors">LinkedIn</a>
-            <span className="text-white/25 text-xs">Bureau de Kinshasa</span>
-            <span className="text-white/25 text-xs">Bureau de Bruxelles</span>
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">Juridique</p>
-            <a href="/fr/privacy" className="text-white/40 text-xs hover:text-white transition-colors">Politique de confidentialité</a>
-            <a href="/fr/legal" className="text-white/40 text-xs hover:text-white transition-colors">Mentions légales</a>
-          </div>
-        </div>
-        <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/40">
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              <span>© 2026 SGCM SARL</span>
-              <span className="text-white/20">|</span>
-              <a href="/fr/privacy" className="hover:text-white/70 transition">Confidentialité</a>
-              <span className="text-white/20">|</span>
-              <a href="/fr/legal" className="hover:text-white/70 transition">Juridique</a>
-              <span className="text-white/20">|</span>
-              <span>SGCM Certified®</span>
-            </div>
-            <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/40">
-              <span>RCCM: CD/KNG/RCCM/26-B-01360</span>
-              <span className="text-white/20">|</span>
-              <span>ID. Nat.: 01-B0500-N98100N</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter lang="fr" />
 
     </main>
   );

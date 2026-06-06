@@ -5,19 +5,17 @@ import { createPortal } from 'react-dom';
 import { useHideOnScroll } from './useHideOnScroll';
 
 const NAV_EN = [
-  { label: 'ABOUT US',  href: '/#aboutus'  },
-  { label: 'PLATFORM',  href: '/#platform' },
-  { label: 'SERVICES',  href: '/#services' },
-  { label: 'INSIGHTS',  href: '/#insights' },
-  { label: 'CONTACT',   href: '/contact'   },
+  { label: 'ABOUT US',    href: '/#aboutus'  },
+  { label: 'CRP PROGRAM', href: '/#platform' },
+  { label: 'SERVICES',    href: '/#services' },
+  { label: 'CONTACT',     href: '/contact'   },
 ];
 
 const NAV_FR = [
-  { label: 'À PROPOS',   href: '/fr/#aboutus'  },
-  { label: 'PLATEFORME', href: '/fr/#platform' },
-  { label: 'SERVICES',   href: '/fr/#services' },
-  { label: 'ACTUALITÉS', href: '/fr/#insights' },
-  { label: 'CONTACT',    href: '/contact/fr'   },
+  { label: 'À PROPOS',      href: '/fr/#aboutus'  },
+  { label: 'PROGRAMME CRP', href: '/fr/#platform' },
+  { label: 'SERVICES',      href: '/fr/#services' },
+  { label: 'CONTACT',       href: '/contact/fr'   },
 ];
 
 export interface SiteHeaderProps {
@@ -39,7 +37,7 @@ export function SiteHeader({
   solid = false,
 }: SiteHeaderProps) {
   const navItems = activeLang === 'en' ? NAV_EN : NAV_FR;
-  const effectiveActiveLabel = activeLabel !== undefined ? activeLabel : (activeLang === 'en' ? 'PLATFORM' : 'PLATEFORME');
+  const effectiveActiveLabel = activeLabel !== undefined ? activeLabel : (activeLang === 'en' ? 'CRP PROGRAM' : 'PROGRAMME CRP');
   const logoHref = activeLang === 'en' ? '/' : '/fr';
   const isLight = variant === 'light';
   const city2 = activeLang === 'fr' ? 'Bruxelles' : 'Brussels';
