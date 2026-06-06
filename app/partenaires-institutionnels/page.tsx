@@ -12,7 +12,7 @@ export default function PartenairesInstitutionnelsPage() {
         breadcrumbLabel="Institutional Partners"
         title="Institutional Partners"
         baseline="Connecting institutions, operators and markets around a single proof of compliance."
-        heroImage="/kin-rdc-sgcm.jpg"
+        heroImage="/kin-rdc-sgcm.webp"
         heroLink1={{ label: 'Our ecosystem', href: '#standard' }}
         heroLink2={{ label: '→ The compliance framework', href: '/cadre-de-conformite' }}
         bodyEyebrow="DISCOVER THE ECOSYSTEM"

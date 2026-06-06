@@ -12,7 +12,7 @@ export default function ProgrammeCRPPage() {
         breadcrumbLabel="CRP Program"
         title="CRP Program"
         baseline="Structuring compliance. Documenting proof. Validating eligibility."
-        heroImage="/images/CRP-WEB.png"
+        heroImage="/images/CRP-WEB.webp"
         heroLink1={{ label: 'The CRP standard', href: '#standard' }}
         heroLink2={{ label: '→ The compliance framework', href: '/cadre-de-conformite' }}
         bodyEyebrow="DISCOVER THE PROGRAM"

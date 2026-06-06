@@ -14,7 +14,7 @@ export default function ContactPageFr() {
       <div className="relative h-64 sm:h-80 md:h-[520px] overflow-hidden flex items-end" style={{ marginTop: '102px' }}>
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.3) 100%), url("/SGCM Electrorefining plant.png")',
+          backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.3) 100%), url("/SGCM Electrorefining plant.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }} />

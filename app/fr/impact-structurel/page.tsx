@@ -12,7 +12,7 @@ export default function ImpactStructurelPageFR() {
         breadcrumbLabel="Impact Structurel"
         title="Impact Structurel"
         baseline="Une conformité documentée, vérifiable et durable, au service d'un secteur transformé."
-        heroImage="/images/IMPACT-STRUCTUREL.png"
+        heroImage="/images/IMPACT-STRUCTUREL.webp"
         heroLink1={{ label: 'Notre impact', href: '#standard' }}
         heroLink2={{ label: '→ Le programme CRP', href: '/fr/programme-crp' }}
         bodyEyebrow="DÉCOUVRIR L'IMPACT"

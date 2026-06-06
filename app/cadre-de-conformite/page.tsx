@@ -12,7 +12,7 @@ export default function CadreDeConformitePage() {
         breadcrumbLabel="Compliance Framework"
         title="Compliance Framework"
         baseline="Aligning Congolese production with the world's due diligence standards."
-        heroImage="/images/CADRE-CONFORMITE.png"
+        heroImage="/images/CADRE-CONFORMITE.webp"
         heroLink1={{ label: 'The reference standards', href: '#standard' }}
         heroLink2={{ label: '→ The CRP program', href: '/programme-crp' }}
         bodyEyebrow="DISCOVER THE FRAMEWORK"

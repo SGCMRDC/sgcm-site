@@ -38,7 +38,7 @@ const slides: Slide[] = [
     body: 'A proprietary standard for evaluating and validating DRC production units.',
     subtitle: 'Explore the Program',
     ctaHref: '#platform',
-    image: '/images/CRP-WEB.png',
+    image: '/images/CRP-WEB.webp',
     alt: 'SGCM Certified Responsible Partner framework',
   },
   {
@@ -47,7 +47,7 @@ const slides: Slide[] = [
     body: 'OECD · LBMA · ICGLR · EU 2017/821 · DRC Mining Code 2018',
     subtitle: 'Regulatory Framework',
     ctaHref: '#services',
-    image: '/images/diligence-crp.png',
+    image: '/images/diligence-crp.webp',
     alt: 'International due diligence frameworks alignment',
   },
   {
@@ -56,7 +56,7 @@ const slides: Slide[] = [
     body: 'Structural conditions for international market access — and for lasting local value.',
     subtitle: 'Structural Outcomes',
     ctaHref: '#contact',
-    image: '/images/IMPACT-STRUCTUREL.png',
+    image: '/images/IMPACT-STRUCTUREL.webp',
     alt: 'Congolese artisanal miners — ASM operation structured by SGCM',
   },
 ];
@@ -241,7 +241,7 @@ export default function Home() {
 
             <Link href="/programme-crp" aria-label="Learn more about the CRP Program"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/DRC-MINER-ASM.png" alt="Artisanal mining operator in DRC" fill
+              <Image src="/images/DRC-MINER-ASM.webp" alt="Artisanal mining operator in DRC" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -257,7 +257,7 @@ export default function Home() {
 
             <Link href="/cadre-de-conformite" aria-label="Learn more about the Compliance Framework"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/CADRE-CONFORMITE.png" alt="Cadre de Conformité" fill
+              <Image src="/images/CADRE-CONFORMITE.webp" alt="Cadre de Conformité" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -273,7 +273,7 @@ export default function Home() {
 
             <Link href="/partenaires-institutionnels" aria-label="Learn more about Institutional Partners"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/kin-rdc-sgcm.jpg" alt="Kinshasa, institutional capital" fill
+              <Image src="/kin-rdc-sgcm.webp" alt="Kinshasa, institutional capital" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -289,7 +289,7 @@ export default function Home() {
 
             <Link href="/impact-structurel" aria-label="Learn more about Structural Impact"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/IMPACT-STRUCTUREL.png" alt="Impact Structurel" fill
+              <Image src="/images/IMPACT-STRUCTUREL.webp" alt="Impact Structurel" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -350,7 +350,7 @@ export default function Home() {
             {/* Right column — photo (above text on mobile) */}
             <div className="order-first md:order-last relative h-[220px] md:h-full">
               <Image
-                src="/images/about-mineral-structure.png"
+                src="/images/about-mineral-structure.webp"
                 alt="Mineral supply chain compliance — SGCM"
                 fill
                 className="object-cover"

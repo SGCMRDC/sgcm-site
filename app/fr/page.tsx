@@ -38,7 +38,7 @@ const slides: Slide[] = [
     body: 'Un standard propriétaire d\'évaluation et de validation des unités de production RDC.',
     subtitle: 'Découvrir le Programme',
     ctaHref: '#platform',
-    image: '/images/CRP-WEB.png',
+    image: '/images/CRP-WEB.webp',
     alt: 'Cadre Certified Responsible Partner de SGCM',
   },
   {
@@ -47,7 +47,7 @@ const slides: Slide[] = [
     body: 'OCDE · LBMA · ICGLR · Règlement UE 2017/821 · Code Minier RDC 2018',
     subtitle: 'Cadre Réglementaire',
     ctaHref: '#services',
-    image: '/images/diligence-crp.png',
+    image: '/images/diligence-crp.webp',
     alt: 'Alignement sur les cadres internationaux de diligence raisonnable',
   },
   {
@@ -56,7 +56,7 @@ const slides: Slide[] = [
     body: 'Des conditions structurelles d\'accès aux marchés internationaux — et de valeur locale durable.',
     subtitle: 'Résultats Structurels',
     ctaHref: '#contact',
-    image: '/images/IMPACT-STRUCTUREL.png',
+    image: '/images/IMPACT-STRUCTUREL.webp',
     alt: 'Mineurs artisanaux congolais — opération ASM structurée par SGCM',
   },
 ];
@@ -224,7 +224,7 @@ export default function Home() {
 
             <Link href="/fr/programme-crp" aria-label="En savoir plus sur le Programme CRP"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/DRC-MINER-ASM.png" alt="Opérateur minier artisanal en RDC" fill
+              <Image src="/images/DRC-MINER-ASM.webp" alt="Opérateur minier artisanal en RDC" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -240,7 +240,7 @@ export default function Home() {
 
             <Link href="/fr/cadre-de-conformite" aria-label="En savoir plus sur le Cadre de Conformité"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/CADRE-CONFORMITE.png" alt="Cadre de Conformité" fill
+              <Image src="/images/CADRE-CONFORMITE.webp" alt="Cadre de Conformité" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -256,7 +256,7 @@ export default function Home() {
 
             <Link href="/fr/partenaires-institutionnels" aria-label="En savoir plus sur les Partenaires Institutionnels"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/kin-rdc-sgcm.jpg" alt="Kinshasa, capitale institutionnelle" fill
+              <Image src="/kin-rdc-sgcm.webp" alt="Kinshasa, capitale institutionnelle" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -272,7 +272,7 @@ export default function Home() {
 
             <Link href="/fr/impact-structurel" aria-label="En savoir plus sur l'Impact Structurel"
               className="group relative aspect-[4/5] overflow-hidden block rounded-[14px] flex-none snap-start w-[82%] sm:w-[46%] lg:w-[23.5%]">
-              <Image src="/images/IMPACT-STRUCTUREL.png" alt="Impact Structurel" fill
+              <Image src="/images/IMPACT-STRUCTUREL.webp" alt="Impact Structurel" fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} aria-hidden="true" />
@@ -335,7 +335,7 @@ export default function Home() {
             {/* Colonne droite — photo (au-dessus du texte sur mobile) */}
             <div className="order-first md:order-last relative h-[220px] md:h-full">
               <Image
-                src="/images/about-mineral-structure.png"
+                src="/images/about-mineral-structure.webp"
                 alt="Conformité de la chaîne minérale — SGCM"
                 fill
                 className="object-cover"

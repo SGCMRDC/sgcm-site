@@ -12,7 +12,7 @@ export default function CadreDeConformitePageFR() {
         breadcrumbLabel="Cadre de Conformité"
         title="Cadre de Conformité"
         baseline="Aligner la production congolaise sur les standards mondiaux de diligence raisonnable."
-        heroImage="/images/CADRE-CONFORMITE.png"
+        heroImage="/images/CADRE-CONFORMITE.webp"
         heroLink1={{ label: 'Les standards de référence', href: '#standard' }}
         heroLink2={{ label: '→ Le programme CRP', href: '/fr/programme-crp' }}
         bodyEyebrow="DÉCOUVRIR LE CADRE"

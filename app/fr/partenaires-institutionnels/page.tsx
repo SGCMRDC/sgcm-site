@@ -12,7 +12,7 @@ export default function PartenairesInstitutionnelsPageFR() {
         breadcrumbLabel="Partenaires Institutionnels"
         title="Partenaires Institutionnels"
         baseline="Relier les institutions, les opérateurs et les marchés autour d'une même preuve de conformité."
-        heroImage="/kin-rdc-sgcm.jpg"
+        heroImage="/kin-rdc-sgcm.webp"
         heroLink1={{ label: 'Notre écosystème', href: '#standard' }}
         heroLink2={{ label: '→ Le cadre de conformité', href: '/fr/cadre-de-conformite' }}
         bodyEyebrow="DÉCOUVRIR L'ÉCOSYSTÈME"
