@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 
-const HERO_SRC = '/images/about-us-sgcm.png';
+const HERO_SRC = '/images/about-us-sgcm.webp';
 
 export default function AboutPage() {
   return (
