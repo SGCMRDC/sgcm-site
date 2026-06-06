@@ -1,12 +1,41 @@
 import Image from 'next/image';
 
-// Social icons — activate entries when URLs are confirmed.
-// The socials row renders only when at least one entry is present.
-// import { Linkedin, Twitter, Youtube } from 'lucide-react';
-const SOCIALS: Array<{ label: string; href: string }> = [
-  // { label: 'LinkedIn', href: 'https://www.linkedin.com/company/sgcm-sarl' },
-  // { label: 'X',        href: 'https://x.com/sgcm' },
-  // { label: 'YouTube',  href: 'https://youtube.com/@sgcm' },
+// Lucide v1.17.0 doesn't include Linkedin — inline SVG matches the Lucide path exactly.
+const LinkedinIcon = ({ size = 24, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+type SocialEntry = {
+  name: string;
+  href: string;
+  icon: typeof LinkedinIcon;
+  ariaLabel: { en: string; fr: string };
+};
+
+// Socials row renders only when at least one entry is active.
+const SOCIALS: SocialEntry[] = [
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/sgcm-drc/',
+    icon: LinkedinIcon,
+    ariaLabel: { en: 'SGCM on LinkedIn', fr: 'SGCM sur LinkedIn' },
+  },
+  // { name: 'X',       href: 'https://x.com/sgcm',       ariaLabel: { en: 'SGCM on X',       fr: 'SGCM sur X'       } },
+  // { name: 'YouTube', href: 'https://youtube.com/@sgcm', ariaLabel: { en: 'SGCM on YouTube', fr: 'SGCM sur YouTube' } },
 ];
 
 const DATA = {
@@ -92,14 +121,16 @@ export function SiteFooter({ lang, className }: SiteFooterProps) {
           <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>{d.city}</p>
           {SOCIALS.length > 0 && (
             <div className="flex gap-2 mt-1">
-              {SOCIALS.map(({ label, href }) => (
+              {SOCIALS.map(({ name, href, icon: Icon, ariaLabel }) => (
                 <a
-                  key={label}
+                  key={name}
                   href={href}
-                  aria-label={label}
-                  className="w-7 h-7 flex items-center justify-center rounded border border-white/15 text-white/40 hover:text-white hover:border-white/40 transition-colors text-[10px] font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={ariaLabel[lang]}
+                  className="w-7 h-7 flex items-center justify-center rounded border border-white/15 text-white/40 hover:text-white hover:border-white/40 transition-colors"
                 >
-                  {label[0]}
+                  <Icon size={14} strokeWidth={1.5} />
                 </a>
               ))}
             </div>
