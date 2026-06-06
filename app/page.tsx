@@ -60,13 +60,6 @@ const slides: Slide[] = [
   },
 ];
 
-const aboutCards = [
-  { label: 'Mission',  text: 'Structure the compliance of DRC mining operators according to international standards' },
-  { label: 'Vision',   text: 'Become the reference compliance integrator in Central Africa' },
-  { label: 'Presence', text: 'Kinshasa · Kolwezi (DRC) and Brussels (Belgium)' },
-  { label: 'Focus',    text: 'Strategic minerals from the DRC, integrated into audited supply chains aligned with international standards.' },
-];
-
 const services = [
   {
     title: 'Multi-mineral compliance structuring',
@@ -361,29 +354,6 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-            </div>
-          </div>
-
-          {/* Separator + 4-bloc band: desktop only */}
-          <div className="hidden md:block">
-            <div className="mt-14 h-[2px] bg-[#0A1628]" />
-            <div className="grid grid-cols-4">
-              {aboutCards.map((item, i) => {
-                const borderClass = [
-                  'border-r border-gray-200',
-                  'border-r border-gray-200',
-                  'border-r border-gray-200',
-                  'border-gray-200',
-                ][i];
-                return (
-                  <div key={item.label} className={`px-8 py-10 ${borderClass}`}>
-                    <p className="text-xs font-semibold uppercase tracking-widest mb-3 text-[#5F5E5A]">
-                      {item.label}
-                    </p>
-                    <p className="text-sm leading-relaxed text-gray-700">{item.text}</p>
-                  </div>
-                );
-              })}
             </div>
           </div>
 
