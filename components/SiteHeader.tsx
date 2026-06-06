@@ -5,14 +5,14 @@ import { createPortal } from 'react-dom';
 import { useHideOnScroll } from './useHideOnScroll';
 
 const NAV_EN = [
-  { label: 'ABOUT US',    href: '/#aboutus'  },
+  { label: 'ABOUT US',    href: '/about'     },
   { label: 'CRP PROGRAM', href: '/#platform' },
   { label: 'SERVICES',    href: '/#services' },
   { label: 'CONTACT',     href: '/contact'   },
 ];
 
 const NAV_FR = [
-  { label: 'À PROPOS',      href: '/fr/#aboutus'  },
+  { label: 'À PROPOS',      href: '/fr/a-propos'  },
   { label: 'PROGRAMME CRP', href: '/fr/#platform' },
   { label: 'SERVICES',      href: '/fr/#services' },
   { label: 'CONTACT',       href: '/contact/fr'   },
