@@ -74,19 +74,19 @@ export function SiteFooter({ lang, className }: SiteFooterProps) {
 
   return (
     <footer className={`bg-[#0a0a0a] text-white${className ? ` ${className}` : ''}`}>
-      <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 items-start">
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-14 items-start">
 
         {/* Brand */}
-        <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-2">
+        <div className="sm:col-span-2 lg:col-span-1 flex flex-col">
           <Image
             src="/sgcm-logo.png"
             alt="SGCM"
             width={220}
             height={60}
-            className="object-contain w-[220px] h-auto"
+            className="object-contain w-[220px] h-auto mb-8"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
-          <p style={{ marginTop: '8px', color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
+          <p className="mb-4" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', lineHeight: '1.7' }}>
             {d.baseline}
           </p>
           <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>{d.city}</p>
@@ -139,7 +139,7 @@ export function SiteFooter({ lang, className }: SiteFooterProps) {
       </div>
 
       {/* Legal bar */}
-      <div className="border-t border-white/10 px-6 py-6 max-w-7xl mx-auto">
+      <div className="border-t border-white/10 px-6 py-6 md:py-7 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/40">
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             <span>© 2026 SGCM SARL</span>
