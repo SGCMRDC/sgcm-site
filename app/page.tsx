@@ -341,10 +341,10 @@ export default function Home() {
                 aligned with OECD guidelines, to deliver to international buyers complete,
                 verifiable and auditable due diligence dossiers.
               </p>
-              <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
+              <Link href="/about" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
                 Find out more
                 <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-              </a>
+              </Link>
             </div>
 
             {/* Right column — photo (above text on mobile) */}

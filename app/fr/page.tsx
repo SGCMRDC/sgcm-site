@@ -326,10 +326,10 @@ export default function Home() {
                 internationaux des dossiers de diligence raisonnable complets, vérifiables
                 et auditables.
               </p>
-              <a href="#platform" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
+              <Link href="/fr/a-propos" className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 group w-fit">
                 En savoir plus
                 <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-              </a>
+              </Link>
             </div>
 
             {/* Colonne droite — photo (au-dessus du texte sur mobile) */}
