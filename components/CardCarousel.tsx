@@ -17,7 +17,7 @@ export function CardCarousel({ children }: { children: React.ReactNode }) {
       <div
         ref={trackRef}
         onScroll={onScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-5 scrollbar-hide"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-5 scrollbar-hide -mx-6 md:-mx-14 lg:mx-0 [&>*:first-child]:ml-6 md:[&>*:first-child]:ml-14 lg:[&>*:first-child]:ml-0 [&>*:first-child]:scroll-ml-6 md:[&>*:first-child]:scroll-ml-14 lg:[&>*:first-child]:scroll-ml-0 [&>*:last-child]:mr-6 md:[&>*:last-child]:mr-14 lg:[&>*:last-child]:mr-0"
       >
         {children}
       </div>
