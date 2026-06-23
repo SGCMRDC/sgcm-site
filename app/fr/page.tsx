@@ -6,7 +6,7 @@ import { CardCarousel } from '../../components/CardCarousel';
 import { SiteHeader } from '../../components/SiteHeader';
 import { PlatformScrollSection } from '../../components/PlatformScrollSection';
 import { SiteFooter } from '../../components/SiteFooter';
-import { Layers, Landmark, TrendingUp } from 'lucide-react';
+import { Layers, Landmark, Waypoints } from 'lucide-react';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -73,9 +73,9 @@ const services = [
     Icon: Landmark,
   },
   {
-    title: 'Conseil stratégique minier',
-    desc: "Sur la base des données collectées dans nos audits, SGCM oriente acheteurs industriels, fonds d'investissement et institutions publiques sur la structuration de leurs partenariats RDC : cartographie des risques, sélection des opérateurs, ingénierie contractuelle, suivi opérationnel.",
-    Icon: TrendingUp,
+    title: 'Provenance vérifiable',
+    desc: "Les acheteurs internationaux et les raffineries accèdent directement à l'origine documentée et à la chaîne de traçabilité de chaque lot structuré par SGCM, de la coopérative au point d'exportation. Une base concrète pour un approvisionnement responsable.",
+    Icon: Waypoints,
   },
 ];
 

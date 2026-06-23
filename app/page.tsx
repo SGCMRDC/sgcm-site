@@ -6,7 +6,7 @@ import { CardCarousel } from '../components/CardCarousel';
 import { SiteHeader } from '../components/SiteHeader';
 import { PlatformScrollSection } from '../components/PlatformScrollSection';
 import { SiteFooter } from '../components/SiteFooter';
-import { Layers, Landmark, TrendingUp } from 'lucide-react';
+import { Layers, Landmark, Waypoints } from 'lucide-react';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -73,9 +73,9 @@ const services = [
     Icon: Landmark,
   },
   {
-    title: 'Strategic Mining Advisory',
-    desc: 'Drawing on data collected through its audits, SGCM advises industrial buyers, investment funds and public institutions on the structuring of their DRC partnerships: risk mapping, operator selection, contractual engineering, operational monitoring.',
-    Icon: TrendingUp,
+    title: 'Verifiable Provenance',
+    desc: 'International buyers and refineries gain direct, auditable visibility into the documented origin and chain of custody of every lot structured through SGCM, from the cooperative to the export point. A practical foundation for responsible sourcing.',
+    Icon: Waypoints,
   },
 ];
 
