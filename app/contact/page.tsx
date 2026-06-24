@@ -1,6 +1,16 @@
 'use client';
+import Link from 'next/link';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
+
+// lucide-react v1.17.0 doesn't include Linkedin — inline SVG matches the Lucide path exactly.
+const LinkedinIcon = ({ size = 24, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
 
 export default function ContactPage() {
   return (
@@ -8,127 +18,74 @@ export default function ContactPage() {
 
       <SiteHeader variant="dark" solid={true} activeLang="en" enHref="/contact" frHref="/contact/fr" activeLabel="CONTACT" />
 
-      {/* ══════════════════════════════════════════════
-          HERO
-      ══════════════════════════════════════════════ */}
-      <div className="relative h-64 sm:h-80 md:h-[520px] overflow-hidden flex items-end" style={{ marginTop: '102px' }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.3) 100%), url("/SGCM Electrorefining plant.webp")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }} />
-        <div className="relative z-10 px-6 md:px-12 pb-8 md:pb-16 max-w-2xl">
-          <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '16px' }}>
-            Contact
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px]"
-            style={{ fontWeight: 300, color: '#fff', lineHeight: 1.1, marginBottom: '20px' }}>
-            Get in touch<br />with SGCM
-          </h1>
-          <p className="hidden md:block" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: '480px' }}>
-            Whether you are an industrial buyer, a certified producer, or an institutional partner — our team is ready to support your facilitation and compliance needs.
-          </p>
+      <section style={{ marginTop: '102px', background: '#f9fafb', borderBottom: '0.5px solid rgba(0,0,0,0.06)' }}>
+        <div className="px-6 md:px-12 py-16 md:py-24 text-center" style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <p style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '0.14em', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '22px' }}>Contact</p>
+          <h1 style={{ fontWeight: 300, fontSize: 'clamp(34px, 6vw, 60px)', lineHeight: 1.04, letterSpacing: '-0.01em', color: '#0A1628', marginBottom: '20px' }}>Get in touch with SGCM</h1>
+          <p style={{ fontWeight: 300, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.4, color: '#374151', maxWidth: '560px', margin: '0 auto' }}>Whether you are an industrial buyer, a mining operator, or an institutional partner, our team supports your facilitation and compliance needs.</p>
         </div>
-      </div>
+      </section>
 
-      {/* ══════════════════════════════════════════════
-          CONTENT
-      ══════════════════════════════════════════════ */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-
-        {/* Office info */}
-        <section className="pt-12 md:pt-16">
-          <div className="flex justify-between items-center pb-6 border-b border-gray-200">
-            <h2 className="text-2xl md:text-[28px]" style={{ fontWeight: 400 }}>SGCM — Kinshasa Office</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-10 md:py-12 border-b border-gray-200">
-            <div className="md:pr-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Head Office</p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>SGCM</p>
-              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.75, marginBottom: '16px' }}>Kinshasa, Democratic Republic of Congo</p>
-              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'block', color: '#1A1F2C', fontSize: '13px', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px', marginBottom: '8px' }}>
-                ✉ contact@sgcm-mining.com
-              </a>
-              <a href="mailto:verify@sgcm-mining.com" style={{ display: 'block', color: '#555', fontSize: '12px', textDecoration: 'none' }}>
-                verify@sgcm-mining.com
-              </a>
+      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <section style={{ borderBottom: '0.5px solid rgba(0,0,0,0.1)' }}>
+          <h2 style={{ fontWeight: 300, fontSize: 'clamp(24px, 3vw, 32px)', color: '#0A1628', padding: '36px 0 24px' }}>SGCM Kinshasa</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10">
+            <div>
+              <p style={{ fontSize: '16px', color: '#374151', lineHeight: 1.78 }}>SGCM<br />Kinshasa<br />Democratic Republic of the Congo</p>
+              <a href="mailto:contact@sgcm-mining.com" style={{ display: 'inline-block', marginTop: '16px', fontSize: '15px', color: '#FF7F2A' }}>Email us</a>
             </div>
-            <div className="md:px-12 md:border-r md:border-gray-200">
-              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Quick Links</p>
-              {['About SGCM', 'Our Commercial Ecosystem', 'SGCM Certified™ Standard'].map((item) => (
-                <a key={item} href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#1A1F2C' }}>→</span>{item}
-                </a>
-              ))}
+            <div className="flex flex-col gap-3">
+              <Link href="/about" style={{ fontSize: '15px', color: '#0A1628' }}><span style={{ color: '#FF7F2A', marginRight: '8px' }}>→</span>About SGCM</Link>
+              <a href="#" style={{ fontSize: '15px', color: '#0A1628' }}><span style={{ color: '#FF7F2A', marginRight: '8px' }}>→</span>Our commercial ecosystem</a>
+              <a href="#" style={{ fontSize: '15px', color: '#0A1628' }}><span style={{ color: '#FF7F2A', marginRight: '8px' }}>→</span>SGCM Certified™ Standard</a>
             </div>
-            <div className="md:pl-12">
-              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px' }}>Connect</p>
-              {[
-                { label: 'LinkedIn', href: '#' /* TODO: replace with real LinkedIn company page URL (e.g. https://www.linkedin.com/company/sgcm-sarl) */ },
-              ].map((item) => (
-                <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111', textDecoration: 'none', marginBottom: '12px' }}>
-                  <span style={{ color: '#1A1F2C' }}>→</span>{item.label}
-                </a>
-              ))}
+            <div>
+              <p style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '0.14em', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '12px' }}>Follow us</p>
+              <a href="https://www.linkedin.com/company/sgcm-drc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ display: 'inline-flex', width: '40px', height: '40px', border: '1px solid #FF7F2A', borderRadius: '50%', alignItems: 'center', justifyContent: 'center', color: '#FF7F2A' }}><LinkedinIcon size={19} strokeWidth={1.5} /></a>
             </div>
           </div>
         </section>
 
-        {/* Departments */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-12 md:py-14 border-b border-gray-200">
-          {[
-            { title: 'Communications & Partnerships', desc: 'For press inquiries, institutional communication, or partnership proposals, please reach out directly to our communications team.', email: 'contact@sgcm-mining.com' },
-            { title: 'Commercial & Buyer Relations', desc: 'For commercial inquiries, off-take discussions, or buyer onboarding, contact our commercial team directly.', email: 'contact@sgcm-mining.com' },
-            { title: 'Compliance & Documentation', desc: 'For mandate verification, KYC documentation requests, or SGCM Certified™ inquiries, use our dedicated verification channel.', email: 'verify@sgcm-mining.com' },
-          ].map((dept, i) => (
-            <div key={dept.title} className={`${i > 0 ? 'md:pl-12' : ''} ${i < 2 ? 'md:pr-12 md:border-r md:border-gray-200' : ''}`}>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(26,31,44,0.15)', display: 'inline-block' }}>{dept.title}</p>
-              <p style={{ fontSize: '13px', lineHeight: 1.75, color: '#555', marginBottom: '12px', marginTop: '8px' }}>{dept.desc}</p>
-              <a href={`mailto:${dept.email}`} style={{ fontSize: '12px', fontWeight: 600, color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Send an inquiry →
-              </a>
-            </div>
-          ))}
-        </div>
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8" style={{ padding: '36px 0' }}>
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0A1628', marginBottom: '12px' }}>Communications &amp; Partnerships</h3>
+            <p style={{ fontSize: '15px', color: '#374151', lineHeight: 1.6, marginBottom: '16px' }}>For press, institutional communications or partnership proposals.</p>
+            <a href="mailto:contact@sgcm-mining.com" style={{ fontSize: '14px', color: '#FF7F2A' }}>Email us</a>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0A1628', marginBottom: '12px' }}>Buyer &amp; Institutional Relations</h3>
+            <p style={{ fontSize: '15px', color: '#374151', lineHeight: 1.6, marginBottom: '16px' }}>For international buyers and institutions seeking access to compliance and traceability dossiers.</p>
+            <a href="mailto:contact@sgcm-mining.com" style={{ fontSize: '14px', color: '#FF7F2A' }}>Email us</a>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#0A1628', marginBottom: '12px' }}>Compliance &amp; Documentation</h3>
+            <p style={{ fontSize: '15px', color: '#374151', lineHeight: 1.6, marginBottom: '16px' }}>For documentation requests, KYC files or questions about the SGCM Certified&trade; Standard.</p>
+            <a href="mailto:contact@sgcm-mining.com" style={{ fontSize: '14px', color: '#FF7F2A' }}>Email us</a>
+          </div>
+        </section>
 
-        {/* Careers */}
-        <div className="py-12 md:py-14 border-b border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16 items-start">
+        <section style={{ borderTop: '0.5px solid rgba(0,0,0,0.12)', borderBottom: '0.5px solid rgba(0,0,0,0.12)', padding: '28px 0', display: 'flex', alignItems: 'baseline', gap: '14px', flexWrap: 'wrap' }}>
+          <span style={{ fontWeight: 300, fontSize: 'clamp(22px, 2.6vw, 28px)', color: '#0A1628' }}>SGCM Brussels</span>
+          <span style={{ fontSize: '14px', color: '#9ca3af' }}>Liaison office &middot; Belgium</span>
+        </section>
+      </div>
+
+      <section style={{ background: '#f9fafb' }}>
+        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 0' }}>
+          <p style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '0.14em', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '14px' }}>Careers</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
-              <p style={{ color: '#5F5E5A', fontSize: '11px', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '12px' }}>Careers</p>
-              <h3 style={{ fontSize: '24px', fontWeight: 400, color: '#111', marginBottom: '12px' }}>Join the SGCM team</h3>
-              <p style={{ fontSize: '13px', color: '#555', lineHeight: 1.7 }}>SGCM is currently accepting applications from Congolese professionals committed to building responsible and transparent mineral supply chains in the DRC.</p>
+              <h2 style={{ fontWeight: 300, fontSize: 'clamp(24px, 3vw, 32px)', color: '#0A1628', marginBottom: '14px' }}>Join the SGCM team</h2>
+              <p style={{ fontSize: '15px', color: '#374151', lineHeight: 1.78 }}>SGCM welcomes applications from Congolese professionals committed to building responsible and transparent mineral supply chains in the DRC.</p>
             </div>
-            <div className="flex flex-col gap-4">
-              {[
-                { title: 'Compliance & Documentation Officer', location: 'Kinshasa, DRC · Full-time' },
-                { title: 'Supply Chain Coordinator', location: 'Kinshasa / Kolwezi, DRC · Full-time' },
-                { title: 'Logistics & Export Specialist', location: 'Kinshasa, DRC · Full-time' },
-              ].map((job) => (
-                <div key={job.title} className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 border border-gray-200">
-                  <div>
-                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#111', marginBottom: '4px' }}>{job.title}</p>
-                    <p style={{ fontSize: '12px', color: '#555' }}>{job.location}</p>
-                  </div>
-                  <a href={`mailto:contact@sgcm-mining.com?subject=Application: ${job.title}`}
-                    className="shrink-0"
-                    style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#1A1F2C', textDecoration: 'none', border: '1px solid rgba(26,31,44,0.4)', padding: '8px 16px' }}>
-                    Apply
-                  </a>
-                </div>
-              ))}
+            <div style={{ fontSize: '16px', color: '#374151', lineHeight: 1.78 }}>
+              For Congolese applicants
+              <a href="mailto:careers@sgcm-mining.com" style={{ display: 'block', marginTop: '10px', fontSize: '15px', color: '#FF7F2A' }}>careers@sgcm-mining.com</a>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-
-      {/* ══════════════════════════════════════════════
-          FOOTER
-      ══════════════════════════════════════════════ */}
       <SiteFooter lang="en" className="mt-16 md:mt-[72px]" />
 
     </main>
