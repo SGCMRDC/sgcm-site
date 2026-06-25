@@ -39,7 +39,7 @@ export function ArticleLayout({
         activeLabel={activeLabel}
       />
 
-      <div style={{ marginTop: '102px', padding: '0 clamp(16px, 5vw, 70px)' }}>
+      <div style={{ marginTop: '138px', padding: '0 clamp(16px, 5vw, 70px)' }}>
         <div style={{
           position: 'relative',
           borderRadius: '18px',
