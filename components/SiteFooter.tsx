@@ -156,7 +156,6 @@ export function SiteFooter({ lang, className }: SiteFooterProps) {
         <div className="flex flex-col gap-4">
           <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">{d.contactLabel}</p>
           <a href="mailto:contact@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">contact@sgcm-mining.com</a>
-          <a href="mailto:verify@sgcm-mining.com" className="text-white/40 text-xs hover:text-white transition-colors">verify@sgcm-mining.com</a>
           <span className="text-white/25 text-xs">{d.officeA}</span>
           <span className="text-white/25 text-xs">{d.officeB}</span>
         </div>
