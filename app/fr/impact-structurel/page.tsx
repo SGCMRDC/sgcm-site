@@ -39,23 +39,6 @@ export default function ImpactStructurelPageFR() {
             text: "Le programme structure, documente et valide. Il prépare une matière sur laquelle les autorités compétentes fondent leurs décisions, sans jamais se substituer à leur rôle ni intervenir dans la transaction. L'impact recherché est durable et responsable : faire de la rigueur documentaire un levier de développement pour le secteur et pour le pays.",
           },
         ]}
-        cards={[
-          {
-            title: 'Une conformité durable',
-            body: "Un système de preuve entretenu dans le temps, vérifiable à tout moment, plutôt qu'une attestation figée.",
-            href: '#',
-          },
-          {
-            title: 'La formalisation du secteur',
-            body: "Des opérateurs informels devenus partenaires reconnus, avec un accès consolidé aux marchés exigeants.",
-            href: '#',
-          },
-          {
-            title: 'Une valeur nationale',
-            body: "Traçabilité des flux et lisibilité documentaire au service de la captation de valeur pour la RDC.",
-            href: '#',
-          },
-        ]}
       />
 
       <SiteFooter lang="fr" />

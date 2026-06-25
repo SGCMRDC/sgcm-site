@@ -39,23 +39,6 @@ export default function PartenairesInstitutionnelsPageFR() {
             text: "SGCM relie, structure et documente. Le programme ne se substitue à aucun de ses partenaires. Il fournit l'infrastructure commune qui permet aux institutions d'exercer leur mandat, aux opérateurs de prouver leur conformité, et aux marchés d'accorder leur confiance, autour d'une même source de vérité.",
           },
         ]}
-        cards={[
-          {
-            title: 'Les institutions congolaises',
-            body: "CEEC, SAEMAPE et Ministère des Mines, dans l'exercice de leurs missions d'encadrement et de certification.",
-            href: '#',
-          },
-          {
-            title: 'Les standards internationaux',
-            body: 'OCDE, LBMA et CIRGL, références sur lesquelles repose la lisibilité de la conformité.',
-            href: '#',
-          },
-          {
-            title: "Les marchés de l'aval",
-            body: "Raffineries, importateurs, industriels et financiers, destinataires d'une assurance d'origine vérifiable.",
-            href: '#',
-          },
-        ]}
       />
 
       <SiteFooter lang="fr" />

@@ -35,7 +35,7 @@ export interface ProgramPageProps {
   bodyEyebrow?: string;
   /** CTA label on cards. Defaults to "EN SAVOIR PLUS →". EN pages pass "LEARN MORE →". */
   cardCta?: string;
-  cards: [ProgramCard, ProgramCard, ProgramCard];
+  cards?: [ProgramCard, ProgramCard, ProgramCard];
 }
 
 export function ProgramPage({
@@ -227,6 +227,7 @@ export function ProgramPage({
       </section>
 
       {/* ── CARDS ── */}
+      {cards && cards.length > 0 && (
       <section id="standard" className="px-4 md:px-10 lg:px-[70px] pb-24 md:pb-32">
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8">
@@ -258,6 +259,7 @@ export function ProgramPage({
           </div>
         </div>
       </section>
+      )}
     </div>
   );
 }

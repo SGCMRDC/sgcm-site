@@ -40,23 +40,6 @@ export default function PartenairesInstitutionnelsPage() {
             text: 'SGCM connects, structures and documents. The program substitutes for none of its partners. It provides the common infrastructure that allows institutions to exercise their mandate, operators to prove their compliance, and markets to extend their trust, around a single source of truth.',
           },
         ]}
-        cards={[
-          {
-            title: 'The Congolese institutions',
-            body: 'CEEC, SAEMAPE and the Ministry of Mines, in the exercise of their oversight and certification missions.',
-            href: '#',
-          },
-          {
-            title: 'The international standards',
-            body: 'OECD, LBMA and ICGLR, the references on which the legibility of compliance rests.',
-            href: '#',
-          },
-          {
-            title: 'The downstream markets',
-            body: 'Refiners, importers, industrial groups and financiers, recipients of a verifiable assurance of origin.',
-            href: '#',
-          },
-        ]}
       />
 
       <SiteFooter lang="en" />

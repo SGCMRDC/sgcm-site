@@ -40,23 +40,6 @@ export default function ImpactStructurelPage() {
             text: 'The program structures, documents and validates. It prepares substance on which the competent authorities base their decisions, without ever substituting for their role or intervening in the transaction. The intended impact is lasting and responsible: to make documentary rigour a lever for development, for the sector and for the country.',
           },
         ]}
-        cards={[
-          {
-            title: 'A lasting compliance',
-            body: 'A system of proof maintained over time, verifiable at any moment, rather than a fixed attestation.',
-            href: '#',
-          },
-          {
-            title: 'Formalising the sector',
-            body: 'Informal operators become recognised partners, with consolidated access to demanding markets.',
-            href: '#',
-          },
-          {
-            title: 'A national value',
-            body: 'Traceability of flows and documentary legibility in service of value capture for the DRC.',
-            href: '#',
-          },
-        ]}
       />
 
       <SiteFooter lang="en" />
