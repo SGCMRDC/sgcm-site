@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="fr"
+      breadcrumbLabel={`Vers les standards mondiaux`}
       eyebrow={`Cadre réglementaire`}
       title={`Les standards internationaux de devoir de diligence pour les minerais`}
       intro={`L'accès aux marchés internationaux pour les minerais ne dépend plus seulement de la qualité du produit. Il dépend d'une architecture de standards de devoir de diligence qui s'est densifiée au cours de la dernière décennie. Pour toute production issue de zones sensibles, dont la RDC, comprendre cette architecture n'est pas un exercice théorique, c'est la condition préalable à l'éligibilité commerciale.`}

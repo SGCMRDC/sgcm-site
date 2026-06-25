@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="en"
+      breadcrumbLabel={`Built for international requirements`}
       eyebrow={`Market access`}
       title={`Responsible origin, the new condition of market access`}
       intro={`For a long time, the responsible origin of a mineral was a matter of voluntary commitment, a reputational argument more than an enforceable requirement. That era is over. Under the combined effect of European regulation and refiners' requirements, proof of origin has become a condition of market access. Not being able to establish it means seeing the doors of the most demanding supply chains gradually close.`}

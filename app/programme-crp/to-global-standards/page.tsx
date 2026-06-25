@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="en"
+      breadcrumbLabel={`To global standards`}
       eyebrow={`Regulatory framework`}
       title={`International due diligence standards for minerals`}
       intro={`Access to international markets for minerals no longer depends on product quality alone. It depends on an architecture of due diligence standards that has grown denser over the past decade. For any production from sensitive areas, the DRC included, understanding this architecture is not a theoretical exercise, it is the precondition for commercial eligibility.`}

@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="fr"
+      breadcrumbLabel={`De l'informel au formel`}
       eyebrow={`Cadre économique`}
       title={`De l'informel au formel : comprendre l'économie minière artisanale en RDC`}
       intro={`L'exploitation minière artisanale n'est pas un phénomène marginal en République Démocratique du Congo. Elle constitue l'un des piliers de l'économie réelle du pays. Selon la Banque mondiale, l'activité fait vivre environ dix millions de personnes en RDC et représente dix à vingt pour cent de la production minière nationale. Elle est le deuxième secteur d'emploi du pays après l'agriculture. Comprendre cette économie, c'est comprendre les conditions de vie de millions de foyers et les enjeux de toute une filière placée sous une observation internationale croissante.`}

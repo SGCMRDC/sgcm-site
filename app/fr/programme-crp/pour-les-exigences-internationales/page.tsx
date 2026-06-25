@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="fr"
+      breadcrumbLabel={`Pour les exigences internationales`}
       eyebrow={`Accès au marché`}
       title={`L'origine responsable, nouvelle condition d'accès aux marchés`}
       intro={`Pendant longtemps, l'origine responsable d'un minerai relevait de l'engagement volontaire, un argument de réputation davantage qu'une exigence opposable. Cette époque est révolue. Sous l'effet conjugué de la réglementation européenne et des exigences des raffineurs, la preuve d'origine est devenue une condition d'accès au marché. Ne pas pouvoir l'établir, c'est se voir progressivement fermer les portes des chaînes d'approvisionnement les plus exigeantes.`}

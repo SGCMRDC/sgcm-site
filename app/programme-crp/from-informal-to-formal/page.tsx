@@ -9,6 +9,7 @@ export default function Page() {
   return (
     <ArticleLayout
       lang="en"
+      breadcrumbLabel={`From informal to formal`}
       eyebrow={`Economic context`}
       title={`From informal to formal: understanding the artisanal mining economy in the DRC`}
       intro={`Artisanal mining is not a marginal phenomenon in the Democratic Republic of the Congo. It is one of the pillars of the country's real economy. According to the World Bank, the activity provides a livelihood for around ten million people in the DRC and accounts for ten to twenty percent of national mining production. It is the country's second largest source of employment after agriculture. To understand this economy is to understand the living conditions of millions of households, and the stakes of an entire sector under growing international scrutiny.`}
