@@ -50,7 +50,7 @@ export function ArticleLayout({
           <nav style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px', fontSize: '13px', marginBottom: '26px' }}>
             <Link href={homeHref} aria-label="SGCM" style={{ display: 'inline-flex', alignItems: 'center' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/symbol_SGCM-5.png" alt="SGCM" style={{ height: '20px', width: 'auto', display: 'block' }} />
+              <img src="/symbol_SGCM-5.png" alt="SGCM" style={{ height: '28px', width: 'auto', display: 'block' }} />
             </Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>›</span>
             <Link href={programmeHref} style={{ color: 'rgba(255,255,255,0.65)' }}>{backLabel}</Link>
