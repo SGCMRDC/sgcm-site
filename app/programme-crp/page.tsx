@@ -45,16 +45,19 @@ export default function ProgrammeCRPPage() {
             title: 'From informal to formal',
             body: 'SGCM connects the artisanal mining economy to the requirements of responsible markets, turning informal operators into eligible, traceable and recognised partners.',
             href: '/programme-crp/from-informal-to-formal',
+            image: '/images/informal_formal.png',
           },
           {
             title: 'To global standards',
             body: 'Aligned with the OECD five-step due diligence, the LBMA RGG V9, the ICGLR and Regulation (EU) 2017/821. Documented, verifiable and defensible compliance.',
             href: '/programme-crp/to-global-standards',
+            image: '/images/oecd.avif',
           },
           {
             title: 'Built for international requirements',
             body: 'By integrating AI into documentation, SGCM meets global standards and accelerates case processing. This capability gives Congolese institutions a tool to map and monitor cooperatives.',
             href: '/programme-crp/built-for-international-requirements',
+            image: '/images/WORLD_SGCM.jpg',
           },
         ]}
       />
