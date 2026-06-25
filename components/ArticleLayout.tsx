@@ -39,7 +39,7 @@ export function ArticleLayout({
         activeLabel={activeLabel}
       />
 
-      <div style={{ marginTop: '150px', padding: '0 clamp(16px, 5vw, 70px)' }}>
+      <div style={{ marginTop: '170px', padding: '0 clamp(16px, 5vw, 70px)' }}>
         <div style={{
           position: 'relative',
           borderRadius: '18px',
@@ -54,7 +54,7 @@ export function ArticleLayout({
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>›</span>
             <span style={{ color: '#ffffff' }}>{crumbCurrent}</span>
           </nav>
-          <h1 style={{ fontWeight: 300, fontSize: 'clamp(34px, 6vw, 60px)', lineHeight: 1.04, letterSpacing: '-0.01em', color: '#ffffff', maxWidth: '820px' }}>{title}</h1>
+          <h1 style={{ fontWeight: 300, fontSize: 'clamp(30px, 4.6vw, 48px)', lineHeight: 1.04, letterSpacing: '-0.01em', color: '#ffffff', maxWidth: '820px' }}>{title}</h1>
         </div>
       </div>
 
