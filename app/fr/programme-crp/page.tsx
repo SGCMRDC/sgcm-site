@@ -44,16 +44,19 @@ export default function ProgrammeCRPPageFR() {
             title: "De l'informel au formel",
             body: "SGCM relie l'économie minière artisanale aux exigences des marchés responsables, transformant des opérateurs informels en partenaires éligibles, traçables et reconnus.",
             href: '/fr/programme-crp/de-l-informel-au-formel',
+            image: '/images/informal_formal.png',
           },
           {
             title: 'Aux standards du monde',
             body: 'Aligné sur la diligence raisonnable OCDE en cinq étapes, le LBMA RGG V9, la CIRGL et le Règlement UE 2017/821. Une conformité documentée, vérifiable et défendable.',
             href: '/fr/programme-crp/vers-les-standards-mondiaux',
+            image: '/images/oecd.avif',
           },
           {
             title: 'Conçu pour les exigences internationales',
             body: "En intégrant l'IA à la documentation, SGCM répond aux standards mondiaux et accélère le traitement des dossiers. Cette capacité offre aux institutions congolaises un outil de cartographie et de suivi des coopératives.",
             href: '/fr/programme-crp/pour-les-exigences-internationales',
+            image: '/images/WORLD_SGCM.jpg',
           },
         ]}
       />
