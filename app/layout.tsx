@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { IBM_Plex_Mono } from 'next/font/google';
 import "./globals.css";
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+  display: 'swap',
+});
 import { ScrollProgress } from "../components/ScrollProgress";
 
 export const metadata: Metadata = {
@@ -37,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${plexMono.variable}`}>
       <body className="antialiased">
         <ScrollProgress />
         {children}
