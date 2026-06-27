@@ -1,10 +1,11 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 // Coller ici l'URL .m3u8 (ou .mp4) de la video SGCM. Vide = fond sombre de secours.
 const HLS_SRC = '';
 
-type Stage = { tag: string; h2: string; p: string; meta?: string; cap: string };
+type Stage = { tag: string; h2: string; p: string; meta?: string; cap: string; img?: string };
 type Content = {
   h1: string; sub: string; cue: string;
   threadLabel: string; proofLead: string; refLabel: string; stepsLabel: string;
@@ -31,10 +32,10 @@ const FR: Content = {
     { name: 'Marché', sub: 'Le client final' },
   ],
   stages: [
-    { tag: "À l'origine · la mine", h2: 'La preuve naît à la source', p: "Dès l'unité de production, le programme capte et structure les données d'origine. Identité de la coopérative, périmètre d'exploitation, premières pièces du dossier. La conformité commence là où commence la production.", cap: 'Visuel · Origine' },
-    { tag: 'La vérification · le comptoir', h2: 'Confrontée aux autorités', p: "Le dossier est recoupé avec les référentiels et les autorités compétentes. SGCM prépare et sécurise la matière documentaire ; la certification d'origine demeure la prérogative des autorités congolaises.", meta: 'CEEC · SAEMAPE · Ministère des Mines', cap: 'Visuel · Vérification' },
-    { tag: 'Les standards · la raffinerie', h2: 'Lisible par les marchés', p: "Documentée et structurée, la conformité se lit au regard des standards internationaux. Une preuve défendable, vérifiable à chaque étape, qui résiste à l'examen le plus exigeant.", meta: 'OCDE 5 étapes · LBMA RGG V9 · CIRGL · Règlement UE 2017/821', cap: 'Visuel · Standards' },
-    { tag: 'Le marché · le client final', h2: 'Transmise, et durable', p: "La conformité établie peut être publiée vers les standards internationaux de traçabilité, sous la forme d'un passeport numérique de produit. SGCM en demeure le système de référence. La preuve ne se perd pas : elle accompagne la production jusqu'au client final.", cap: 'Visuel · Marché' },
+    { tag: "À l'origine · la mine", h2: 'La preuve naît à la source', p: "Dès l'unité de production, le programme capte et structure les données d'origine. Identité de la coopérative, périmètre d'exploitation, premières pièces du dossier. La conformité commence là où commence la production.", cap: 'Visuel · Origine', img: '/images/ORIGINE.png' },
+    { tag: 'La vérification · le comptoir', h2: 'Confrontée aux autorités', p: "Le dossier est recoupé avec les référentiels et les autorités compétentes. SGCM prépare et sécurise la matière documentaire ; la certification d'origine demeure la prérogative des autorités congolaises.", meta: 'CEEC · SAEMAPE · Ministère des Mines', cap: 'Visuel · Vérification', img: '/images/VERIFICATION.png' },
+    { tag: 'Les standards · la raffinerie', h2: 'Lisible par les marchés', p: "Documentée et structurée, la conformité se lit au regard des standards internationaux. Une preuve défendable, vérifiable à chaque étape, qui résiste à l'examen le plus exigeant.", meta: 'OCDE 5 étapes · LBMA RGG V9 · CIRGL · Règlement UE 2017/821', cap: 'Visuel · Standards', img: '/images/STANDARDS.png' },
+    { tag: 'Le marché · le client final', h2: 'Transmise, et durable', p: "La conformité établie peut être publiée vers les standards internationaux de traçabilité, sous la forme d'un passeport numérique de produit. SGCM en demeure le système de référence. La preuve ne se perd pas : elle accompagne la production jusqu'au client final.", cap: 'Visuel · Marché', img: '/images/MARCHE.png' },
   ],
   principleLabel: 'Le principe',
   principleA: "L'intelligence artificielle propose.",
@@ -60,10 +61,10 @@ const EN: Content = {
     { name: 'Market', sub: 'The end customer' },
   ],
   stages: [
-    { tag: 'At the source · the mine', h2: 'Evidence begins at the source', p: 'From the production unit onward, the programme captures and structures origin data. Cooperative identity, area of operation, first documents in the file. Compliance begins where production begins.', cap: 'Visual · Origin' },
-    { tag: 'Verification · the trading post', h2: 'Tested against the authorities', p: 'The file is cross-checked against the reference frameworks and the competent authorities. SGCM prepares and secures the documentary substance; certification of origin remains the prerogative of the Congolese authorities.', meta: 'CEEC · SAEMAPE · Ministry of Mines', cap: 'Visual · Verification' },
-    { tag: 'Standards · the refinery', h2: 'Legible to the markets', p: 'Documented and structured, compliance is read against the international standards. Defensible evidence, verifiable at every step, that withstands the most demanding scrutiny.', meta: 'OECD five steps · LBMA RGG V9 · ICGLR · EU Regulation 2017/821', cap: 'Visual · Standards' },
-    { tag: 'The market · the end customer', h2: 'Transmitted, and lasting', p: 'Established compliance can be published to international traceability standards, in the form of a digital product passport. SGCM remains the system of record. The evidence is not lost: it accompanies production through to the end customer.', cap: 'Visual · Market' },
+    { tag: 'At the source · the mine', h2: 'Evidence begins at the source', p: 'From the production unit onward, the programme captures and structures origin data. Cooperative identity, area of operation, first documents in the file. Compliance begins where production begins.', cap: 'Visual · Origin', img: '/images/ORIGINE.png' },
+    { tag: 'Verification · the trading post', h2: 'Tested against the authorities', p: 'The file is cross-checked against the reference frameworks and the competent authorities. SGCM prepares and secures the documentary substance; certification of origin remains the prerogative of the Congolese authorities.', meta: 'CEEC · SAEMAPE · Ministry of Mines', cap: 'Visual · Verification', img: '/images/VERIFICATION.png' },
+    { tag: 'Standards · the refinery', h2: 'Legible to the markets', p: 'Documented and structured, compliance is read against the international standards. Defensible evidence, verifiable at every step, that withstands the most demanding scrutiny.', meta: 'OECD five steps · LBMA RGG V9 · ICGLR · EU Regulation 2017/821', cap: 'Visual · Standards', img: '/images/STANDARDS.png' },
+    { tag: 'The market · the end customer', h2: 'Transmitted, and lasting', p: 'Established compliance can be published to international traceability standards, in the form of a digital product passport. SGCM remains the system of record. The evidence is not lost: it accompanies production through to the end customer.', cap: 'Visual · Market', img: '/images/MARCHE.png' },
   ],
   principleLabel: 'The principle',
   principleA: 'Artificial intelligence proposes.',
@@ -171,7 +172,20 @@ export default function CrpStandard({ lang }: { lang: 'en' | 'fr' }) {
                 <h2 className="rise">{s.h2}</h2>
                 <p className="rise">{s.p}</p>
                 {s.meta && <div className="crp-stage-meta mono rise">{s.meta}</div>}
-                <div className="crp-visual rise"><div className="frame" /><span className="cap label">{s.cap}</span></div>
+                <div className="crp-visual rise">
+                  {s.img ? (
+                    <Image
+                      src={s.img}
+                      alt=""
+                      fill
+                      sizes="(max-width: 900px) 100vw, 840px"
+                      className="crp-visual-img"
+                    />
+                  ) : (
+                    <div className="frame" />
+                  )}
+                  <span className="cap label">{s.cap}</span>
+                </div>
               </article>
             ))}
           </div>
