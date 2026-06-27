@@ -76,6 +76,7 @@ img {
 .crp-stage-meta{margin-top:20px;font-size:12px;color:var(--muted);letter-spacing:.04em}
 .crp-visual{margin-top:30px;width:100%;aspect-ratio:2/1;border-radius:14px;background:#EDEBE6;border:1px solid var(--hair);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .crp .crp-visual-img{object-fit:cover}
+.crp .crp-h1-keep{white-space:nowrap}
 .crp-visual .cap{position:absolute;left:16px;bottom:14px;color:#a6a093}
 .crp-visual .frame{position:absolute;inset:10px;border:1px solid rgba(10,22,40,.06);border-radius:8px}
 .crp-coda{background:var(--ink);color:#fff;margin-top:clamp(40px,8vh,90px);padding:clamp(80px,16vh,180px) clamp(24px,7vw,120px);text-align:center}

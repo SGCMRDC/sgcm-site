@@ -141,7 +141,19 @@ export default function CrpStandard({ lang }: { lang: 'en' | 'fr' }) {
       <header className="crp-lead">
         <video ref={videoRef} className="crp-bgvideo" muted loop playsInline autoPlay preload="auto" style={HLS_SRC ? { display: 'block' } : undefined} />
         <div className="crp-scrim" />
-        <h1 className="rise in">{c.h1}</h1>
+        <h1 className="rise in">
+          {(() => {
+            const i = c.h1.indexOf(',');
+            if (i === -1) return c.h1;
+            const first = c.h1.slice(0, i + 1);
+            const rest = c.h1.slice(i + 1).trim();
+            return (
+              <>
+                {first} <span className="crp-h1-keep">{rest}</span>
+              </>
+            );
+          })()}
+        </h1>
         <p className="crp-sub rise in" style={{ animationDelay: '.12s' }}>{c.sub}</p>
         <div className="crp-cue label"><span className="ln" />{c.cue}</div>
       </header>
