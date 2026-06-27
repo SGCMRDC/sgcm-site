@@ -13,7 +13,7 @@ export default function ProgrammeCRPPageFR() {
         title="Programme CRP"
         baseline="Structurer la conformité. Documenter la preuve. Valider l'éligibilité."
         heroImage="/images/CRP-WEB.webp"
-        heroLink1={{ label: 'Le standard CRP', href: '#standard' }}
+        heroLink1={{ label: 'Le standard CRP', href: '/fr/sgcm-certified' }}
         heroLink2={{ label: '→ Le cadre de conformité', href: '/fr/cadre-de-conformite' }}
         bodyEyebrow="DÉCOUVRIR LE PROGRAMME"
         lede="Le programme CRP, pour Certified Responsible Partner, établit le standard selon lequel une coopérative minière artisanale est structurée, documentée et validée pour intégrer les chaînes d'approvisionnement responsables. Il constitue le socle de conformité qui relie la production de terrain aux exigences des marchés internationaux."
