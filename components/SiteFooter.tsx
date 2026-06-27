@@ -51,8 +51,6 @@ const DATA = {
     services: [
       { label: 'CRP Program',             href: '/programme-crp' },
       { label: 'Compliance Framework',     href: '/cadre-de-conformite' },
-      { label: 'Traceability Integration', href: '/impact-structurel' },
-      { label: 'Institutional Advisory',   href: '/partenaires-institutionnels' },
     ],
     contactLabel: 'Contact',
     officeA: 'Kinshasa Office',
@@ -77,8 +75,6 @@ const DATA = {
     services: [
       { label: 'Programme CRP',            href: '/fr/programme-crp' },
       { label: 'Cadre de conformité',      href: '/fr/cadre-de-conformite' },
-      { label: 'Intégration tracabilité',  href: '/fr/impact-structurel' },
-      { label: 'Conseil institutionnel',   href: '/fr/partenaires-institutionnels' },
     ],
     contactLabel: 'Contact',
     officeA: 'Bureau de Kinshasa',
