@@ -54,12 +54,11 @@ export function JobList({ lang }: { lang: 'en' | 'fr' }) {
 
       {/* ── HERO ── */}
       <div
-        className="relative rounded-[18px] overflow-hidden bg-[#0A1628]"
+        className="relative rounded-[18px] overflow-hidden bg-[#0A1628] h-[max(340px,calc(100vw_-_2*clamp(16px,5vw,70px)))] md:h-[clamp(460px,64vh,740px)]"
         style={{
           marginTop: '170px',
           marginLeft: INSET,
           marginRight: INSET,
-          height: 'clamp(460px, 64vh, 740px)',
         }}
       >
         <Image
@@ -83,9 +82,8 @@ export function JobList({ lang }: { lang: 'en' | 'fr' }) {
 
         {/* Breadcrumb */}
         <div
-          className="absolute flex items-center gap-2"
+          className="absolute flex items-center gap-2 top-5 md:top-[clamp(22px,4vh,46px)]"
           style={{
-            top: 'clamp(22px, 4vh, 46px)',
             left: 'clamp(20px, 4vw, 52px)',
           }}
         >
@@ -109,9 +107,8 @@ export function JobList({ lang }: { lang: 'en' | 'fr' }) {
 
         {/* Bottom content */}
         <div
-          className="absolute"
+          className="absolute bottom-10 md:bottom-[clamp(48px,9vh,118px)]"
           style={{
-            bottom: 'clamp(48px, 9vh, 118px)',
             left: 'clamp(20px, 4vw, 52px)',
             right: 'clamp(20px, 4vw, 52px)',
             maxWidth: 'min(680px, 86%)',

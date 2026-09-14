@@ -79,12 +79,11 @@ export function JobDetail({ job, lang }: { job: Job; lang: 'en' | 'fr' }) {
 
       {/* ── HERO ── */}
       <div
-        className="relative rounded-[18px] overflow-hidden bg-[#0A1628]"
+        className="relative rounded-[18px] overflow-hidden bg-[#0A1628] h-[max(400px,calc(100vw_-_2*clamp(16px,5vw,70px)))] md:h-[clamp(440px,60vh,640px)]"
         style={{
           marginTop: '170px',
           marginLeft: INSET,
           marginRight: INSET,
-          height: 'clamp(440px, 60vh, 640px)',
         }}
       >
         <Image
@@ -108,9 +107,8 @@ export function JobDetail({ job, lang }: { job: Job; lang: 'en' | 'fr' }) {
 
         {/* Breadcrumb */}
         <div
-          className="absolute flex items-center gap-2"
+          className="absolute flex items-center gap-2 top-5 md:top-[clamp(22px,4vh,46px)]"
           style={{
-            top: 'clamp(22px, 4vh, 46px)',
             left: 'clamp(20px, 4vw, 52px)',
           }}
         >
@@ -135,9 +133,8 @@ export function JobDetail({ job, lang }: { job: Job; lang: 'en' | 'fr' }) {
 
         {/* Bottom content */}
         <div
-          className="absolute"
+          className="absolute bottom-7 md:bottom-[clamp(40px,8vh,96px)]"
           style={{
-            bottom: 'clamp(40px, 8vh, 96px)',
             left: 'clamp(20px, 4vw, 52px)',
             right: 'clamp(20px, 4vw, 52px)',
             maxWidth: 'min(760px, 92%)',
