@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Careers | SGCM',
-  description: 'Join SGCM SARL — careers and opportunities in mineral supply chain compliance, facilitation, and advisory.',
+  description: 'Open positions within the SGCM engineering team. Join the team building the Certified Cooperative Readiness Program (CRP™) platform.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
