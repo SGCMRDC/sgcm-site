@@ -10,7 +10,7 @@ const CAREERS_EMAIL = 'careers@sgcm-mining.com';
 const LABELS = {
   en: {
     careers: 'Careers',
-    heroAlt: 'Kinshasa, Democratic Republic of the Congo',
+    heroAlt: 'Reception area with the SGCM logo',
     back: '← All positions',
     role: 'The role',
     responsibilities: 'Responsibilities',
@@ -24,7 +24,7 @@ const LABELS = {
   },
   fr: {
     careers: 'Carrières',
-    heroAlt: 'Kinshasa, République Démocratique du Congo',
+    heroAlt: 'Espace d\'accueil avec le logo SGCM',
     back: '← Toutes les offres',
     role: 'Le rôle',
     responsibilities: 'Responsabilités',
@@ -87,7 +87,7 @@ export function JobDetail({ job, lang }: { job: Job; lang: 'en' | 'fr' }) {
         }}
       >
         <Image
-          src="/kin-rdc-sgcm.webp"
+          src="/sgcm-careers-v1.jpeg"
           alt={t.heroAlt}
           fill
           priority

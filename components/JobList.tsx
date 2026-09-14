@@ -5,7 +5,7 @@ import { CAREERS_INTRO, JOBS } from '../data/careers';
 const LABELS = {
   en: {
     eyebrow: 'Join SGCM',
-    heroAlt: 'Kinshasa, Democratic Republic of the Congo',
+    heroAlt: 'Reception area with the SGCM logo',
     heroLink1: 'View open positions',
     heroLink2: '→ Recruitment process',
     positionsId: 'positions',
@@ -23,7 +23,7 @@ const LABELS = {
   },
   fr: {
     eyebrow: 'Rejoignez SGCM',
-    heroAlt: 'Kinshasa, République Démocratique du Congo',
+    heroAlt: 'Espace d\'accueil avec le logo SGCM',
     heroLink1: 'Voir les postes ouverts',
     heroLink2: '→ Processus de recrutement',
     positionsId: 'postes',
@@ -62,7 +62,7 @@ export function JobList({ lang }: { lang: 'en' | 'fr' }) {
         }}
       >
         <Image
-          src="/kin-rdc-sgcm.webp"
+          src="/sgcm-careers-v1.jpeg"
           alt={t.heroAlt}
           fill
           priority
