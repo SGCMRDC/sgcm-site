@@ -126,6 +126,21 @@ export default function PrivacyPage() {
         </section>
 
         <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Recruitment</h2>
+          <p className="text-gray-500 leading-relaxed">
+            When you apply for a position, you send us personal data contained in your application
+            (curriculum vitae, contact details, background). This data is used solely to assess your
+            application, kept for the time necessary to the recruitment process, and then deleted if
+            no further action is taken, unless you agree to a longer retention. You may request access
+            to or deletion of your data by writing to{' '}
+            <a href="mailto:careers@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              careers@sgcm-mining.com
+            </a>
+            .
+          </p>
+        </section>
+
+        <section className="mb-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Rights of Data Subjects</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             In accordance with applicable data protection regulations, you have the right to access,
