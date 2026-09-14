@@ -15,11 +15,11 @@ const LABELS = {
     processEyebrow: 'Recruitment',
     processTitle: 'Recruitment process',
     steps: [
-      { title: 'Introductory conversation', text: 'A first exchange by video call on Microsoft Teams.' },
-      { title: 'Technical interview', text: 'A technical interview, also on Microsoft Teams.' },
-      { title: 'In-person meeting', text: 'A meeting in person in Kinshasa.' },
+      { title: 'Introductory conversation', text: 'A first conversation to get to know each other and present the position.' },
+      { title: 'In-depth interview', text: 'An interview with the relevant team to discuss your background and skills.' },
+      { title: 'In-person meeting', text: 'A meeting at our offices to finalise the process.' },
     ],
-    processNote: 'For the DevOps / Infrastructure engagement, the process consists of the first two steps.',
+    processNote: 'The first two steps take place by video call, the last one in person. The process may be adapted depending on the position.',
   },
   fr: {
     eyebrow: 'Rejoignez SGCM',
@@ -33,11 +33,11 @@ const LABELS = {
     processEyebrow: 'Recrutement',
     processTitle: 'Processus de recrutement',
     steps: [
-      { title: 'Premier échange', text: 'Un premier échange en visioconférence sur Microsoft Teams.' },
-      { title: 'Entretien technique', text: 'Un entretien technique, également sur Microsoft Teams.' },
-      { title: 'Rencontre en présentiel', text: 'Une rencontre en présentiel à Kinshasa.' },
+      { title: 'Premier échange', text: 'Une première conversation pour faire connaissance et présenter le poste.' },
+      { title: 'Entretien approfondi', text: 'Un entretien avec l\'équipe concernée pour échanger sur votre parcours et vos compétences.' },
+      { title: 'Rencontre en présentiel', text: 'Une rencontre dans nos bureaux pour finaliser le processus.' },
     ],
-    processNote: 'Pour la mission DevOps / Infrastructure, le processus comprend les deux premières étapes.',
+    processNote: 'Les deux premières étapes se déroulent en visioconférence, la dernière en présentiel. Le processus peut être adapté selon le poste.',
   },
 } as const;
 

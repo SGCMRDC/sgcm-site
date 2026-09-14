@@ -19,11 +19,11 @@ export type Job = {
 export const CAREERS_INTRO = {
   en: {
     heading: "Careers",
-    body: "SGCM is strengthening its engineering team. We are building the platform behind the Certified Cooperative Readiness Program (CRP™), serving compliance and traceability across mining supply chains. We are looking for engineers for whom production rigour and security by default are second nature, and who want direct responsibility within a small team.",
+    body: "At SGCM, we structure compliance and traceability across mineral supply chains, from the DRC to international markets. From Kinshasa, we work towards more transparent and responsible mining supply chains, close to the realities on the ground. Depending on our needs, we recruit a range of profiles: legal professionals, compliance specialists, field agents and engineers. All share the same commitment to rigour and integrity. We are looking for people who want to put their expertise to meaningful use and take on real responsibility within a close-knit team.",
   },
   fr: {
     heading: "Carrières",
-    body: "SGCM renforce son équipe d'ingénierie. Nous construisons la plateforme du programme Certified Cooperative Readiness (CRP™), au service de la conformité et de la traçabilité des chaînes d'approvisionnement du secteur minier. Nous recherchons des ingénieurs pour qui la rigueur de production et la sécurité par défaut sont des réflexes, et qui souhaitent exercer une responsabilité directe au sein d'une équipe restreinte.",
+    body: "Chez SGCM, nous structurons la conformité et la traçabilité des chaînes d'approvisionnement minérales, de la RDC aux marchés internationaux. Depuis Kinshasa, nous travaillons à des filières minières plus transparentes et plus responsables, au plus près des réalités du terrain. Selon nos besoins, nous recrutons des profils variés : juristes, spécialistes de la conformité, agents de terrain, ingénieurs. Tous partagent la même exigence de rigueur et d'intégrité. Nous recherchons des personnes qui souhaitent mettre leur expertise au service d'un projet utile et exercer une responsabilité réelle au sein d'une équipe à taille humaine.",
   },
 };
 
@@ -58,7 +58,7 @@ export const JOBS: Job[] = [
         "Experience leading or structuring a small technical team.",
         "Interest in supply chain traceability.",
       ],
-      process: "An introductory conversation over Microsoft Teams, a technical interview also on Teams, followed by an in-person meeting in Kinshasa.",
+      process: "An introductory conversation by video call, a technical interview also by video call, followed by an in-person meeting in Kinshasa.",
     },
     fr: {
       title: "Tech Lead / Architecte Full-Stack",
@@ -88,7 +88,7 @@ export const JOBS: Job[] = [
         "Expérience d'encadrement ou de structuration d'une petite équipe technique.",
         "Intérêt pour les enjeux de traçabilité des chaînes d'approvisionnement.",
       ],
-      process: "Premier échange en visioconférence sur Microsoft Teams, entretien technique également sur Teams, puis rencontre en présentiel à Kinshasa.",
+      process: "Premier échange en visioconférence, entretien technique également en visioconférence, puis rencontre en présentiel à Kinshasa.",
     },
   },
   {
@@ -120,7 +120,7 @@ export const JOBS: Job[] = [
         "Experience with regulated data or data subject to external audit.",
         "Experience with reliable logging and system auditability.",
       ],
-      process: "An introductory conversation over Microsoft Teams, a technical interview also on Teams, followed by an in-person meeting in Kinshasa.",
+      process: "An introductory conversation by video call, a technical interview also by video call, followed by an in-person meeting in Kinshasa.",
     },
     fr: {
       title: "Ingénieur Base de Données et Sécurité",
@@ -149,7 +149,7 @@ export const JOBS: Job[] = [
         "Expérience de données réglementées ou soumises à audit externe.",
         "Expérience de la journalisation fiable et de l'auditabilité des systèmes.",
       ],
-      process: "Premier échange en visioconférence sur Microsoft Teams, entretien technique également sur Teams, puis rencontre en présentiel à Kinshasa.",
+      process: "Premier échange en visioconférence, entretien technique également en visioconférence, puis rencontre en présentiel à Kinshasa.",
     },
   },
   {
@@ -181,7 +181,7 @@ export const JOBS: Job[] = [
         "Sensibility for institutional design and visual restraint.",
         "Experience with data visualisation.",
       ],
-      process: "An introductory conversation over Microsoft Teams, a technical interview also on Teams, followed by an in-person meeting in Kinshasa.",
+      process: "An introductory conversation by video call, a technical interview also by video call, followed by an in-person meeting in Kinshasa.",
     },
     fr: {
       title: "Développeur Frontend",
@@ -210,7 +210,7 @@ export const JOBS: Job[] = [
         "Sensibilité au design institutionnel et à la sobriété visuelle.",
         "Expérience de la visualisation de données.",
       ],
-      process: "Premier échange en visioconférence sur Microsoft Teams, entretien technique également sur Teams, puis rencontre en présentiel à Kinshasa.",
+      process: "Premier échange en visioconférence, entretien technique également en visioconférence, puis rencontre en présentiel à Kinshasa.",
     },
   },
   {
@@ -241,7 +241,7 @@ export const JOBS: Job[] = [
         "Experience with end-to-end secured production rollouts on sensitive systems.",
         "Experience with application monitoring and incident response.",
       ],
-      process: "An introductory conversation over Microsoft Teams, followed by a technical interview also on Teams.",
+      process: "An introductory conversation by video call, followed by a technical interview also by video call.",
     },
     fr: {
       title: "DevOps / Infrastructure",
@@ -269,7 +269,7 @@ export const JOBS: Job[] = [
         "Expérience de mises en production sécurisées de bout en bout sur des systèmes sensibles.",
         "Expérience de la surveillance applicative et de la réponse à incident.",
       ],
-      process: "Premier échange en visioconférence sur Microsoft Teams, puis entretien technique également sur Teams.",
+      process: "Premier échange en visioconférence, puis entretien technique également en visioconférence.",
     },
   },
 ];
