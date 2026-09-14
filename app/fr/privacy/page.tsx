@@ -132,6 +132,22 @@ export default function FrPrivacyPage() {
         </section>
 
         <section className="mb-10">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Recrutement</h2>
+          <p className="text-gray-500 leading-relaxed">
+            Lorsque vous postulez à une offre d&apos;emploi, vous nous transmettez des données
+            personnelles contenues dans votre candidature (curriculum vitae, coordonnées, parcours).
+            Ces données sont utilisées uniquement pour l&apos;examen de votre candidature, conservées
+            le temps nécessaire au processus de recrutement, puis supprimées si aucune suite n&apos;est
+            donnée, sauf accord de votre part pour une conservation plus longue. Vous pouvez demander
+            l&apos;accès à vos données ou leur suppression en écrivant à{' '}
+            <a href="mailto:careers@sgcm-mining.com" style={{ color: '#1A1F2C', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              careers@sgcm-mining.com
+            </a>
+            .
+          </p>
+        </section>
+
+        <section className="mb-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-3 border-b border-gray-100">Droits des personnes concernées</h2>
           <p className="text-gray-500 leading-relaxed mb-4">
             Conformément à la réglementation applicable en matière de protection des données,
