@@ -6,7 +6,7 @@ import { CardCarousel } from '../components/CardCarousel';
 import { SiteHeader } from '../components/SiteHeader';
 import { PlatformScrollSection } from '../components/PlatformScrollSection';
 import { SiteFooter } from '../components/SiteFooter';
-import { Layers, Landmark, Waypoints } from 'lucide-react';
+import { ServicesSplit } from '../components/ServicesSplit';
 
 // ─────────────────────────────────────────────
 // DATA
@@ -58,24 +58,6 @@ const slides: Slide[] = [
     ctaHref: '#contact',
     image: '/images/IMPACT-STRUCTUREL.webp',
     alt: 'Congolese artisanal miners — ASM operation structured by SGCM',
-  },
-];
-
-const services = [
-  {
-    title: 'Multi-mineral compliance structuring',
-    desc: 'End-to-end audit and compliance for mining supply chains (gold, cobalt, coltan, copper), from certified production to export documentation. Every link traced, documented, verifiable.',
-    Icon: Layers,
-  },
-  {
-    title: 'Institutional Interface',
-    desc: 'SGCM engages with DRC regulators, customs authorities, CEEC, SAEMAPE and international compliance institutions, to anticipate requirements, secure documentation and represent the compliance interests of its clients.',
-    Icon: Landmark,
-  },
-  {
-    title: 'Verifiable Provenance',
-    desc: 'International buyers and refineries gain direct, auditable visibility into the documented origin and chain of custody of every lot structured through SGCM, from the cooperative to the export point. A practical foundation for responsible sourcing.',
-    Icon: Waypoints,
   },
 ];
 
@@ -365,41 +347,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           SERVICES
           ══════════════════════════════════════════════ */}
-      <section id="services" className="py-16 md:py-24 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[#5F5E5A] text-xs font-semibold uppercase tracking-widest mb-4">
-            Services
-          </p>
-          <h2 className="text-3xl md:text-4xl font-light mb-10 md:mb-16 max-w-xl">
-            Our services
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            {services.map((service) => {
-              const ServiceIcon = service.Icon;
-              return (
-                <div
-                  key={service.title}
-                  className="bg-white border border-gray-200 rounded-[14px] p-6 md:p-8 hover:bg-gray-50 transition-colors group flex flex-col"
-                >
-                  <ServiceIcon
-                    size={32}
-                    strokeWidth={1.5}
-                    className="mb-5 text-gray-400 group-hover:text-[#0A1628] transition-colors"
-                  />
-                  <h3 className="text-base font-semibold mb-3 text-gray-900">{service.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-500 flex-1">{service.desc}</p>
-                  <a
-                    href="#platform"
-                    className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest font-medium text-gray-900"
-                  >
-                    Learn more <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ServicesSplit lang="en" />
 
 
       {/* ══════════════════════════════════════════════
