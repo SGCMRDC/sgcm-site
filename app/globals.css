@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Brand navy, used by components/ServicesSplit.tsx (existing hard-coded #0A1628 not migrated) */
+  --color-navy: #0A1628;
 }
 
 body {
