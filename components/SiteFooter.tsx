@@ -41,7 +41,7 @@ const SOCIALS: SocialEntry[] = [
 const DATA = {
   en: {
     baseline: 'Structuring mineral supply chain compliance, from the DRC to international markets.',
-    city: 'Kinshasa · Kolwezi · Brussels',
+    city: 'Kinshasa · Brussels',
     company: 'Company',
     aboutHref: '/about',
     about: 'About Us',
@@ -65,7 +65,7 @@ const DATA = {
   },
   fr: {
     baseline: "Structurer la conformité des chaînes minières, de la RDC aux marchés internationaux.",
-    city: 'Kinshasa · Kolwezi · Bruxelles',
+    city: 'Kinshasa · Bruxelles',
     company: 'Entreprise',
     aboutHref: '/fr/a-propos',
     about: 'À propos',

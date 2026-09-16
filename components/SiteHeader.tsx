@@ -152,8 +152,6 @@ export function SiteHeader({
           </svg>
           <span>Kinshasa</span>
           <span style={{ color: dotColor }}>·</span>
-          <span>Kolwezi</span>
-          <span style={{ color: dotColor }}>·</span>
           <span>{city2}</span>
         </div>
       </div>
@@ -286,7 +284,7 @@ export function SiteHeader({
             }}>EN</Link>
           </div>
           <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.07em' }}>
-            Kinshasa · Kolwezi · {city2}
+            Kinshasa · {city2}
           </div>
         </div>
       </div>,
