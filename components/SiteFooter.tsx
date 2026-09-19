@@ -47,6 +47,8 @@ const DATA = {
     about: 'About Us',
     careersHref: '/careers',
     careers: 'Careers',
+    newsHref: '/news',
+    news: 'News',
     servicesLabel: 'Services',
     services: [
       { label: 'CRP Program',             href: '/programme-crp' },
@@ -71,6 +73,8 @@ const DATA = {
     about: 'À propos',
     careersHref: '/fr/careers',
     careers: 'Carrières',
+    newsHref: '/fr/actualites',
+    news: 'Actualités',
     servicesLabel: 'Services',
     services: [
       { label: 'Programme CRP',            href: '/fr/programme-crp' },
@@ -137,6 +141,7 @@ export function SiteFooter({ lang, className }: SiteFooterProps) {
         <div className="flex flex-col gap-4">
           <p className="text-white/85 text-xs font-semibold uppercase tracking-widest mb-2">{d.company}</p>
           <a href={d.aboutHref} className="text-white/40 text-xs hover:text-white transition-colors">{d.about}</a>
+          <a href={d.newsHref} className="text-white/40 text-xs hover:text-white transition-colors">{d.news}</a>
           <a href={d.careersHref} className="text-white/40 text-xs hover:text-white transition-colors">{d.careers}</a>
         </div>
 
