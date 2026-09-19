@@ -8,6 +8,7 @@ const NAV_EN = [
   { label: 'ABOUT US',    href: '/about'     },
   { label: 'CRP PROGRAM', href: '/#platform' },
   { label: 'SERVICES',    href: '/#services' },
+  { label: 'NEWS',        href: '/news'      },
   { label: 'CONTACT',     href: '/contact'   },
 ];
 
@@ -15,6 +16,7 @@ const NAV_FR = [
   { label: 'À PROPOS',      href: '/fr/a-propos'  },
   { label: 'PROGRAMME CRP', href: '/fr/#platform' },
   { label: 'SERVICES',      href: '/fr/#services' },
+  { label: 'ACTUALITÉS',    href: '/fr/actualites' },
   { label: 'CONTACT',       href: '/contact/fr'   },
 ];
 
